@@ -301,7 +301,7 @@ export const initialGallery = [
 export const initialWebsiteSettings = {
   companyName: "Bharath Enterprises",
   establishedYear: "2025",
-  logo: "/logo-mark.svg",
+  logo: "/logo.png",
   tagline: "Your Trusted Business Development Partner",
   locationBadge: "Coonoor & Coimbatore, Tamil Nadu • Est. 2025",
   address: "Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India",

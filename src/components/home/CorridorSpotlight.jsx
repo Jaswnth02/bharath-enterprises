@@ -186,3 +186,4 @@ export const CorridorSpotlight = () => {
     </section>
   );
 };
+

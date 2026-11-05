@@ -60,11 +60,13 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
           {/* Logo Brand Header */}
           <div className="h-16 px-6 flex items-center justify-between border-b border-primary-light">
             <Link to="/" className="flex items-center gap-2.5">
-              <img
-                src={settings.logo || '/logo-mark.svg'}
-                alt="Logo"
-                className="w-8 h-8 object-contain rounded"
-              />
+              <div className="w-8 h-8 p-0.5 rounded-lg bg-white flex items-center justify-center shrink-0">
+                <img
+                  src={settings.logo || '/logo.png'}
+                  alt="Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div>
                 <span className="text-sm font-bold text-white block leading-tight">
                   BHARATH

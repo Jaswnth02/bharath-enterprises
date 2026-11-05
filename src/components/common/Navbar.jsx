@@ -31,18 +31,18 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 p-1 rounded-xl bg-white/90 shadow-2xs border border-white/80 flex items-center justify-center">
+          <div className="h-10 sm:h-12 w-10 sm:w-12 p-0.5 rounded-xl bg-white shadow-xs border border-white/90 flex items-center justify-center shrink-0">
             <img
-              src={settings.logo || '/logo-mark.svg'}
+              src={settings.logo || '/logo.png'}
               alt="Bharath Enterprises Logo"
               className="w-full h-full object-contain"
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm sm:text-lg font-bold tracking-tight text-primary leading-tight font-sans">
+            <span className="text-sm sm:text-base font-extrabold tracking-tight text-primary leading-tight font-sans">
               BHARATH
             </span>
-            <span className="text-[8px] sm:text-[9px] font-semibold tracking-widest text-secondary uppercase -mt-0.5">
+            <span className="text-[8px] sm:text-[9px] font-bold tracking-widest text-accent uppercase -mt-0.5">
               ENTERPRISES
             </span>
           </div>

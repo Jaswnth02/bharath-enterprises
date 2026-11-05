@@ -21,7 +21,7 @@ export const AdminContent = () => {
       setForm({
         companyName: settings.companyName || 'Bharath Enterprises',
         establishedYear: settings.establishedYear || '2025',
-        logo: settings.logo || '/logo-mark.svg',
+        logo: settings.logo || '/logo.png',
         address: settings.address || '',
         phone: settings.phone || '',
         email: settings.email || '',

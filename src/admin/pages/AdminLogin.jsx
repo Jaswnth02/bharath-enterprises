@@ -57,9 +57,9 @@ export const AdminLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#0D1E35] p-4 text-slate-100">
       <div className="max-w-md w-full bg-slate-800/90 border border-slate-700 rounded-2xl p-8 shadow-2xl backdrop-blur-md">
         <div className="text-center mb-6">
-          <div className="w-12 h-12 bg-primary rounded-xl p-2 mx-auto mb-3 shadow-md border border-slate-700">
+          <div className="w-14 h-14 bg-white rounded-xl p-1.5 mx-auto mb-3 shadow-md border border-slate-700">
             <img
-              src={settings.logo || '/logo-mark.svg'}
+              src={settings.logo || '/logo.png'}
               alt="Logo"
               className="w-full h-full object-contain"
             />

@@ -24,16 +24,18 @@ export const Footer = () => {
           {/* Column 1: Brand & Overview */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img
-                src={settings.logo || '/logo-mark.svg'}
-                alt="Bharath Enterprises"
-                className="w-10 h-10 object-contain rounded-md"
-              />
+              <div className="w-12 h-12 p-1 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
+                <img
+                  src={settings.logo || '/logo.png'}
+                  alt="Bharath Enterprises"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div>
-                <span className="text-xl font-bold tracking-tight text-white block">
+                <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white block">
                   BHARATH
                 </span>
-                <span className="text-[10px] font-semibold tracking-widest text-accent uppercase block">
+                <span className="text-[10px] font-bold tracking-widest text-accent uppercase block -mt-0.5">
                   ENTERPRISES
                 </span>
               </div>

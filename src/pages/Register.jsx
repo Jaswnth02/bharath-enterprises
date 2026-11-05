@@ -82,9 +82,9 @@ export const Register = () => {
       <div className="max-w-md w-full glass-white-elevated rounded-3xl p-5 sm:p-8 md:p-10 border border-white/95 shadow-2xl space-y-6">
         <div className="text-center">
           <Link to="/" className="inline-flex items-center gap-2 mb-3">
-            <div className="w-10 h-10 p-1 rounded-xl bg-white/80 shadow-xs border border-white/80">
+            <div className="w-12 h-12 p-1 rounded-xl bg-white shadow-xs border border-white/80">
               <img
-                src={settings.logo || '/logo-mark.svg'}
+                src={settings.logo || '/logo.png'}
                 alt="Bharath Enterprises"
                 className="w-full h-full object-contain"
               />
