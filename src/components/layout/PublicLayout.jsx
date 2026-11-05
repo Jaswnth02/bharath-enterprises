@@ -7,9 +7,9 @@ import { EnquiryModal } from '../common/EnquiryModal';
 
 export const PublicLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-800">
+    <div className="min-h-screen flex flex-col bg-glass-canvas text-slate-800 relative selection:bg-primary selection:text-white">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <Outlet />
       </main>
       <Footer />

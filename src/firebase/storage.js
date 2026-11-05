@@ -22,3 +22,4 @@ export const uploadFile = async (file, folder = 'uploads') => {
     reader.readAsDataURL(file);
   });
 };
+

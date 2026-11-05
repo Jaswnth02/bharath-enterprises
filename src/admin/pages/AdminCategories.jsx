@@ -274,3 +274,4 @@ export const AdminCategories = () => {
     </div>
   );
 };
+

@@ -15,7 +15,7 @@ export const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-surface border-y border-slate-200/60">
+    <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
@@ -32,7 +32,7 @@ export const ServicesSection = () => {
 
           <Link
             to="/services"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start md:self-auto glass-button px-4 py-2 rounded-xl"
           >
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4" />
@@ -43,9 +43,9 @@ export const ServicesSection = () => {
           {services.map((srv) => (
             <div
               key={srv.serviceId || srv.id}
-              className="bg-white rounded-xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+              className="glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
             >
-              <div className="relative h-44 overflow-hidden bg-slate-100">
+              <div className="relative h-44 overflow-hidden rounded-xl bg-slate-100">
                 <img
                   src={srv.image || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'}
                   alt={srv.title}
@@ -53,9 +53,9 @@ export const ServicesSection = () => {
                 />
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between">
+              <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-primary mb-2 leading-snug">
+                  <h3 className="text-sm font-bold text-primary mb-2 leading-snug font-sans">
                     {srv.title}
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -63,7 +63,7 @@ export const ServicesSection = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between">
                   <button
                     type="button"
                     onClick={() =>
@@ -72,7 +72,7 @@ export const ServicesSection = () => {
                         enquiryType: 'Service Inquiry',
                       })
                     }
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-accent transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-accent transition-colors"
                   >
                     <span>Request Quotation</span>
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export const ServicesSection = () => {
 
                   <Link
                     to="/services"
-                    className="text-[11px] text-slate-400 hover:text-slate-600"
+                    className="text-[11px] text-slate-400 hover:text-slate-600 font-medium"
                   >
                     Details
                   </Link>

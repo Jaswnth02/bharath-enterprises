@@ -91,26 +91,27 @@ export const Contact = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header */}
-      <div className="bg-primary py-16 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-2">
+    <div className="min-h-screen py-10">
+      {/* Header Banner in White Glass */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-8">
+        <div className="glass-white-elevated p-8 sm:p-10 rounded-3xl border border-white/90 shadow-xl relative overflow-hidden">
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-accent/10 to-transparent pointer-events-none" />
+          <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-2 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
             Direct Commercial Desk
           </span>
-          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-sans">
+          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-sans text-primary">
             {t('contact.title')}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mt-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-2 leading-relaxed font-light">
             {t('contact.subtitle')}
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Contact Details Column */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5">
             <div>
               <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-1">
                 Bharath Enterprises
@@ -123,41 +124,41 @@ export const Contact = () => {
               </p>
             </div>
 
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-3 p-4 bg-surface rounded-xl border border-slate-200">
+            <div className="space-y-3.5 pt-2">
+              <div className="flex items-start gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-primary">Office & Facility Address</h4>
-                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                  <h4 className="text-xs font-bold text-primary font-sans">Office & Facility Address</h4>
+                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed font-light">
                     {settings.address || 'Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004, India [Placeholder]'}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 bg-surface rounded-xl border border-slate-200">
+              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
                 <div>
-                  <h4 className="text-xs font-bold text-primary">Contact Telephones</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <h4 className="text-xs font-bold text-primary font-sans">Contact Telephones</h4>
+                  <p className="text-xs text-slate-600 mt-0.5 font-mono">
                     {settings.phone || '+91 (0) 422 - [Phone Placeholder]'}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 bg-surface rounded-xl border border-slate-200">
+              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
                 <div>
-                  <h4 className="text-xs font-bold text-primary">Commercial Email</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <h4 className="text-xs font-bold text-primary font-sans">Commercial Email</h4>
+                  <p className="text-xs text-slate-600 mt-0.5 font-mono">
                     {settings.email || 'contact@bharathenterprises.com [Placeholder]'}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 bg-surface rounded-xl border border-slate-200">
+              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Clock className="w-5 h-5 text-accent shrink-0" />
                 <div>
-                  <h4 className="text-xs font-bold text-primary">Trading & Support Hours</h4>
+                  <h4 className="text-xs font-bold text-primary font-sans">Trading & Support Hours</h4>
                   <p className="text-xs text-slate-600 mt-0.5">
                     {settings.businessHours || 'Monday – Saturday: 9:00 AM – 6:30 PM (IST)'}
                   </p>
@@ -165,67 +166,69 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Direct WhatsApp Callout */}
-            <div className="p-5 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center justify-between">
+            {/* Direct WhatsApp Callout in Glass */}
+            <div className="p-5 glass-white rounded-2xl border border-white/90 shadow-sm flex items-center justify-between">
               <div>
-                <h4 className="text-xs font-bold text-emerald-900">Need Immediate Assistance?</h4>
-                <p className="text-[11px] text-emerald-700">Chat with our Coimbatore representative directly.</p>
+                <h4 className="text-xs font-bold text-primary font-sans">Need Immediate Assistance?</h4>
+                <p className="text-[11px] text-slate-500">Chat with our Coimbatore representative directly.</p>
               </div>
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-bold rounded-lg shadow-sm transition-all"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-bold rounded-xl shadow-md transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />
                 <span>WhatsApp</span>
               </a>
             </div>
 
-            {/* Google Maps Location Preview / Placeholder */}
-            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
-              <div className="p-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs text-slate-600 font-semibold">
+            {/* Google Maps Location Preview in White Glass */}
+            <div className="glass-white p-2 rounded-2xl border border-white/80 shadow-sm overflow-hidden">
+              <div className="p-2.5 flex items-center justify-between text-xs text-slate-600 font-semibold">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-accent" />
                   <span>Coimbatore Industrial District Map</span>
                 </span>
-                <span className="text-[10px] text-slate-400">Avinashi Road Corridor</span>
+                <span className="text-[10px] text-slate-400">Avinashi Road</span>
               </div>
-              <iframe
-                title="Bharath Enterprises Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.4417316712!2d76.9010714!3d11.0168445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                className="w-full h-52 border-0"
-                loading="lazy"
-              />
+              <div className="rounded-xl overflow-hidden">
+                <iframe
+                  title="Bharath Enterprises Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.4417316712!2d76.9010714!3d11.0168445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  className="w-full h-48 border-0"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Form Column */}
+          {/* Form Column in Elevated White Glass */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div className="glass-white-elevated rounded-3xl p-6 sm:p-8 border border-white/95 shadow-xl">
               <div className="mb-6">
-                <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+                <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1 bg-accent/10 w-fit px-2 py-0.5 rounded">
                   Enquiry Submission
                 </span>
-                <h3 className="text-xl font-bold text-primary font-sans">
+                <h3 className="text-xl font-bold text-primary font-sans mt-1">
                   {t('contact.formTitle')}
                 </h3>
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-slate-500 mt-1 font-light">
                   {t('contact.formSubtitle')}
                 </p>
               </div>
 
               {success ? (
-                <div className="p-8 text-center bg-emerald-50 rounded-xl border border-emerald-200 my-4">
+                <div className="p-8 text-center glass-white rounded-2xl border border-emerald-200 my-4 shadow-sm">
                   <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
-                  <h4 className="text-base font-bold text-emerald-900 mb-1">Enquiry Successfully Dispatched</h4>
-                  <p className="text-xs text-emerald-700 max-w-md mx-auto mb-5">
+                  <h4 className="text-base font-bold text-emerald-900 mb-1 font-sans">Enquiry Successfully Dispatched</h4>
+                  <p className="text-xs text-emerald-700 max-w-md mx-auto mb-5 leading-relaxed">
                     {t('contact.successMessage')}
                   </p>
                   <button
                     type="button"
                     onClick={() => setSuccess(false)}
-                    className="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold rounded-lg"
+                    className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl shadow-sm"
                   >
                     Send Another Inquiry
                   </button>
@@ -233,7 +236,7 @@ export const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {errorMessage && (
-                    <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg flex items-center gap-2">
+                    <div className="p-3 bg-rose-50/90 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{errorMessage}</span>
                     </div>
@@ -241,15 +244,15 @@ export const Contact = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.fullName')} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="text"
                         value={formData.customerName}
                         onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
-                        className={`w-full px-3.5 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 ${
-                          errors.customerName ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
+                        className={`w-full px-3.5 py-2 text-xs bg-white/70 backdrop-blur-xs border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                          errors.customerName ? 'border-rose-400 bg-rose-50/40' : 'border-white/80 shadow-2xs'
                         }`}
                         placeholder="e.g. Balasubramanian V."
                       />
@@ -257,15 +260,15 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.phone')} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={`w-full px-3.5 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 ${
-                          errors.phone ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
+                        className={`w-full px-3.5 py-2 text-xs bg-white/70 backdrop-blur-xs border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                          errors.phone ? 'border-rose-400 bg-rose-50/40' : 'border-white/80 shadow-2xs'
                         }`}
                         placeholder="+91 94432 10987"
                       />
@@ -275,15 +278,15 @@ export const Contact = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.email')} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full px-3.5 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 ${
-                          errors.email ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
+                        className={`w-full px-3.5 py-2 text-xs bg-white/70 backdrop-blur-xs border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                          errors.email ? 'border-rose-400 bg-rose-50/40' : 'border-white/80 shadow-2xs'
                         }`}
                         placeholder="bala@industrialmills.com"
                       />
@@ -291,14 +294,14 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.companyName')}
                       </label>
                       <input
                         type="text"
                         value={formData.companyName}
                         onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                        className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full px-3.5 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                         placeholder="e.g. Coimbatore Casting Works"
                       />
                     </div>
@@ -306,13 +309,13 @@ export const Contact = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.enquiryType')}
                       </label>
                       <select
                         value={formData.enquiryType}
                         onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value })}
-                        className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white"
+                        className="w-full px-3.5 py-2 text-xs bg-white/80 backdrop-blur-xs border border-white/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs font-medium"
                       >
                         <option value="General Business">General Business Enquiry</option>
                         <option value="Product Inquiry">Product Catalogue & Pricing</option>
@@ -325,29 +328,29 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
                         {t('contact.productOrService')}
                       </label>
                       <input
                         type="text"
                         value={formData.productOrService}
                         onChange={(e) => setFormData({ ...formData, productOrService: e.target.value })}
-                        className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full px-3.5 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                         placeholder="e.g. M12 Fasteners or Pump Castings"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-700 mb-1">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       {t('contact.message')} <span className="text-rose-500">*</span>
                     </label>
                     <textarea
                       rows="4"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 ${
-                        errors.message ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
+                      className={`w-full px-3.5 py-2.5 text-xs bg-white/70 backdrop-blur-xs border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                        errors.message ? 'border-rose-400 bg-rose-50/40' : 'border-white/80 shadow-2xs'
                       }`}
                       placeholder="Please specify your required specifications, tentative delivery schedules, estimated volume, or any specific questions..."
                     />
@@ -358,7 +361,7 @@ export const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 bg-primary hover:bg-primary-light disabled:opacity-60 text-white text-xs font-bold rounded-lg shadow-sm transition-all"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 bg-primary hover:bg-primary-light disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
                     >
                       {isSubmitting ? (
                         <>

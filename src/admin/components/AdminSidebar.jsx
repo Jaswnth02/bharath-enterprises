@@ -126,3 +126,4 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
     </>
   );
 };
+

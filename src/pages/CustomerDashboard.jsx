@@ -75,12 +75,12 @@ export const CustomerDashboard = () => {
   if (!user) return null;
 
   return (
-    <div className="bg-surface min-h-screen py-10">
+    <div className="min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Welcome Banner */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        {/* Welcome Banner in White Glass */}
+        <div className="glass-white-elevated rounded-3xl p-6 sm:p-8 border border-white/95 shadow-xl mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-xl shadow-xs">
+            <div className="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-xl shadow-sm border border-white/40">
               {user.fullName ? user.fullName.charAt(0).toUpperCase() : 'C'}
             </div>
             <div>
@@ -88,11 +88,11 @@ export const CustomerDashboard = () => {
                 <h1 className="text-xl sm:text-2xl font-bold text-primary font-sans">
                   {t('dashboard.welcome')}, {user.fullName || 'Customer'}
                 </h1>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-blue-100 text-blue-800">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-blue-100/80 text-blue-800 border border-blue-200">
                   Customer Account
                 </span>
               </div>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <p className="text-xs text-slate-500 mt-0.5 font-light">
                 Registered account for quotation tracking and commercial inquiries with Bharath Enterprises.
               </p>
             </div>
@@ -102,7 +102,7 @@ export const CustomerDashboard = () => {
             <button
               type="button"
               onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary hover:bg-primary-light text-white text-xs font-semibold rounded-lg shadow-xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
             >
               <PlusCircle className="w-4 h-4 text-accent" />
               <span>New Quotation Request</span>
@@ -111,7 +111,7 @@ export const CustomerDashboard = () => {
             <button
               type="button"
               onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 glass-button text-slate-700 text-xs font-semibold rounded-xl transition-all"
             >
               <LogOut className="w-4 h-4 text-slate-500" />
               <span>{t('dashboard.logout')}</span>
@@ -123,9 +123,9 @@ export const CustomerDashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Profile Card */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
-              <div className="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
-                <h3 className="text-sm font-bold text-primary flex items-center gap-2">
+            <div className="glass-white rounded-3xl p-6 border border-white/90 shadow-md">
+              <div className="flex items-center justify-between mb-4 border-b border-slate-200/60 pb-3">
+                <h3 className="text-sm font-bold text-primary flex items-center gap-2 font-sans">
                   <User className="w-4 h-4 text-accent" />
                   <span>{t('dashboard.profileSettings')}</span>
                 </h3>
@@ -142,7 +142,7 @@ export const CustomerDashboard = () => {
               </div>
 
               {saveSuccess && (
-                <div className="mb-4 p-2.5 bg-emerald-50 text-emerald-700 text-xs rounded-lg flex items-center gap-2">
+                <div className="mb-4 p-2.5 bg-emerald-50 text-emerald-700 text-xs rounded-xl flex items-center gap-2 border border-emerald-200">
                   <Check className="w-4 h-4" />
                   <span>Profile updated successfully.</span>
                 </div>
@@ -156,7 +156,7 @@ export const CustomerDashboard = () => {
                       type="text"
                       value={editName}
                       onChange={(e) => setEditName(e.target.value)}
-                      className="w-full px-3 py-1.5 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className="w-full px-3 py-1.5 text-xs bg-white/80 border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
 
@@ -166,21 +166,21 @@ export const CustomerDashboard = () => {
                       type="tel"
                       value={editPhone}
                       onChange={(e) => setEditPhone(e.target.value)}
-                      className="w-full px-3 py-1.5 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      className="w-full px-3 py-1.5 text-xs bg-white/80 border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
 
                   <div className="pt-2 flex items-center gap-2">
                     <button
                       type="submit"
-                      className="px-3 py-1.5 bg-primary text-white text-xs font-semibold rounded-lg"
+                      className="px-3.5 py-1.5 bg-primary text-white text-xs font-semibold rounded-xl shadow-xs"
                     >
                       Save Changes
                     </button>
                     <button
                       type="button"
                       onClick={() => setIsEditing(false)}
-                      className="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-semibold rounded-lg"
+                      className="px-3.5 py-1.5 glass-button text-slate-600 text-xs font-semibold rounded-xl"
                     >
                       Cancel
                     </button>
@@ -189,20 +189,20 @@ export const CustomerDashboard = () => {
               ) : (
                 <div className="space-y-3 text-xs">
                   <div>
-                    <span className="text-[11px] text-slate-400 block">Name</span>
+                    <span className="text-[11px] text-slate-400 block font-medium">Name</span>
                     <span className="font-semibold text-slate-800">{user.fullName || 'N/A'}</span>
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-400 block">Email Address</span>
+                    <span className="text-[11px] text-slate-400 block font-medium">Email Address</span>
                     <span className="font-mono text-slate-800">{user.email}</span>
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-400 block">Contact Phone</span>
+                    <span className="text-[11px] text-slate-400 block font-medium">Contact Phone</span>
                     <span className="text-slate-800">{user.phone || 'Not provided'}</span>
                   </div>
-                  <div className="pt-2 border-t border-slate-100">
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Security Notice</span>
-                    <p className="text-[11px] text-slate-500 mt-0.5">
+                  <div className="pt-2 border-t border-slate-200/60">
+                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Security Notice</span>
+                    <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed font-light">
                       Customer accounts are granted read-only access to their own submitted quotation requests.
                     </p>
                   </div>
@@ -211,30 +211,30 @@ export const CustomerDashboard = () => {
             </div>
 
             {/* Quick Action Box */}
-            <div className="bg-primary text-white rounded-2xl p-6 shadow-xs space-y-3">
-              <h4 className="text-sm font-bold">Need Commercial Pricing?</h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
+            <div className="glass-white p-6 rounded-3xl border border-white/90 shadow-md space-y-3">
+              <h4 className="text-sm font-bold text-primary font-sans">Need Commercial Pricing?</h4>
+              <p className="text-xs text-slate-500 leading-relaxed font-light">
                 Browse our product catalogue for industrial fasteners, flanges, pump parts, and bulk supplies.
               </p>
               <Link
                 to="/products"
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent hover:bg-accent-hover text-primary text-xs font-bold rounded-lg transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary hover:bg-primary-light text-white text-xs font-bold rounded-xl transition-all shadow-sm"
               >
                 <span>{t('dashboard.browseProducts')}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5 text-accent" />
               </Link>
             </div>
           </div>
 
           {/* Right Column: Submitted Enquiries Table */}
           <div className="lg:col-span-8">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+            <div className="glass-white rounded-3xl p-6 sm:p-7 border border-white/90 shadow-md">
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-200/60">
                 <h3 className="text-base font-bold text-primary flex items-center gap-2 font-sans">
                   <FileText className="w-4 h-4 text-accent" />
                   <span>{t('dashboard.myEnquiries')}</span>
                 </h3>
-                <span className="text-xs text-slate-500 font-medium">
+                <span className="text-xs text-slate-500 font-semibold glass-pill px-2.5 py-0.5 rounded-lg">
                   {enquiries.length} {enquiries.length === 1 ? 'Record' : 'Records'}
                 </span>
               </div>
@@ -242,21 +242,21 @@ export const CustomerDashboard = () => {
               {loading ? (
                 <div className="space-y-3 py-6 animate-pulse">
                   {[1, 2, 3].map((n) => (
-                    <div key={n} className="h-16 bg-slate-100 rounded-lg" />
+                    <div key={n} className="h-16 glass-white rounded-xl" />
                   ))}
                 </div>
               ) : enquiries.length === 0 ? (
-                <div className="text-center py-14 bg-surface rounded-xl border border-dashed border-slate-300 p-6">
+                <div className="text-center py-14 glass-white-subtle rounded-2xl border border-dashed border-slate-300 p-6">
                   <Clock className="w-10 h-10 text-slate-300 mx-auto mb-3" />
-                  <h4 className="text-sm font-bold text-primary mb-1">
+                  <h4 className="text-sm font-bold text-primary mb-1 font-sans">
                     {t('dashboard.noEnquiries')}
                   </h4>
-                  <p className="text-xs text-slate-500 max-w-sm mx-auto mb-4">
+                  <p className="text-xs text-slate-500 max-w-sm mx-auto mb-4 font-light">
                     When you request quotations or product details from our catalogue, your records and live status will appear here.
                   </p>
                   <Link
                     to="/products"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-xl shadow-xs"
                   >
                     <span>Explore Products</span>
                   </Link>
@@ -265,7 +265,7 @@ export const CustomerDashboard = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs">
                     <thead>
-                      <tr className="border-b border-slate-200 text-slate-500 font-semibold uppercase text-[10px] tracking-wider">
+                      <tr className="border-b border-slate-200/70 text-slate-500 font-semibold uppercase text-[10px] tracking-wider">
                         <th className="py-2.5 px-3">Ref ID</th>
                         <th className="py-2.5 px-3">Category / Item</th>
                         <th className="py-2.5 px-3">Submitted On</th>
@@ -275,7 +275,7 @@ export const CustomerDashboard = () => {
                     </thead>
                     <tbody className="divide-y divide-slate-100">
                       {enquiries.map((enq) => (
-                        <tr key={enq.enquiryId || enq.id} className="hover:bg-slate-50/70 transition-colors">
+                        <tr key={enq.enquiryId || enq.id} className="hover:bg-white/60 transition-colors">
                           <td className="py-3 px-3 font-mono font-bold text-primary">
                             {enq.enquiryId || enq.id}
                           </td>

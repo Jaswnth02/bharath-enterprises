@@ -565,3 +565,4 @@ export const AdminProducts = () => {
     </div>
   );
 };
+

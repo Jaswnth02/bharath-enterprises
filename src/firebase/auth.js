@@ -209,3 +209,4 @@ export const subscribeToAuthChanges = (callback) => {
   // Return unsubscribe dummy
   return () => {};
 };
+

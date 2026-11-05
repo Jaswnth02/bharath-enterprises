@@ -50,3 +50,4 @@ export const getStatusBadgeStyle = (status) => {
       return 'bg-slate-50 text-slate-700 border-slate-200';
   }
 };
+

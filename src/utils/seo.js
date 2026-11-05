@@ -28,3 +28,4 @@ export const useSEO = ({ title, description, keywords }) => {
     }
   }, [title, description, keywords]);
 };
+

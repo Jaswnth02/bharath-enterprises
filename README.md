@@ -136,3 +136,4 @@ VITE_COMPANY_WHATSAPP=919876543210
 3. Set Framework Preset to **Vite**.
 4. In **Environment Variables**, add the `VITE_FIREBASE_*` keys and `VITE_COMPANY_WHATSAPP`.
 5. Click **Deploy**. Vercel will automatically run `npm run build` using the configured `vercel.json` rewrite rules.
+

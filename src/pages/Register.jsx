@@ -78,20 +78,22 @@ export const Register = () => {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-surface">
-      <div className="max-w-md w-full bg-white rounded-2xl p-8 border border-slate-200 shadow-xl space-y-6">
+    <div className="min-h-[80vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full glass-white-elevated rounded-3xl p-8 sm:p-10 border border-white/95 shadow-2xl space-y-6">
         <div className="text-center">
           <Link to="/" className="inline-flex items-center gap-2 mb-3">
-            <img
-              src={settings.logo || '/logo-mark.svg'}
-              alt="Bharath Enterprises"
-              className="w-10 h-10 object-contain rounded-md"
-            />
-            <span className="text-xl font-bold text-primary font-sans">
+            <div className="w-10 h-10 p-1 rounded-xl bg-white/80 shadow-xs border border-white/80">
+              <img
+                src={settings.logo || '/logo-mark.svg'}
+                alt="Bharath Enterprises"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <span className="text-lg font-bold text-primary font-sans">
               BHARATH ENTERPRISES
             </span>
           </Link>
-          <h2 className="text-xl font-bold text-primary">
+          <h2 className="text-xl font-bold text-primary font-sans">
             {t('auth.registerTitle')}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
@@ -100,7 +102,7 @@ export const Register = () => {
         </div>
 
         {error && (
-          <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg flex items-center gap-2">
+          <div className="p-3 bg-rose-50/90 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
@@ -112,13 +114,13 @@ export const Register = () => {
               {t('auth.fullNameLabel')} <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 required
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full pl-10 pr-3 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                 placeholder="e.g. Senthil Kumar"
               />
             </div>
@@ -129,13 +131,13 @@ export const Register = () => {
               {t('auth.emailLabel')} <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full pl-10 pr-3 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                 placeholder="senthil@company.com"
               />
             </div>
@@ -146,13 +148,13 @@ export const Register = () => {
               {t('auth.phoneLabel')} <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="tel"
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full pl-10 pr-3 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                 placeholder="+91 98421 23456"
               />
             </div>
@@ -164,13 +166,13 @@ export const Register = () => {
                 {t('auth.passwordLabel')} <span className="text-rose-500">*</span>
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="w-full pl-10 pr-3 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                   placeholder="Min 6 chars"
                 />
               </div>
@@ -181,13 +183,13 @@ export const Register = () => {
                 {t('auth.confirmPasswordLabel')} <span className="text-rose-500">*</span>
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={formData.confirmPassword}
                   onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                  className="w-full pl-9 pr-8 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="w-full pl-10 pr-8 py-2 text-xs bg-white/70 backdrop-blur-xs border border-white/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs"
                   placeholder="Repeat pass"
                 />
                 <button
@@ -205,7 +207,7 @@ export const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 px-4 bg-primary hover:bg-primary-light disabled:opacity-60 text-white text-xs font-bold rounded-lg shadow-sm transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 bg-primary hover:bg-primary-light disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
             >
               {loading ? (
                 <>
@@ -222,7 +224,7 @@ export const Register = () => {
           </div>
         </form>
 
-        <div className="pt-2 text-center text-xs text-slate-500 border-t border-slate-100">
+        <div className="pt-2 text-center text-xs text-slate-500 border-t border-slate-200/60">
           <p>
             {t('auth.haveAccount')}{' '}
             <Link to="/login" className="font-bold text-primary hover:text-accent">

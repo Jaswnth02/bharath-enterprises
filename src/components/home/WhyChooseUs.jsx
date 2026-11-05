@@ -33,7 +33,7 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-1">
@@ -53,12 +53,12 @@ export const WhyChooseUs = () => {
             return (
               <div
                 key={idx}
-                className="bg-surface p-6 rounded-xl border border-slate-200/80 hover:border-primary/40 hover:shadow-lg transition-all text-center flex flex-col items-center"
+                className="glass-white glass-white-hover p-6 rounded-2xl text-center flex flex-col items-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary text-accent flex items-center justify-center mb-4 shadow-xs">
+                <div className="w-12 h-12 rounded-2xl bg-primary text-accent flex items-center justify-center mb-4 shadow-sm border border-white/60">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-sm font-bold text-primary mb-2">
+                <h3 className="text-sm font-bold text-primary mb-2 font-sans">
                   {item.title}
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed">

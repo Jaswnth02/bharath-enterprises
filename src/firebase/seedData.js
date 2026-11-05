@@ -398,3 +398,4 @@ export const initialWebsiteSettings = {
   ],
   footerContent: "Bharath Enterprises is an established commercial enterprise in Coimbatore, Tamil Nadu. Committed to standard-compliant commercial supplies and verified business partnerships. All rights reserved."
 };
+

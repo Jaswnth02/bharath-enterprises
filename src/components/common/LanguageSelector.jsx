@@ -69,3 +69,4 @@ export const LanguageSelector = ({ variant = 'light' }) => {
     </div>
   );
 };
+

@@ -11,3 +11,4 @@ export const isValidPhone = (phone) => {
 export const isValidPassword = (password) => {
   return typeof password === 'string' && password.length >= 6;
 };
+

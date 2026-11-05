@@ -9,36 +9,38 @@ export const CompanyIntro = () => {
   const { settings } = useSite();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Image side */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
-              <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
-                alt="Bharath Enterprises Coimbatore Operations"
-                className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">
-                  Headquarters
-                </span>
-                <p className="text-sm font-semibold">Coimbatore, Tamil Nadu, India</p>
-                <p className="text-xs text-slate-300">Commercial & Industrial Supply Operations</p>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/80 p-2 glass-white">
+              <div className="rounded-2xl overflow-hidden relative h-[400px]">
+                <img
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+                  alt="Bharath Enterprises Coimbatore Operations"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">
+                    Headquarters
+                  </span>
+                  <p className="text-sm font-semibold">Coimbatore, Tamil Nadu, India</p>
+                  <p className="text-xs text-slate-300">Commercial & Industrial Supply Operations</p>
+                </div>
               </div>
             </div>
 
-            {/* Float badge */}
-            <div className="hidden sm:block absolute -bottom-5 -right-5 bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+            {/* Float White Glass Badge */}
+            <div className="hidden sm:block absolute -bottom-5 -right-5 glass-white-elevated p-4 rounded-2xl shadow-xl border border-white/90">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
+                <div className="w-11 h-11 rounded-xl bg-primary text-accent flex items-center justify-center font-bold text-sm shadow-xs">
                   BE
                 </div>
                 <div>
                   <p className="text-xs font-bold text-primary">Established 2025</p>
-                  <p className="text-[10px] text-slate-500">Commercial Integrity</p>
+                  <p className="text-[10px] text-slate-500 font-medium">Commercial Integrity</p>
                 </div>
               </div>
             </div>
@@ -59,20 +61,24 @@ export const CompanyIntro = () => {
               {settings.aboutContent || t('home.introText')}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-              <div className="flex items-start gap-2.5 p-3 rounded-lg bg-surface border border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div className="flex items-start gap-3 p-4 rounded-2xl glass-white border border-white/80 shadow-xs">
                 <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-primary">B2B & B2C Fulfilment</h4>
-                  <p className="text-[11px] text-slate-500">Supplying industrial units, workshops, and commercial trade.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                    Supplying industrial units, workshops, and commercial trade.
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-2.5 p-3 rounded-lg bg-surface border border-slate-100">
+              <div className="flex items-start gap-3 p-4 rounded-2xl glass-white border border-white/80 shadow-xs">
                 <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-primary">Coimbatore Engineering Link</h4>
-                  <p className="text-[11px] text-slate-500">Connected with premier casting, tooling, and pump networks.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                    Connected with premier casting, tooling, and pump networks.
+                  </p>
                 </div>
               </div>
             </div>
@@ -80,7 +86,7 @@ export const CompanyIntro = () => {
             <div className="pt-4 flex items-center gap-4">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-semibold rounded-lg shadow-xs transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-semibold rounded-xl shadow-md transition-all"
               >
                 <span>{t('common.readMore')}</span>
                 <ArrowRight className="w-3.5 h-3.5 text-accent" />
@@ -88,7 +94,7 @@ export const CompanyIntro = () => {
 
               <Link
                 to="/contact"
-                className="text-xs font-semibold text-slate-700 hover:text-primary transition-colors"
+                className="text-xs font-semibold text-slate-700 hover:text-primary transition-colors glass-button px-4 py-2.5 rounded-xl"
               >
                 Reach Our Office &rarr;
               </Link>
