@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #142D4E;
+  --color-primary-dark: #0D1E35;
+  --color-primary-light: #1E3F68;
+  --color-secondary: #244B70;
+  --color-accent: #D99A35;
+  --color-accent-hover: #BF8226;
+  --color-surface: #F5F7FA;
+  --color-surface-card: #FFFFFF;
+  --color-text-main: #202B38;
+  --color-text-muted: #687586;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom corporate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass & elevation utilities */
+.corporate-card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(20, 45, 78, 0.06), 0 2px 6px -1px rgba(20, 45, 78, 0.04);
+}
+
+.corporate-card-shadow-hover:hover {
+  box-shadow: 0 12px 30px -4px rgba(20, 45, 78, 0.12), 0 4px 10px -2px rgba(20, 45, 78, 0.06);
+}

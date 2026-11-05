@@ -1,0 +1,93 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.role == 'admin' ||
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+      );
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      // Admin can read all users
+      allow read: if isAdmin() || isOwner(userId);
+      
+      // Public customer registration: create their own document with default role 'customer'
+      allow create: if isAuthenticated() && request.auth.uid == userId
+                    && request.resource.data.role == 'customer';
+      
+      // Customer can update profile, but CANNOT modify role or accountStatus
+      allow update: if isOwner(userId)
+                    && request.resource.data.role == resource.data.role
+                    && request.resource.data.accountStatus == resource.data.accountStatus
+                    || isAdmin();
+      
+      allow delete: if isAdmin();
+    }
+
+    // Products Collection
+    match /products/{productId} {
+      // Public read access for published products; Admin can read all (including drafts)
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Categories Collection
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Services Collection
+    match /services/{serviceId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Enquiries Collection
+    match /enquiries/{enquiryId} {
+      // Anyone can create an enquiry (with basic field validation)
+      allow create: if request.resource.data.customerName is string
+                    && request.resource.data.email is string
+                    && request.resource.data.phone is string
+                    && request.resource.data.message is string
+                    && request.resource.data.status == 'New';
+      
+      // Customers can read their own enquiries; Admins can read all
+      allow read: if (isAuthenticated() && resource.data.customerId == request.auth.uid) || isAdmin();
+      
+      // Only Admins can update enquiry status or admin notes
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Projects Collection
+    match /projects/{projectId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Gallery Collection
+    match /gallery/{imageId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Website Settings
+    match /websiteSettings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
