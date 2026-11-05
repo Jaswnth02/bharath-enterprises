@@ -8,9 +8,10 @@ import { RegionalSupplyWorkflow } from '../components/home/RegionalSupplyWorkflo
 import { ServicesSection } from '../components/home/ServicesSection';
 import { ProcurementEstimator } from '../components/home/ProcurementEstimator';
 import { ShgCommunityImpact } from '../components/home/ShgCommunityImpact';
+import { RegionalCorridorCoverage } from '../components/home/RegionalCorridorCoverage';
+import { CorporateResourcesKit } from '../components/home/CorporateResourcesKit';
+import { QualityComplianceHub } from '../components/home/QualityComplianceHub';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { ProjectsPreview } from '../components/home/ProjectsPreview';
-import { GalleryPreview } from '../components/home/GalleryPreview';
 import { ProcurementFaq } from '../components/home/ProcurementFaq';
 import { CtaSection } from '../components/home/CtaSection';
 
@@ -47,19 +48,22 @@ export const Home = () => {
       {/* 8. Self-Help Groups (SHG) & Community Livelihood Impact */}
       <ShgCommunityImpact />
 
-      {/* 9. Principles & Value Bento Grid */}
+      {/* 9. Regional Logistics & Freight Corridors (Tamil Nadu & South India) */}
+      <RegionalCorridorCoverage />
+
+      {/* 10. Technical Spec Sheets & Procurement Resource Kit */}
+      <CorporateResourcesKit />
+
+      {/* 11. Certified Standards & Quality Compliance Charter */}
+      <QualityComplianceHub />
+
+      {/* 12. Principles & Value Bento Grid */}
       <WhyChooseUs />
 
-      {/* 10. Recent Supply & Community Deployments */}
-      <ProjectsPreview />
-
-      {/* 11. Facilities & Operations Visual Gallery */}
-      <GalleryPreview />
-
-      {/* 12. Practical Trade & Buyer FAQs Accordion */}
+      {/* 13. Practical Trade & Buyer FAQs Accordion */}
       <ProcurementFaq />
 
-      {/* 13. Direct Commercial Enquiry & WhatsApp Desk */}
+      {/* 14. Direct Commercial Enquiry & WhatsApp Desk */}
       <CtaSection />
     </div>
   );
