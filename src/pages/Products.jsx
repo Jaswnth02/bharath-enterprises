@@ -59,18 +59,18 @@ export const Products = () => {
   });
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen py-6 sm:py-10">
       {/* Catalogue Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-8">
-        <div className="glass-white-elevated p-8 sm:p-10 rounded-3xl border border-white/90 shadow-xl relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-6 sm:mb-8">
+        <div className="glass-white-elevated p-5 sm:p-8 md:p-10 rounded-3xl border border-white/90 shadow-xl relative overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-accent/10 to-transparent pointer-events-none" />
-          <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-2 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
+          <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1.5 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
             Bharath Enterprises Catalogue
           </span>
-          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-sans text-primary">
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-sans text-primary">
             {t('products.title')}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-1.5 sm:mt-2 leading-relaxed">
             {t('products.subtitle')}
           </p>
         </div>
@@ -78,7 +78,7 @@ export const Products = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Search & Filter Bar in White Glass */}
-        <div className="glass-white p-4 rounded-2xl border border-white/80 shadow-md mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-md mb-6 sm:mb-8 flex flex-col md:flex-row gap-3 sm:gap-4 items-center justify-between">
           {/* Search Box */}
           <div className="relative w-full md:w-80">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />

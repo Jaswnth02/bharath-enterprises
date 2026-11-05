@@ -101,8 +101,8 @@ export const EnquiryModal = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="relative glass-white-elevated rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 text-left transition-all border border-white/95">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
+      <div className="relative glass-white-elevated rounded-3xl shadow-2xl max-w-lg w-full p-4 sm:p-6 md:p-8 text-left transition-all border border-white/95 max-h-[92vh] overflow-y-auto">
         <button
           onClick={closeEnquiryModal}
           className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-white/60 transition-colors"

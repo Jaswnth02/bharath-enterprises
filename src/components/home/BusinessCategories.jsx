@@ -21,21 +21,21 @@ export const BusinessCategories = () => {
   }, []);
 
   return (
-    <section className="py-20 relative">
+    <section className="py-12 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+          <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
             {t('home.categoriesTitle')}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight font-sans">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
             Specialized Commercial Capabilities
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 font-light">
+          <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-light">
             {t('home.categoriesSubtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
           {categories.map((cat) => {
             const Icon = categoryIcons[cat.categoryId] || Factory;
             return (
@@ -43,7 +43,7 @@ export const BusinessCategories = () => {
                 key={cat.categoryId || cat.id}
                 className="group glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
               >
-                <div className="relative h-36 overflow-hidden rounded-xl bg-slate-100">
+                <div className="relative h-36 sm:h-36 overflow-hidden rounded-xl bg-slate-100">
                   <img
                     src={cat.image || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'}
                     alt={cat.name}

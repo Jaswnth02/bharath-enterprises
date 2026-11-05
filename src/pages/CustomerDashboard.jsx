@@ -75,17 +75,17 @@ export const CustomerDashboard = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen py-6 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Welcome Banner in White Glass */}
-        <div className="glass-white-elevated rounded-3xl p-6 sm:p-8 border border-white/95 shadow-xl mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-xl shadow-sm border border-white/40">
+        <div className="glass-white-elevated rounded-3xl p-5 sm:p-8 border border-white/95 shadow-xl mb-6 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5 sm:gap-4">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-lg sm:text-xl shadow-sm border border-white/40 shrink-0">
               {user.fullName ? user.fullName.charAt(0).toUpperCase() : 'C'}
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl sm:text-2xl font-bold text-primary font-sans">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-lg sm:text-2xl font-bold text-primary font-sans">
                   {t('dashboard.welcome')}, {user.fullName || 'Customer'}
                 </h1>
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-blue-100/80 text-blue-800 border border-blue-200">
@@ -98,11 +98,11 @@ export const CustomerDashboard = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-primary hover:bg-primary-light text-white text-xs font-bold rounded-xl shadow-md transition-all active:scale-98"
             >
               <PlusCircle className="w-4 h-4 text-accent" />
               <span>New Quotation Request</span>
@@ -111,7 +111,7 @@ export const CustomerDashboard = () => {
             <button
               type="button"
               onClick={handleLogout}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 glass-button text-slate-700 text-xs font-semibold rounded-xl transition-all"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 glass-button text-slate-700 text-xs font-semibold rounded-xl transition-all active:scale-98"
             >
               <LogOut className="w-4 h-4 text-slate-500" />
               <span>{t('dashboard.logout')}</span>

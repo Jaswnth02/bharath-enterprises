@@ -33,33 +33,33 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-12 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center max-w-xl mx-auto mb-14">
-          <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-14">
+          <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
             {t('home.whyTitle')}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight font-sans">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
             Principles Driving Our Commercial Service
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 font-light">
+          <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-light">
             {t('home.whySubtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-5">
           {values.map((item, idx) => {
             const Icon = icons[idx % icons.length];
             return (
               <div
                 key={idx}
-                className="group glass-white glass-white-hover p-6 rounded-2xl text-center flex flex-col items-center justify-between border border-white/80"
+                className="group glass-white glass-white-hover p-4 sm:p-6 rounded-2xl text-center flex flex-col items-center justify-between border border-white/80"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-accent flex items-center justify-center mb-4 transition-all duration-300 border border-white/90 shadow-2xs">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-accent flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 border border-white/90 shadow-2xs">
                   <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
                 </div>
                 <div>
-                  <h3 className="text-xs sm:text-sm font-bold text-primary mb-2 font-sans">
+                  <h3 className="text-xs sm:text-sm font-bold text-primary mb-1.5 sm:mb-2 font-sans">
                     {item.title}
                   </h3>
                   <p className="text-[11px] text-slate-500 leading-relaxed font-light">

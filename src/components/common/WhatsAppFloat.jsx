@@ -26,13 +26,12 @@ export const WhatsAppFloat = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Bharath Enterprises on WhatsApp"
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 p-3 sm:px-4 sm:py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 group"
     >
-      <MessageCircle className="w-6 h-6 fill-white" />
+      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-white" />
       <span className="hidden sm:inline-block text-xs font-semibold tracking-wide">
         WhatsApp Inquiry
       </span>
     </a>
   );
 };
-

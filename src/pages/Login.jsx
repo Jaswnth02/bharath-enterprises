@@ -71,8 +71,8 @@ export const Login = () => {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full glass-white-elevated rounded-3xl p-8 sm:p-10 border border-white/95 shadow-2xl space-y-6">
+    <div className="min-h-[80vh] flex items-center justify-center py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full glass-white-elevated rounded-3xl p-5 sm:p-8 md:p-10 border border-white/95 shadow-2xl space-y-6">
         <div className="text-center">
           <Link to="/" className="inline-flex items-center gap-2 mb-3">
             <div className="w-10 h-10 p-1 rounded-xl bg-white/80 shadow-xs border border-white/80">

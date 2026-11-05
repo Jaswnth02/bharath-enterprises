@@ -99,30 +99,30 @@ export const ProductDetails = () => {
     : ['https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'];
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen py-6 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Breadcrumb */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
           <button
             type="button"
             onClick={() => navigate('/products')}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-primary transition-colors glass-pill px-3 py-1.5 rounded-xl"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-primary transition-colors glass-pill px-3 py-1.5 rounded-xl self-start"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products Catalogue</span>
           </button>
 
-          <span className="text-xs font-mono text-slate-500 glass-pill px-3 py-1 rounded-lg">
+          <span className="text-xs font-mono text-slate-500 glass-pill px-3 py-1 rounded-lg self-start sm:self-auto">
             SKU: {product.sku || 'BE-GEN-00'}
           </span>
         </div>
 
         {/* Top Product Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
           {/* Images Gallery in White Glass */}
           <div className="lg:col-span-6 space-y-3">
             <div className="glass-white p-2.5 rounded-3xl border border-white/90 shadow-lg">
-              <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-50">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden bg-slate-50">
                 <img
                   src={activeImage || imagesList[0]}
                   alt={product.name}
@@ -141,7 +141,7 @@ export const ProductDetails = () => {
                     key={idx}
                     type="button"
                     onClick={() => setActiveImage(img)}
-                    className={`w-16 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all p-0.5 glass-white ${
+                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all p-0.5 glass-white ${
                       (activeImage || imagesList[0]) === img ? 'border-primary ring-2 ring-primary/20 scale-105' : 'border-white/60 opacity-70 hover:opacity-100'
                     }`}
                   >
@@ -154,12 +154,12 @@ export const ProductDetails = () => {
 
           {/* Product Info & Actions in White Glass */}
           <div className="lg:col-span-6">
-            <div className="glass-white-elevated p-8 rounded-3xl border border-white/95 shadow-xl space-y-5">
+            <div className="glass-white-elevated p-5 sm:p-8 rounded-3xl border border-white/95 shadow-xl space-y-4 sm:space-y-5">
               <div>
                 <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-1 bg-accent/10 w-fit px-2 py-0.5 rounded">
                   Bharath Enterprises Specification
                 </span>
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
+                <h1 className="text-lg sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
                   {product.name}
                 </h1>
                 {product.sku && (
@@ -171,7 +171,7 @@ export const ProductDetails = () => {
                 {product.shortDescription}
               </p>
 
-              <div className="p-4 glass-white-subtle rounded-2xl border border-white/80 space-y-2 text-xs text-slate-700">
+              <div className="p-3.5 sm:p-4 glass-white-subtle rounded-2xl border border-white/80 space-y-2 text-xs text-slate-700">
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-accent shrink-0" />
                   <span>Batch inspection with material test documentation</span>
@@ -183,7 +183,7 @@ export const ProductDetails = () => {
               </div>
 
               {/* CTAs */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   type="button"
                   onClick={() =>
@@ -193,7 +193,7 @@ export const ProductDetails = () => {
                       enquiryType: 'Product Inquiry',
                     })
                   }
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5 active:scale-98"
                 >
                   <MessageSquare className="w-4 h-4 text-accent" />
                   <span>Request Price Quotation</span>
@@ -203,7 +203,7 @@ export const ProductDetails = () => {
                   href={waProductUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all transform hover:-translate-y-0.5 active:scale-98"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
                   <span>Inquire on WhatsApp</span>
@@ -214,9 +214,9 @@ export const ProductDetails = () => {
         </div>
 
         {/* Detailed Description & Specifications */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           <div className="lg:col-span-7">
-            <div className="glass-white p-7 sm:p-8 rounded-3xl border border-white/90 shadow-md space-y-6">
+            <div className="glass-white p-5 sm:p-7 md:p-8 rounded-3xl border border-white/90 shadow-md space-y-5 sm:space-y-6">
               <div>
                 <h3 className="text-base font-bold text-primary mb-3 font-sans">Product Overview & Scope</h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed whitespace-pre-line font-light">

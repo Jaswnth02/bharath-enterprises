@@ -15,14 +15,14 @@ export const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-20 relative">
+    <section className="py-12 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
-            <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
               {t('home.servicesTitle')}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight font-sans">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
               End-to-End Commercial Supply Solutions
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
@@ -32,18 +32,18 @@ export const ServicesSection = () => {
 
           <Link
             to="/services"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start md:self-auto glass-button px-4 py-2 rounded-xl"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start sm:self-auto glass-button px-3.5 sm:px-4 py-2 rounded-xl"
           >
             <span>View All Services</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {services.map((srv) => (
             <div
               key={srv.serviceId || srv.id}
-              className="group glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
+              className="group glass-white glass-white-hover rounded-2xl p-2 sm:p-2.5 flex flex-col justify-between"
             >
               <div className="relative h-44 overflow-hidden rounded-xl bg-slate-100">
                 <img
@@ -53,7 +53,7 @@ export const ServicesSection = () => {
                 />
               </div>
 
-              <div className="p-4 flex-1 flex flex-col justify-between">
+              <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-primary mb-1.5 leading-snug font-sans group-hover:text-secondary transition-colors">
                     {srv.title}
@@ -72,7 +72,7 @@ export const ServicesSection = () => {
                         enquiryType: 'Service Inquiry',
                       })
                     }
-                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-accent transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-accent transition-colors active:scale-95"
                   >
                     <span>Request Quotation</span>
                     <ChevronRight className="w-3.5 h-3.5" />

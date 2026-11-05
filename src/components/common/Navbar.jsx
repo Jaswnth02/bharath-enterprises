@@ -5,7 +5,6 @@ import {
   Menu,
   X,
   User,
-  ShieldCheck,
   ChevronRight,
 } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
@@ -29,10 +28,10 @@ export const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full glass-nav transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-          <div className="w-10 h-10 p-1 rounded-xl bg-white/90 shadow-2xs border border-white/80 flex items-center justify-center">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 p-1 rounded-xl bg-white/90 shadow-2xs border border-white/80 flex items-center justify-center">
             <img
               src={settings.logo || '/logo-mark.svg'}
               alt="Bharath Enterprises Logo"
@@ -40,16 +39,16 @@ export const Navbar = () => {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-base sm:text-lg font-bold tracking-tight text-primary leading-tight font-sans">
+            <span className="text-sm sm:text-lg font-bold tracking-tight text-primary leading-tight font-sans">
               BHARATH
             </span>
-            <span className="text-[9px] font-semibold tracking-widest text-secondary uppercase -mt-0.5">
+            <span className="text-[8px] sm:text-[9px] font-semibold tracking-widest text-secondary uppercase -mt-0.5">
               ENTERPRISES
             </span>
           </div>
         </Link>
 
-        {/* Desktop Nav Items */}
+        {/* Desktop Nav Items (lg and above) */}
         <nav className="hidden lg:flex items-center gap-1 bg-white/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/80 shadow-2xs">
           {navLinks.map((link) => (
             <NavLink
@@ -69,12 +68,10 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        {/* Right Action Buttons */}
-        <div className="hidden sm:flex items-center gap-2.5">
-          {/* Language Switcher */}
+        {/* Desktop Right Action Buttons (lg and above) */}
+        <div className="hidden lg:flex items-center gap-2.5">
           <LanguageSelector variant="dark" />
 
-          {/* Customer Portal / Admin Link */}
           {user ? (
             <Link
               to={isAdmin ? '/admin/dashboard' : '/customer-dashboard'}
@@ -93,7 +90,6 @@ export const Navbar = () => {
             </Link>
           )}
 
-          {/* Enquire Now CTA Button */}
           <button
             type="button"
             onClick={() => openEnquiryModal()}
@@ -104,23 +100,33 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu toggle */}
-        <div className="flex sm:hidden items-center gap-2">
+        {/* Mobile & Tablet Header Controls (below lg) */}
+        <div className="flex lg:hidden items-center gap-2">
+          {/* Direct compact enquire button on mobile header */}
+          <button
+            type="button"
+            onClick={() => openEnquiryModal()}
+            className="px-3 py-1.5 text-[11px] font-bold text-white bg-primary hover:bg-primary-light rounded-lg shadow-xs"
+          >
+            {t('nav.enquireNow')}
+          </button>
+
+          {/* Mobile menu toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-primary glass-button rounded-lg focus:outline-none"
-            aria-label="Toggle mobile menu"
+            className="p-2 text-slate-700 hover:text-primary glass-button rounded-lg focus:outline-none active:scale-95 transition-transform"
+            aria-label="Toggle mobile navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (visible on all screens below lg when open) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-white-elevated border-t border-white/60 px-5 pt-3 pb-6 shadow-2xl animate-in slide-in-from-top">
-          <div className="flex flex-col space-y-2">
+        <div className="lg:hidden glass-white-elevated border-t border-white/80 px-4 pt-3 pb-6 shadow-2xl animate-in slide-in-from-top duration-200 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -128,18 +134,19 @@ export const Navbar = () => {
                 end={link.to === '/'}
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-xs font-semibold py-2 px-3 rounded-xl transition-colors ${
-                    isActive ? 'glass-white text-primary font-bold shadow-xs' : 'text-slate-700 hover:bg-white/50'
+                  `text-sm font-semibold py-2.5 px-3.5 rounded-xl transition-colors flex items-center justify-between ${
+                    isActive ? 'glass-white text-primary font-bold shadow-xs' : 'text-slate-700 hover:bg-white/60'
                   }`
                 }
               >
-                {link.label}
+                <span>{link.label}</span>
+                <ChevronRight className="w-3.5 h-3.5 opacity-50" />
               </NavLink>
             ))}
 
-            <div className="pt-3 border-t border-slate-200/60 flex flex-col gap-2">
-              <div className="flex items-center justify-between py-1">
-                <span className="text-xs text-slate-500">Language:</span>
+            <div className="pt-3 mt-2 border-t border-slate-200/60 flex flex-col gap-2.5">
+              <div className="flex items-center justify-between py-1 px-1">
+                <span className="text-xs font-medium text-slate-500">Language:</span>
                 <LanguageSelector variant="dark" />
               </div>
 
@@ -147,17 +154,19 @@ export const Navbar = () => {
                 <Link
                   to={isAdmin ? '/admin/dashboard' : '/customer-dashboard'}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-2.5 px-3 text-center text-xs font-semibold text-primary glass-button rounded-xl"
+                  className="w-full py-2.5 px-3 text-center text-xs font-semibold text-primary glass-button rounded-xl flex items-center justify-center gap-1.5"
                 >
-                  My Portal ({user.fullName})
+                  <User className="w-3.5 h-3.5 text-accent" />
+                  <span>My Portal ({user.fullName ? user.fullName.split(' ')[0] : 'Profile'})</span>
                 </Link>
               ) : (
                 <Link
                   to="/login"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-2.5 px-3 text-center text-xs font-semibold text-slate-700 glass-button rounded-xl"
+                  className="w-full py-2.5 px-3 text-center text-xs font-semibold text-slate-700 glass-button rounded-xl flex items-center justify-center gap-1.5"
                 >
-                  {t('nav.customerLogin')}
+                  <User className="w-3.5 h-3.5 text-slate-500" />
+                  <span>{t('nav.customerLogin')}</span>
                 </Link>
               )}
 
@@ -167,7 +176,7 @@ export const Navbar = () => {
                   setMobileMenuOpen(false);
                   openEnquiryModal();
                 }}
-                className="w-full py-2.5 px-4 text-center text-xs font-bold text-white bg-primary rounded-xl shadow-md"
+                className="w-full py-2.5 px-4 text-center text-xs font-bold text-white bg-primary rounded-xl shadow-md active:scale-98 transition-transform"
               >
                 {t('nav.enquireNow')}
               </button>

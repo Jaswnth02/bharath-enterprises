@@ -91,41 +91,41 @@ export const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen py-6 sm:py-10">
       {/* Header Banner in White Glass */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-8">
-        <div className="glass-white-elevated p-8 sm:p-10 rounded-3xl border border-white/90 shadow-xl relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-6 sm:mb-8">
+        <div className="glass-white-elevated p-5 sm:p-8 md:p-10 rounded-3xl border border-white/90 shadow-xl relative overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-accent/10 to-transparent pointer-events-none" />
-          <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-2 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
+          <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1.5 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
             Direct Commercial Desk
           </span>
-          <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-sans text-primary">
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-sans text-primary">
             {t('contact.title')}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-2 leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-1.5 sm:mt-2 leading-relaxed font-light">
             {t('contact.subtitle')}
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 pb-12 sm:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           {/* Contact Details Column */}
-          <div className="lg:col-span-5 space-y-5">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-5">
             <div>
-              <span className="text-xs font-bold text-accent uppercase tracking-wider block mb-1">
+              <span className="text-[10px] sm:text-xs font-bold text-accent uppercase tracking-wider block mb-1">
                 Bharath Enterprises
               </span>
-              <h2 className="text-2xl font-bold text-primary font-sans">
+              <h2 className="text-xl sm:text-2xl font-bold text-primary font-sans">
                 Coimbatore Operational Center
               </h2>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1.5 sm:mt-2 leading-relaxed font-light">
                 Connect directly with our commercial desk for bulk orders, contract sourcing, technical specifications, and distribution agreements.
               </p>
             </div>
 
-            <div className="space-y-3.5 pt-2">
-              <div className="flex items-start gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
+            <div className="space-y-3 pt-1">
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Office & Facility Address</h4>
@@ -135,7 +135,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
+              <div className="flex items-center gap-3 p-3.5 sm:p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Contact Telephones</h4>
@@ -145,7 +145,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
+              <div className="flex items-center gap-3 p-3.5 sm:p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Commercial Email</h4>
@@ -155,7 +155,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
+              <div className="flex items-center gap-3 p-3.5 sm:p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <Clock className="w-5 h-5 text-accent shrink-0" />
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Trading & Support Hours</h4>
@@ -167,16 +167,16 @@ export const Contact = () => {
             </div>
 
             {/* Direct WhatsApp Callout in Glass */}
-            <div className="p-5 glass-white rounded-2xl border border-white/90 shadow-sm flex items-center justify-between">
+            <div className="p-4 sm:p-5 glass-white rounded-2xl border border-white/90 shadow-sm flex items-center justify-between gap-3">
               <div>
                 <h4 className="text-xs font-bold text-primary font-sans">Need Immediate Assistance?</h4>
-                <p className="text-[11px] text-slate-500">Chat with our Coimbatore representative directly.</p>
+                <p className="text-[11px] text-slate-500">Chat with our Coimbatore team directly.</p>
               </div>
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-bold rounded-xl shadow-md transition-all"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-bold rounded-xl shadow-md transition-all shrink-0 active:scale-95"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />
                 <span>WhatsApp</span>
@@ -185,7 +185,7 @@ export const Contact = () => {
 
             {/* Google Maps Location Preview in White Glass */}
             <div className="glass-white p-2 rounded-2xl border border-white/80 shadow-sm overflow-hidden">
-              <div className="p-2.5 flex items-center justify-between text-xs text-slate-600 font-semibold">
+              <div className="p-2 sm:p-2.5 flex items-center justify-between text-xs text-slate-600 font-semibold">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-accent" />
                   <span>Coimbatore Industrial District Map</span>
@@ -196,7 +196,7 @@ export const Contact = () => {
                 <iframe
                   title="Bharath Enterprises Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.4417316712!2d76.9010714!3d11.0168445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                  className="w-full h-48 border-0"
+                  className="w-full h-44 sm:h-48 border-0"
                   loading="lazy"
                 />
               </div>
@@ -205,7 +205,7 @@ export const Contact = () => {
 
           {/* Form Column in Elevated White Glass */}
           <div className="lg:col-span-7">
-            <div className="glass-white-elevated rounded-3xl p-6 sm:p-8 border border-white/95 shadow-xl">
+            <div className="glass-white-elevated rounded-3xl p-4 sm:p-6 md:p-8 border border-white/95 shadow-xl">
               <div className="mb-6">
                 <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1 bg-accent/10 w-fit px-2 py-0.5 rounded">
                   Enquiry Submission
