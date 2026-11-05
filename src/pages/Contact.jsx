@@ -24,9 +24,9 @@ export const Contact = () => {
   const { user } = useAuth();
 
   useSEO({
-    title: 'Contact Us | Bharath Enterprises – Coimbatore',
-    description: 'Get in touch with Bharath Enterprises in Coimbatore, Tamil Nadu. Submit business quotations, industrial procurement inquiries, or speak directly on WhatsApp.',
-    keywords: 'Contact Bharath Enterprises Coimbatore, Coimbatore commercial enquiry, industrial supplies phone email',
+    title: 'Contact Us | Bharath Enterprises – Coonoor & Coimbatore',
+    description: 'Get in touch with Bharath Enterprises in Coonoor and Coimbatore, Tamil Nadu. Submit business quotations, trade inquiries, or speak directly on WhatsApp.',
+    keywords: 'Contact Bharath Enterprises Nilgiris Coimbatore, Nilgiris tea wholesale enquiry, Coonoor rubber recycling plywood enquiry',
   });
 
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ export const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919876543210';
+  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919600949927';
   const cleanNumber = String(rawNumber).replace(/[^0-9]/g, '');
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I would like to make an inquiry via your contact page.")}`;
 
@@ -117,7 +117,7 @@ export const Contact = () => {
                 Bharath Enterprises
               </span>
               <h2 className="text-xl sm:text-2xl font-bold text-primary font-sans">
-                Coimbatore Operational Center
+                Coonoor & Coimbatore Operational Center
               </h2>
               <p className="text-xs text-slate-600 mt-1.5 sm:mt-2 leading-relaxed font-light">
                 Connect directly with our commercial desk for bulk orders, contract sourcing, technical specifications, and distribution agreements.
@@ -130,7 +130,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Office & Facility Address</h4>
                   <p className="text-xs text-slate-600 mt-0.5 leading-relaxed font-light">
-                    {settings.address || 'Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004, India [Placeholder]'}
+                    {settings.address || 'Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India'}
                   </p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Contact Telephones</h4>
                   <p className="text-xs text-slate-600 mt-0.5 font-mono">
-                    {settings.phone || '+91 (0) 422 - [Phone Placeholder]'}
+                    {settings.phone || '+91 9600949927'}
                   </p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Commercial Email</h4>
                   <p className="text-xs text-slate-600 mt-0.5 font-mono">
-                    {settings.email || 'contact@bharathenterprises.com [Placeholder]'}
+                    {settings.email || 'cncmurthi27@gmail.com'}
                   </p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export const Contact = () => {
             <div className="p-4 sm:p-5 glass-white rounded-2xl border border-white/90 shadow-sm flex items-center justify-between gap-3">
               <div>
                 <h4 className="text-xs font-bold text-primary font-sans">Need Immediate Assistance?</h4>
-                <p className="text-[11px] text-slate-500">Chat with our Coimbatore team directly.</p>
+                <p className="text-[11px] text-slate-500">Chat with our Nilgiris & Coimbatore team directly.</p>
               </div>
               <a
                 href={waUrl}
@@ -188,9 +188,9 @@ export const Contact = () => {
               <div className="p-2 sm:p-2.5 flex items-center justify-between text-xs text-slate-600 font-semibold">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-accent" />
-                  <span>Coimbatore Industrial District Map</span>
+                  <span>Regional Operations Map</span>
                 </span>
-                <span className="text-[10px] text-slate-400">Avinashi Road</span>
+                <span className="text-[10px] text-slate-400">Nilgiris & Coimbatore</span>
               </div>
               <div className="rounded-xl overflow-hidden">
                 <iframe

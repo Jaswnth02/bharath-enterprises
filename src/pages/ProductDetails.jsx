@@ -88,7 +88,7 @@ export const ProductDetails = () => {
     );
   }
 
-  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919876543210';
+  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919600949927';
   const cleanNumber = String(rawNumber).replace(/[^0-9]/g, '');
   const waProductUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
     `Hello Bharath Enterprises, I am inquiring about product "${product.name}" (SKU: ${product.sku || 'N/A'}). Please share price quote and availability.`

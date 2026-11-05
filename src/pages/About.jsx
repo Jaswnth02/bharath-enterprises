@@ -17,9 +17,9 @@ export const About = () => {
   const { settings, openEnquiryModal } = useSite();
 
   useSEO({
-    title: 'About Us | Bharath Enterprises – Coimbatore',
-    description: 'Learn about Bharath Enterprises, established in 2025 in Coimbatore, Tamil Nadu. Discover our mission, vision, core values, and multi-category commercial capabilities.',
-    keywords: 'About Bharath Enterprises, Coimbatore enterprise, industrial supplier Coimbatore, commercial distribution Tamil Nadu',
+    title: 'About Us | Bharath Enterprises – Coonoor & Coimbatore',
+    description: 'Learn about Bharath Enterprises, established in 2025 in Coonoor and Coimbatore, Tamil Nadu. Discover our mission, vision, core disciplines, and community empowerment initiatives.',
+    keywords: 'About Bharath Enterprises, Coonoor enterprise, Nilgiris tea wholesale, rubber recycling Coimbatore, plywood trading Tamil Nadu',
   });
 
   return (
@@ -32,7 +32,7 @@ export const About = () => {
             {t('about.title')}
           </span>
           <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-sans text-primary">
-            Committed to Industrial Excellence & Commercial Trust
+            Committed to Quality, Sustainability & Commercial Trust
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-3xl mt-2 leading-relaxed font-light">
             {t('about.subtitle')}
@@ -48,13 +48,13 @@ export const About = () => {
               {t('about.backgroundTitle')}
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
-              Grounded in Coimbatore's Engineering & Trading Heritage
+              Grounded in Nilgiris & Coimbatore's Commercial Heritage
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
               {settings.aboutContent}
             </p>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-              Operating from the industrial corridor of Coimbatore, Tamil Nadu, Bharath Enterprises bridges critical supply gaps for machine builders, industrial fabricators, commercial contractors, and regional wholesalers. We ensure transparent pricing, consistent stock reserves, and verified quality standards.
+              Operating across Coonoor and Coimbatore, Tamil Nadu, Bharath Enterprises bridges critical supply gaps in Nilgiris Tourism, Wholesale Food Distribution, Plywood Trading, Rubber Recycling, and Community Empowerment. We ensure transparent pricing, consistent stock reserves, and verified quality standards.
             </p>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
@@ -63,7 +63,7 @@ export const About = () => {
                 <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Year Established</p>
               </div>
               <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-xs">
-                <p className="text-lg sm:text-xl font-bold text-primary font-sans">Coimbatore</p>
+                <p className="text-lg sm:text-xl font-bold text-primary font-sans leading-tight">Coonoor & Coimbatore</p>
                 <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Tamil Nadu, India</p>
               </div>
             </div>
@@ -143,7 +143,7 @@ export const About = () => {
             <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-accent mb-2.5 sm:mb-3" />
             <h4 className="text-sm font-bold text-primary mb-1 font-sans">Quality Assured Sourcing</h4>
             <p className="text-xs text-slate-500 leading-relaxed font-light">
-              We ensure that industrial supplies, fastener grades, and castings conform rigorously to technical blueprints and industry tolerances.
+              We ensure all Nilgiris tea, snacks, plywood sheets, and recycled nitrile rubber conform strictly to quality benchmarks.
             </p>
           </div>
 
@@ -157,9 +157,9 @@ export const About = () => {
 
           <div className="glass-white p-5 sm:p-6 rounded-2xl border border-white/80 shadow-xs">
             <Clock className="w-7 h-7 sm:w-8 sm:h-8 text-accent mb-2.5 sm:mb-3" />
-            <h4 className="text-sm font-bold text-primary mb-1 font-sans">Reliable Distribution Timelines</h4>
+            <h4 className="text-sm font-bold text-primary mb-1 font-sans">Regional Distribution Reliability</h4>
             <p className="text-xs text-slate-500 leading-relaxed font-light">
-              Minimizing customer downtime through planned consignments and efficient dispatch protocols from Coimbatore.
+              Minimizing commercial delays through planned consignments and efficient dispatch protocols from Coonoor and Coimbatore.
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ export const About = () => {
             Partner With Bharath Enterprises
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-light">
-            Discuss your procurement, manufacturing, wholesale distribution, or import-export requirements with our Coimbatore team.
+            Discuss your wholesale FMCG, plywood trade, rubber recycling, tour packages, or SHG partnership requirements with our team.
           </p>
           <div className="pt-2">
             <button

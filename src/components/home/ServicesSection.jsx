@@ -20,13 +20,13 @@ export const ServicesSection = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
-              {t('home.servicesTitle')}
+              PROFESSIONAL SERVICES
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
               End-to-End Commercial Supply Solutions
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
-              {t('home.servicesSubtitle')}
+              End-to-end commercial solutions from sourcing to logistics execution.
             </p>
           </div>
 

@@ -1,60 +1,61 @@
 export const initialCategories = [
   {
-    categoryId: "manufacturing",
-    name: "Manufacturing",
-    description: "Precision engineered components, custom fabrications, and industrial manufacturing solutions.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    categoryId: "nilgiris-tour-travel",
+    name: "Nilgiris Tour & Travel",
+    description: "Custom Ooty, Coonoor, Kotagiri packages, corporate trips, cab/taxi bookings, and resort stays.",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
     status: "active"
   },
   {
-    categoryId: "wholesale-distribution",
-    name: "Wholesale & Distribution",
-    description: "Bulk supply chain fulfillment, regional warehousing, and structured B2B distribution networks.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    categoryId: "wholesale-snacks-fmcg",
+    name: "Wholesale Snacks & FMCG",
+    description: "Bulk supply of authentic Ooty Varkey, Nilgiri Tea, packaged chips, and homemade chocolates.",
+    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
     status: "active"
   },
   {
-    categoryId: "retail-trading",
-    name: "Retail & Trading",
-    description: "Commercial mercantile trading, verified industrial materials, and direct trade supplies.",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
+    categoryId: "plywood-interior-trade",
+    name: "Plywood & Interior Trade",
+    description: "Commercial, BWR, BWP Plywood sheets, MDF boards, laminates, and wood adhesives for trade.",
+    image: "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80",
     status: "active"
   },
   {
-    categoryId: "import-export",
-    name: "Import & Export",
-    description: "International cargo facilitation, cross-border commercial trade, and global procurement.",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
+    categoryId: "rubber-waste-recycling",
+    name: "Rubber Waste Recycling",
+    description: "Nitrile synthetic rubber gasket scrap processing unit producing granules and fine powder.",
+    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
     status: "active"
   },
   {
-    categoryId: "industrial-supplies",
-    name: "Industrial Supplies",
-    description: "Heavy-duty fasteners, hydraulic hardware, protective materials, and foundry-grade supplies.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    categoryId: "agri-shg-initiatives",
+    name: "Agri & SHG Initiatives",
+    description: "Vanilla cultivation guidance in Nilgiris and community support for registered Self-Help Groups.",
+    image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80",
     status: "active"
   }
 ];
 
 export const initialProducts = [
   {
-    productId: "be-prod-101",
-    name: "High-Tensile Industrial Fasteners & Hex Bolts [Sample Placeholder]",
-    slug: "high-tensile-fasteners-hex-bolts",
-    sku: "BE-IS-101",
-    categoryId: "industrial-supplies",
-    shortDescription: "Grade 8.8 / 10.9 high-tensile alloy steel fasteners for heavy machinery, structural framing, and automotive assemblies.",
-    description: "Engineered for maximum tensile stability and shear resistance, these industrial fasteners withstand extreme torsional loads in machinery and infrastructure applications. Available in both zinc-plated and black-oxide protective finishes.",
+    productId: "be-prod-fmcg-01",
+    name: "Premium Nilgiris Packaged Tea & Ooty Varkey",
+    slug: "premium-nilgiris-tea-ooty-varkey",
+    sku: "BE-FMCG-101",
+    categoryId: "wholesale-snacks-fmcg",
+    badge: "FOOD & BEVERAGES",
+    shortDescription: "Freshly sourced Nilgiri tea bags/pouches, traditional varkey, potato chips, and homemade chocolates.",
+    description: "Direct wholesale supply of world-renowned Nilgiris orthodox and CTC tea, traditional crispy Ooty varkey, artisanal homemade chocolates, and freshly packaged hill-style chips. Sourced directly from Nilgiris tea gardens and heritage bakeries for retail and commercial distribution.",
     specifications: {
-      "Material Grade": "Alloy Steel Grade 8.8 / 10.9 / 12.9",
-      "Thread Specification": "Metric Coarse & Fine (M6 to M36)",
-      "Coating / Finish": "Zinc Trivalent / Black Oxide / Hot-dip Galvanized",
-      "Standard Compliance": "DIN 933 / ISO 4017 / IS 1364",
-      "Application": "Heavy Machinery, Heavy Structural, Automotive"
+      "Origin": "The Nilgiris, Tamil Nadu",
+      "Tea Selection": "CTC Dust, Orange Pekoe, Orthodox Green Tea (100g – 5kg)",
+      "Bakery Range": "Authentic Wood-Fired Ooty Varkey (Traditional Crispy)",
+      "Chocolates": "Nilgiris Roasted Almond, Milk, Dark, and Fruit & Nut",
+      "Supply Mode": "Bulk Retail Cartons / Commercial Wholesale Pallets"
     },
     images: [
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -62,22 +63,24 @@ export const initialProducts = [
     updatedAt: "2025-01-15T09:00:00.000Z"
   },
   {
-    productId: "be-prod-102",
-    name: "Precision Heavy-Duty Cast Flanges & Fittings [Sample Placeholder]",
-    slug: "precision-cast-flanges-fittings",
-    sku: "BE-MF-202",
-    categoryId: "manufacturing",
-    shortDescription: "High-integrity ductile iron and forged carbon steel pipe flanges designed for Coimbatore pump and valve sectors.",
-    description: "Precision CNC turned pipe flanges manufactured to withstand fluid and steam pressure pipelines. Rigorously inspected for porosity, concentricity, and dimensional tolerance.",
+    productId: "be-prod-rubber-02",
+    name: "Recycled Nitrile Rubber Granules & Powder",
+    slug: "recycled-nitrile-rubber-granules-powder",
+    sku: "BE-RBR-201",
+    categoryId: "rubber-waste-recycling",
+    badge: "SUSTAINABLE MATERIALS",
+    shortDescription: "High-purity NBR rubber granules and fine rubber powder sourced from industrial gasket offcuts.",
+    description: "Processed at our synthetic rubber recycling unit in Coimbatore. High-purity Nitrile Butadiene Rubber (NBR) scrap from industrial gasket cutoffs is sorted, de-dusted, shredded, and ambient-ground into uniform granules and fine powder for molded goods, sports surfacing, and polymer compounding.",
     specifications: {
-      "Material": "Forged Carbon Steel A105 / Ductile Iron",
-      "Nominal Pipe Size": "1/2 inch to 18 inch",
-      "Pressure Rating": "Class 150 / Class 300 / PN16",
-      "Facing Type": "Raised Face (RF) / Flat Face (FF)",
-      "Tolerance": "± 0.05 mm CNC Turned"
+      "Base Polymer": "100% Nitrile Synthetic Rubber (NBR)",
+      "Granule Fractions": "1.0 mm – 4.0 mm Granules",
+      "Powder Mesh": "40 – 80 Mesh Fine Powder",
+      "Contamination": "Zero Metal / Clean Fiber-Free",
+      "Packaging": "25 kg / 50 kg Moisture-Proof HDPE Bags & Jumbo Sacks"
     },
     images: [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -85,21 +88,24 @@ export const initialProducts = [
     updatedAt: "2025-01-16T10:00:00.000Z"
   },
   {
-    productId: "be-prod-103",
-    name: "Hydraulic Fluid Quick-Disconnect Couplers [Sample Placeholder]",
-    slug: "hydraulic-fluid-quick-disconnect-couplers",
-    sku: "BE-IS-103",
-    categoryId: "industrial-supplies",
-    shortDescription: "High-pressure leak-free hydraulic couplings for construction, agricultural, and industrial fluid systems.",
-    description: "Rugged quick-release hydraulic connectors engineered for zero-leakage fluid transfer. Tested up to 350 bar burst pressure with hardened steel sleeves.",
+    productId: "be-prod-ply-03",
+    name: "Commercial & Marine-Grade Plywood Sheets",
+    slug: "commercial-marine-grade-plywood-sheets",
+    sku: "BE-PLY-301",
+    categoryId: "plywood-interior-trade",
+    badge: "BUILDING MATERIALS",
+    shortDescription: "High-tensile BWP/BWR structural plywood boards, blockboards, and decorative laminates.",
+    description: "Premium commercial and marine plywood manufactured from dense hardwood timber cores bonded with cross-linked phenolic resins. Superior resistance to delamination, termite infestation, and boiling water, ideal for modular cabinetry, architectural woodwork, and construction applications.",
     specifications: {
-      "Operating Pressure": "Up to 350 Bar (5000 PSI)",
-      "Seal Material": "NBR / Viton High-Temp Elastomer",
-      "Valve Mechanism": "Poppet / Flat Face Non-Drip",
-      "Body Material": "Zinc Nickel Plated Hardened Steel"
+      "Standards Compliance": "IS:710 Marine Grade BWP / IS:303 Commercial BWR",
+      "Available Thickness": "6 mm, 9 mm, 12 mm, 16 mm, 19 mm, 25 mm",
+      "Panel Sizes": "8 ft x 4 ft / 7 ft x 4 ft / 7 ft x 3 ft",
+      "Core Construction": "100% Calibrated Hardwood Veneers",
+      "Applications": "Modular Kitchens, Interior Partitions, Furniture"
     },
     images: [
-      "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -107,21 +113,24 @@ export const initialProducts = [
     updatedAt: "2025-01-18T11:00:00.000Z"
   },
   {
-    productId: "be-prod-104",
-    name: "Industrial Centrifugal Pump Castings [Sample Placeholder]",
-    slug: "centrifugal-pump-castings",
-    sku: "BE-MF-204",
-    categoryId: "manufacturing",
-    shortDescription: "Foundry-grade grey and ductile iron castings suited for Coimbatore centrifugal and submersible pump assemblies.",
-    description: "Designed in alignment with Coimbatore's prominent water technology and pump manufacturing industry. High-precision impeller volutes, motor housings, and pump casings.",
+    productId: "be-prod-agri-04",
+    name: "Cured Vanilla Beans & High-Value Extracts",
+    slug: "cured-vanilla-beans-high-value-extracts",
+    sku: "BE-AGR-401",
+    categoryId: "agri-shg-initiatives",
+    badge: "AGRICULTURE",
+    shortDescription: "Premium organic Nilgiris vanilla beans, vanilla powder, and extracts for food and bakery industries.",
+    description: "Cultivated in shade-canopied plantations in the Nilgiris district. These Grade-A gourmet vanilla planifolia pods undergo traditional sun-sweat curing to produce deep, complex vanillin aromatic profiles, supplied in vacuum-sealed food-grade packs for bakeries, food processors, and extract houses.",
     specifications: {
-      "Foundry Material": "Grey Cast Iron FG 200 / FG 260, Ductile Iron",
-      "Hydrostatic Test": "Tested up to 25 Bar",
-      "Surface Finish": "Anti-rust primer coated / Machined bore",
-      "Weight Capacity": "5 kg to 180 kg per casting"
+      "Grade": "Gourmet / Grade A (Planifolia)",
+      "Pod Length": "15 cm to 20 cm Plump Flexible Pods",
+      "Vanillin Content": "1.8% – 2.4% Natural Vanillin",
+      "Moisture": "30% – 33% Cured Humidity",
+      "Forms": "Whole Black Beans, Pure Ground Powder, Extract Liquid"
     },
     images: [
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -129,21 +138,23 @@ export const initialProducts = [
     updatedAt: "2025-01-20T12:00:00.000Z"
   },
   {
-    productId: "be-prod-105",
-    name: "Heavy-Duty Bulk Woven Industrial Packaging Bags [Sample Placeholder]",
-    slug: "heavy-duty-bulk-woven-packaging-bags",
-    sku: "BE-WD-301",
-    categoryId: "wholesale-distribution",
-    shortDescription: "High-capacity PP woven FIBC jumbo bags for agriculture, chemicals, cement, and bulk transport.",
-    description: "Supplied in wholesale quantities for textile mills, chemical processors, and grain storage. Built with UV-stabilized virgin polymer yarns.",
+    productId: "be-prod-tour-05",
+    name: "Custom Nilgiris Tour & Resort Packages",
+    slug: "custom-nilgiris-tour-resort-packages",
+    sku: "BE-TRV-501",
+    categoryId: "nilgiris-tour-travel",
+    badge: "TOURISM & TRAVEL",
+    shortDescription: "Tailored family holiday itineraries, heritage toy train tours, and luxury tea estate resort stays.",
+    description: "Complete tourism management in Ooty, Coonoor, and Kotagiri. We arrange private hill-certified cab transport, verified plantation homestays, heritage tea factory visits, and customized corporate retreats with round-the-clock local support.",
     specifications: {
-      "Safe Working Load (SWL)": "500 kg to 2000 kg",
-      "Safety Factor (SF)": "5:1 (Single trip) / 6:1 (Multi trip)",
-      "Loop Design": "Corner Loops / Cross-Corner Lifting Loops",
-      "Moisture Protection": "Laminated with LDPE inner liner"
+      "Destinations": "Ooty, Coonoor, Kotagiri, Pykara, Mudumalai",
+      "Duration": "Weekend Getaways, 3D/2N, 5D/4N Packages",
+      "Vehicles": "Sedan, SUV, Tempo Traveller with Mountain Drivers",
+      "Accommodation": "Heritage Colonial Bungalows, 3-Star/5-Star Resorts",
+      "Customization": "Family Vacations, Corporate Conclaves, Trekking Itineraries"
     },
     images: [
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
     ],
     featured: false,
     status: "published",
@@ -151,206 +162,138 @@ export const initialProducts = [
     updatedAt: "2025-01-22T14:00:00.000Z"
   },
   {
-    productId: "be-prod-106",
-    name: "Heavy Modular Pallet Storage Racking [Sample Placeholder]",
-    slug: "modular-pallet-storage-racking",
-    sku: "BE-RT-401",
-    categoryId: "retail-trading",
-    shortDescription: "Galvanized and powder-coated adjustable warehouse pallet racks for commercial storage facilities.",
-    description: "Commercial storage system offering rapid modular assembly, beam level adjustments, and heavy shelf capacities for Coimbatore logistics operators.",
+    productId: "be-prod-shg-06",
+    name: "SHG Handcrafted Nilgiris Natural Products",
+    slug: "shg-handcrafted-natural-products",
+    sku: "BE-SHG-601",
+    categoryId: "agri-shg-initiatives",
+    badge: "COMMUNITY & SHG",
+    shortDescription: "Eucalyptus essential oil, pure Nilgiris honey, handmade natural soaps, and hill spices.",
+    description: "Sourced through community empowerment initiatives supporting registered women-led Self-Help Groups (SHGs) in Coonoor and rural Nilgiris. Pure steam-distilled eucalyptus oil, multi-floral forest honey, and wild spices packed under verified hygiene standards.",
     specifications: {
-      "Load Capacity": "1000 kg to 3500 kg per level",
-      "Upright Section": "Cold-rolled Omega Profile 90x70 mm",
-      "Finish": "Electrostatically applied Epoxy Powder Coating",
-      "Safety Pins": "Zinc-coated steel auto-locking drop pins"
+      "Producer Group": "Registered Coonoor Women Self-Help Groups",
+      "Key Items": "Nilgiri Eucalyptus Oil (80% Cineole), Forest Honey",
+      "Handcrafted Soaps": "Cold-Processed Tea Tree, Coffee & Lemongrass Soaps",
+      "Certification": "FSSAI Compliant, 100% Chemical-Free",
+      "Packaging": "Eco-friendly recyclable bottles and glass jars"
     },
     images: [
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80"
     ],
     featured: false,
     status: "published",
     createdAt: "2025-01-24T15:00:00.000Z",
     updatedAt: "2025-01-24T15:00:00.000Z"
-  },
-  {
-    productId: "be-prod-107",
-    name: "Industrial Brass & Bronze Flow Control Valves [Sample Placeholder]",
-    slug: "industrial-brass-bronze-flow-control-valves",
-    sku: "BE-IS-105",
-    categoryId: "industrial-supplies",
-    shortDescription: "High-spec brass gate, check, and ball valves engineered for commercial pipelines, boilers, and HVAC.",
-    description: "Manufactured from dezincification-resistant brass alloys. Excellent thermal resilience and tight bubble-free shut-off.",
-    specifications: {
-      "Body Material": "Forged Brass CW617N / Leaded Bronze",
-      "Port Type": "Full Bore & Standard Bore",
-      "Handle Type": "Quarter-turn Lever / Cast Iron Handwheel",
-      "Pressure Class": "PN25 / PN32 (up to 450 PSI)"
-    },
-    images: [
-      "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: false,
-    status: "published",
-    createdAt: "2025-01-25T16:00:00.000Z",
-    updatedAt: "2025-01-25T16:00:00.000Z"
-  },
-  {
-    productId: "be-prod-108",
-    name: "Export Grade Cargo Lashing & Webbing Straps [Sample Placeholder]",
-    slug: "export-cargo-lashing-straps",
-    sku: "BE-IE-501",
-    categoryId: "import-export",
-    shortDescription: "100% high-tenacity polyester ratchet tie-down straps certified for marine container securing.",
-    description: "Designed for ocean container export shipments and cross-country haulage. Low-stretch webbing with double-J steel chassis hooks.",
-    specifications: {
-      "Webbing Width": "50 mm (2 inch) / 75 mm (3 inch)",
-      "Breaking Strength (BS)": "5000 kg / 10000 kg",
-      "Standard": "EN 12195-2 Compliant",
-      "Elongation": "< 7% at maximum load"
-    },
-    images: [
-      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80"
-    ],
-    featured: true,
-    status: "published",
-    createdAt: "2025-01-26T17:00:00.000Z",
-    updatedAt: "2025-01-26T17:00:00.000Z"
   }
 ];
 
 export const initialServices = [
   {
-    serviceId: "contract-manufacturing-sourcing",
-    title: "Contract Manufacturing & Component Sourcing",
-    description: "Leveraging Coimbatore's vast engineering network to source, inspect, and supply customized machine parts, casting prototypes, and structural components with guaranteed adherence to technical drawings.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    serviceId: "nilgiris-tourism-mobility",
+    title: "Nilgiris Tourism & Mobility Services",
+    description: "Customized family itineraries, taxi/cab bookings, corporate outings, and hotel reservations.",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
     status: "published",
     createdAt: "2025-01-10T10:00:00.000Z"
   },
   {
-    serviceId: "industrial-wholesale-distribution",
-    title: "Bulk Industrial Wholesale & Distribution",
-    description: "Structured distribution infrastructure providing fast turnaround times, consistent inventory reserves, and flexible volume pricing for factories, workshops, and commercial trade partners across Tamil Nadu.",
+    serviceId: "bulk-wholesale-regional-distribution",
+    title: "Bulk Wholesale & Regional Distribution",
+    description: "Structured distribution network across Tamil Nadu for snacks, tea, plywood, and consumer goods.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
     status: "published",
     createdAt: "2025-01-11T10:00:00.000Z"
   },
   {
-    serviceId: "commercial-trading-procurement",
-    title: "Commercial Retail & Trade Procurement",
-    description: "Dedicated merchant procurement services that consolidate raw materials, specialized hardware, and industrial tools under single-point billing and verified batch certificates.",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
+    serviceId: "waste-recycling-environmental-projects",
+    title: "Waste Recycling & Environmental Projects",
+    description: "Synthetic rubber scrap processing and integrated municipal solid waste management DPR execution.",
+    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
     status: "published",
     createdAt: "2025-01-12T10:00:00.000Z"
-  },
-  {
-    serviceId: "import-export-coordination",
-    title: "Import & Export Commercial Facilitation",
-    description: "Coordinating cross-border goods transit, container packing compliance, customs documentation support, and maritime cargo lashing for commercial exporters in South India.",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
-    status: "published",
-    createdAt: "2025-01-13T10:00:00.000Z"
-  },
-  {
-    serviceId: "industrial-supplies-management",
-    title: "Industrial Supplies & MRO Consignment",
-    description: "On-demand maintenance, repair, and operational (MRO) supplies management preventing factory downtime through scheduled inventory replenishment and urgent dispatch.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
-    status: "published",
-    createdAt: "2025-01-14T10:00:00.000Z"
   }
 ];
 
 export const initialProjects = [
   {
-    projectId: "proj-101",
-    title: "Regional Foundry Supply Chain Modernization",
-    description: "Consolidated high-grade casting supplies, machining stock, and fasteners for leading industrial pump manufacturers across Coimbatore.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
-    category: "Manufacturing",
-    completionDate: "Q3 2025",
+    projectId: "proj-synthetic-rubber-coimbatore",
+    title: "Synthetic Rubber Waste Unit — Coimbatore",
+    description: "Established nitrile rubber recycling unit converting scrap into reusable granules and powder.",
+    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
+    category: "RECYCLING & MANUFACTURING",
+    completionDate: "Operating 2025",
     status: "published",
     createdAt: "2025-02-01T10:00:00.000Z"
   },
   {
-    projectId: "proj-102",
-    title: "Commercial Warehouse Storage & Logistics Racking",
-    description: "Designed, sourced, and deployed high-density heavy pallet shelving units across a 25,000 sq.ft distribution warehouse.",
-    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=800&q=80",
-    category: "Wholesale & Distribution",
-    completionDate: "Q4 2025",
+    projectId: "proj-statewide-snacks-tea-network",
+    title: "Statewide Nilgiris Snacks & Tea Network",
+    description: "Expanding dealer networks across Coimbatore, Tiruppur, Erode, Salem, and Chennai for hill snacks.",
+    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+    category: "WHOLESALE & DISTRIBUTION",
+    completionDate: "Tamil Nadu Network",
     status: "published",
     createdAt: "2025-02-10T10:00:00.000Z"
   },
   {
-    projectId: "proj-103",
-    title: "Industrial Export Webbing & Container Lashing Deployment",
-    description: "Delivered certified high-tenacity container tie-down solutions for heavy machinery export consignments passing through Tuticorin and Chennai ports.",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
-    category: "Import & Export",
-    completionDate: "2025",
+    projectId: "proj-coonoor-shg-livelihood-program",
+    title: "Coonoor Self-Help Group Livelihood Program",
+    description: "Providing branding, market linkages, and sales support for registered local SHG artisans.",
+    image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80",
+    category: "COMMUNITY & SHG",
+    completionDate: "Nilgiris Initiative",
     status: "published",
     createdAt: "2025-02-15T10:00:00.000Z"
-  },
-  {
-    projectId: "proj-104",
-    title: "Bulk Precision Fastener Consignment Contract",
-    description: "Supplied continuous batch-inspected grade 10.9 structural bolts and socket screws for regional engineering fabrication contracts.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
-    category: "Industrial Supplies",
-    completionDate: "Ongoing",
-    status: "published",
-    createdAt: "2025-02-20T10:00:00.000Z"
   }
 ];
 
 export const initialGallery = [
   {
     imageId: "gal-1",
-    title: "Industrial Manufacturing Facility",
-    description: "Precision tooling and fabrication capabilities in Coimbatore.",
-    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
-    category: "Manufacturing",
+    title: "Coonoor Tea Estates & Sourcing Desk",
+    description: "Direct partnership with pristine high-altitude tea plantations in The Nilgiris.",
+    imageUrl: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    category: "Coonoor",
     createdAt: "2025-01-10T10:00:00.000Z"
   },
   {
     imageId: "gal-2",
-    title: "Wholesale Logistics & Storage",
-    description: "Heavy-duty pallet warehousing and orderly inventory management.",
-    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    category: "Warehousing",
+    title: "Wholesale Tea & Snack Packing Facility",
+    description: "Hygienic sorting, weighing, and packing of authentic Ooty Varkey and premium tea.",
+    imageUrl: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+    category: "Tea & FMCG",
     createdAt: "2025-01-11T10:00:00.000Z"
   },
   {
     imageId: "gal-3",
-    title: "Precision Hardware & Fasteners",
-    description: "Engineered alloy steel fasteners, bolts, and mechanical fittings.",
-    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
-    category: "Products",
+    title: "Nitrile Rubber Processing & Granule Unit",
+    description: "Industrial recycling equipment converting gasket scrap into high-purity rubber powder.",
+    imageUrl: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
+    category: "Recycling",
     createdAt: "2025-01-12T10:00:00.000Z"
   },
   {
     imageId: "gal-4",
-    title: "Export & Cargo Handling",
-    description: "Maritime shipping container preparation and safety lashing.",
-    imageUrl: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
-    category: "Logistics",
+    title: "Commercial Plywood & Interior Depot",
+    description: "Wholesale inventory of BWP/BWR structural plywood sheets, MDF boards, and laminates.",
+    imageUrl: "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80",
+    category: "Plywood Trade",
     createdAt: "2025-01-13T10:00:00.000Z"
   },
   {
     imageId: "gal-5",
-    title: "Heavy Casting Inspection",
-    description: "Rigorous quality inspection for ductile and grey iron castings.",
-    imageUrl: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
-    category: "Quality",
+    title: "Nilgiris Vanilla & Agro Produce Hub",
+    description: "Carefully sweat-cured Grade A vanilla planifolia beans and natural extracts.",
+    imageUrl: "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=800&q=80",
+    category: "Agriculture",
     createdAt: "2025-01-14T10:00:00.000Z"
   },
   {
     imageId: "gal-6",
-    title: "Commercial Trading Center",
-    description: "Direct trade supplies, industrial materials, and commercial distribution.",
-    imageUrl: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80",
-    category: "Trading",
+    title: "Regional Distribution Fleet & Warehouse",
+    description: "Logistics infrastructure dispatching goods across Coimbatore and South Indian corridors.",
+    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    category: "Logistics",
     createdAt: "2025-01-15T10:00:00.000Z"
   }
 ];
@@ -359,11 +302,12 @@ export const initialWebsiteSettings = {
   companyName: "Bharath Enterprises",
   establishedYear: "2025",
   logo: "/logo-mark.svg",
-  tagline: "Building Business Connections Through Quality and Reliability",
-  address: "Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004, India [Placeholder]",
-  phone: "+91 (0) 422 - [Phone Placeholder]",
-  email: "contact@bharathenterprises.com [Placeholder]",
-  whatsappNumber: "919876543210",
+  tagline: "Your Trusted Business Development Partner",
+  locationBadge: "Coonoor & Coimbatore, Tamil Nadu • Est. 2025",
+  address: "Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India",
+  phone: "+91 9600949927",
+  email: "cncmurthi27@gmail.com",
+  whatsappNumber: "919600949927",
   businessHours: "Monday – Saturday: 9:00 AM – 6:30 PM (IST)",
   socialLinks: {
     linkedin: "https://linkedin.com/company/bharath-enterprises",
@@ -371,21 +315,21 @@ export const initialWebsiteSettings = {
     twitter: "https://twitter.com/bharathenterprises",
     instagram: "https://instagram.com/bharathenterprises"
   },
-  mission: "To deliver unmatched industrial supply chain reliability, superior product standards, and enduring commercial partnerships across regional and global markets from our Coimbatore hub.",
-  vision: "To be recognized as South India's premier multi-category commercial enterprise, setting the benchmark for dependability, transparent trading, and customer-first execution.",
-  aboutContent: "Established in 2025 in Coimbatore, Tamil Nadu, Bharath Enterprises operates as a diversified commercial and industrial entity. Catering to both B2B industrial enterprises and B2C commercial clients, we bridge procurement gaps with quality-checked goods, structured distribution, and ethical business stewardship.",
+  mission: "To empower regional business ecosystems by delivering authentic Nilgiris produce, sustainable synthetic rubber recycling, high-grade timber trade, and transformative community initiatives from Coonoor and Coimbatore.",
+  vision: "To be recognized as South India's trusted business development partner, uniting eco-friendly industrial processing, wholesale supply excellence, and community empowerment.",
+  aboutContent: "Established in 2025 in Coonoor and Coimbatore, Tamil Nadu, Bharath Enterprises is your trusted business development partner. Operating across five core disciplines: Nilgiris Tour & Travel, Wholesale Snacks & FMCG, Plywood & Interior Trade, Rubber Waste Recycling, and Agri & SHG Initiatives, we bridge critical commercial supply gaps through transparent trading, dependable logistics, and ethical community stewardship.",
   whyChooseUs: [
     {
       title: "Quality Commitment",
-      desc: "Every product and batch undergoes structured dimensional, material, and performance checks."
+      desc: "Every product batch, tea consignment, and recycled material undergoes strict dimensional and sensory checks."
     },
     {
       title: "Customer Focus",
-      desc: "Dedicated account representatives ensuring clear communication and tailored procurement schedules."
+      desc: "Dedicated account representatives ensuring clear communication and tailored regional procurement schedules."
     },
     {
       title: "Business Reliability",
-      desc: "Dependable dispatch protocols and steady reserve stocks minimizing operational disruptions."
+      desc: "Dependable dispatch protocols and steady reserve stocks minimizing commercial disruptions."
     },
     {
       title: "Professional Service",
@@ -396,6 +340,5 @@ export const initialWebsiteSettings = {
       desc: "We focus on sustainable business partnerships rather than single-transaction commercial deals."
     }
   ],
-  footerContent: "Bharath Enterprises is an established commercial enterprise in Coimbatore, Tamil Nadu. Committed to standard-compliant commercial supplies and verified business partnerships. All rights reserved."
+  footerContent: "Bharath Enterprises is an established commercial enterprise operating across Coonoor and Coimbatore, Tamil Nadu. Committed to standard-compliant supplies, sustainable recycling, and verified business partnerships. All rights reserved."
 };
-

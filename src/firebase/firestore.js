@@ -24,11 +24,12 @@ import {
 } from './seedData';
 
 // Helper for local mock storage
+const STORAGE_PREFIX = 'bharath_v4_';
 const getLocalData = (key, defaultData) => {
   try {
-    const item = localStorage.getItem(`bharath_${key}`);
+    const item = localStorage.getItem(`${STORAGE_PREFIX}${key}`);
     if (!item) {
-      localStorage.setItem(`bharath_${key}`, JSON.stringify(defaultData));
+      localStorage.setItem(`${STORAGE_PREFIX}${key}`, JSON.stringify(defaultData));
       return defaultData;
     }
     return JSON.parse(item);
@@ -39,7 +40,7 @@ const getLocalData = (key, defaultData) => {
 
 const setLocalData = (key, data) => {
   try {
-    localStorage.setItem(`bharath_${key}`, JSON.stringify(data));
+    localStorage.setItem(`${STORAGE_PREFIX}${key}`, JSON.stringify(data));
   } catch (e) {
     console.error('Local storage write error:', e);
   }

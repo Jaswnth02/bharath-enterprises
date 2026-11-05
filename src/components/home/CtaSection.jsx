@@ -7,7 +7,7 @@ export const CtaSection = () => {
   const { t } = useTranslation();
   const { settings, openEnquiryModal } = useSite();
 
-  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919876543210';
+  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919600949927';
   const cleanNumber = String(rawNumber).replace(/[^0-9]/g, '');
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I am contacting you from your website to discuss business requirements.")}`;
 
@@ -22,7 +22,7 @@ export const CtaSection = () => {
           <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-white border border-white/90 text-slate-700 text-[11px] sm:text-xs font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-accent" />
-              <span>Coimbatore Commercial Desk</span>
+              <span>Coonoor & Coimbatore Commercial Desk</span>
             </div>
 
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-primary tracking-tight font-sans">

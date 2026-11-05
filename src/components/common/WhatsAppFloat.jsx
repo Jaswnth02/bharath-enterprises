@@ -7,7 +7,7 @@ export const WhatsAppFloat = () => {
   const { settings } = useSite();
   const location = useLocation();
 
-  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919876543210';
+  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919600949927';
   const cleanNumber = String(rawNumber).replace(/[^0-9]/g, '');
 
   let defaultMessage = "Hello Bharath Enterprises, I would like to make an inquiry regarding your commercial and industrial supplies.";

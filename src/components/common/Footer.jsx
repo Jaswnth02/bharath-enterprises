@@ -40,7 +40,7 @@ export const Footer = () => {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Established in Coimbatore, Tamil Nadu (2025). Commercial partner in Manufacturing, Wholesale Distribution, Retail & Trading, Import-Export, and Industrial Supplies.
+              Established in Coonoor and Coimbatore, Tamil Nadu (2025). Your trusted business development partner across Nilgiris Tourism, Wholesale Food Distribution, Plywood Trading, Rubber Recycling, and Community Empowerment.
             </p>
 
             {/* Social links */}
@@ -138,14 +138,14 @@ export const Footer = () => {
           {/* Column 3: Commercial Disciplines */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-accent pl-2">
-              Business Categories
+              Business Disciplines
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li className="hover:text-slate-200 transition-colors">Manufacturing & Sourcing</li>
-              <li className="hover:text-slate-200 transition-colors">Wholesale & Regional Distribution</li>
-              <li className="hover:text-slate-200 transition-colors">Commercial Retail & Trading</li>
-              <li className="hover:text-slate-200 transition-colors">Import & Export Facilitation</li>
-              <li className="hover:text-slate-200 transition-colors">Industrial Supplies & MRO</li>
+              <li className="hover:text-slate-200 transition-colors">Nilgiris Tour & Travel</li>
+              <li className="hover:text-slate-200 transition-colors">Wholesale Snacks & FMCG</li>
+              <li className="hover:text-slate-200 transition-colors">Plywood & Interior Trade</li>
+              <li className="hover:text-slate-200 transition-colors">Rubber Waste Recycling</li>
+              <li className="hover:text-slate-200 transition-colors">Agri & SHG Initiatives</li>
               <li className="pt-2">
                 <Link
                   to="/products"
@@ -158,7 +158,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Coimbatore Desk */}
+          {/* Column 4: Contact & Operational Center */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-accent pl-2">
               {t('common.contactInfo')}
@@ -166,15 +166,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-xs text-slate-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>{settings.address || 'Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004, India [Placeholder]'}</span>
+                <span>{settings.address || 'Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India'}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
-                <span>{settings.phone || '+91 (0) 422 - [Phone Placeholder]'}</span>
+                <span>{settings.phone || '+91 9600949927'}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <span>{settings.email || 'contact@bharathenterprises.com [Placeholder]'}</span>
+                <span>{settings.email || 'cncmurthi27@gmail.com'}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-accent shrink-0" />
@@ -187,7 +187,7 @@ export const Footer = () => {
         {/* Bottom Strip */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3">
           <p>
-            &copy; 2025 Bharath Enterprises, Coimbatore, Tamil Nadu. {t('common.rights')}.
+            &copy; 2025 Bharath Enterprises, Coonoor & Coimbatore, Tamil Nadu. {t('common.rights')}.
           </p>
 
           <div className="flex items-center gap-4">

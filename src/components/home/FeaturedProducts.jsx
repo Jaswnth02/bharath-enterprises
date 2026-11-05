@@ -26,13 +26,13 @@ export const FeaturedProducts = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
-              {t('home.featuredProductsTitle')}
+              FEATURED PRODUCTS
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
-              Precision Supplies & Industrial Hardware
+              Multi-Sector Products & Commercial Supplies
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
-              {t('home.featuredProductsSubtitle')}
+              Quality-tested goods engineered for performance, taste, and industrial reliability.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export const FeaturedProducts = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider border border-white/80 shadow-2xs">
-                      {product.categoryId?.replace('-', ' ')}
+                      {product.badge || product.categoryId?.replace(/-/g, ' ')}
                     </span>
                   </div>
 

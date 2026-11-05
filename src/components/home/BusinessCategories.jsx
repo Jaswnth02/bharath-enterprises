@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Factory, Truck, Store, Globe2, Wrench } from 'lucide-react';
+import { ArrowRight, Factory, Truck, Store, Globe2, Wrench, Compass, Coffee, Layers, Recycle, Sprout } from 'lucide-react';
 import { getCategories } from '../../firebase/firestore';
 
 const categoryIcons = {
+  'nilgiris-tour-travel': Compass,
+  'wholesale-snacks-fmcg': Coffee,
+  'plywood-interior-trade': Layers,
+  'rubber-waste-recycling': Recycle,
+  'agri-shg-initiatives': Sprout,
   manufacturing: Factory,
   'wholesale-distribution': Truck,
   'retail-trading': Store,
@@ -25,13 +30,13 @@ export const BusinessCategories = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">
           <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
-            {t('home.categoriesTitle')}
+            OUR BUSINESS DISCIPLINES
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
             Specialized Commercial Capabilities
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1.5 sm:mt-2 font-light">
-            {t('home.categoriesSubtitle')}
+            Comprehensive commercial capabilities tailored to modern regional business demands.
           </p>
         </div>
 

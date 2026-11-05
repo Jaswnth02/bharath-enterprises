@@ -18,13 +18,13 @@ export const GalleryPreview = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
-              {t('home.galleryTitle')}
+              COMPANY GALLERY
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
               Operations, Logistics & Facilities
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
-              {t('home.gallerySubtitle')}
+              A glimpse into our Coonoor and Coimbatore operations, tea packing, recycling setup, and distribution scope.
             </p>
           </div>
 
