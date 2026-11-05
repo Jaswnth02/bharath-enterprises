@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect width="100" height="100" rx="20" fill="#142D4E" />
-  <path d="M28 22H52C62 22 70 27 70 36C70 42 66 47 60 49C68 51 72 57 72 65C72 75 63 80 52 80H28V22Z" fill="#142D4E"/>
-  <!-- Modern Geometric B -->
-  <path d="M30 24H50C58 24 64 28 64 36C64 43 59 47 51 47H30V24Z" fill="#FFFFFF"/>
-  <path d="M30 47H53C62 47 68 52 68 61C68 70 61 76 51 76H30V47Z" fill="#D99A35"/>
-  <path d="M42 33H49C52 33 54 34.5 54 36.5C54 38.5 52 40 49 40H42V33Z" fill="#142D4E"/>
-  <path d="M42 55H50C53 55 56 57 56 60.5C56 64 53 66 50 66H42V55Z" fill="#142D4E"/>
-</svg>
