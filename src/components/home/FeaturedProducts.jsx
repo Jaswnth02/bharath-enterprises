@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, MessageSquare, ExternalLink, Tag } from 'lucide-react';
+import { ArrowRight, MessageSquare } from 'lucide-react';
 import { getProducts } from '../../firebase/firestore';
 import { useSite } from '../../context/SiteContext';
 
@@ -25,13 +25,13 @@ export const FeaturedProducts = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+            <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
               {t('home.featuredProductsTitle')}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight font-sans">
               Precision Supplies & Industrial Hardware
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
               {t('home.featuredProductsSubtitle')}
             </p>
           </div>
@@ -40,15 +40,15 @@ export const FeaturedProducts = () => {
             to="/products"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start md:self-auto glass-button px-4 py-2 rounded-xl"
           >
-            <span>Browse Full Catalogue (10–50 Products)</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Browse Full Catalogue</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-pulse">
             {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="h-80 glass-white rounded-2xl" />
+              <div key={n} className="h-72 glass-white rounded-2xl" />
             ))}
           </div>
         ) : products.length === 0 ? (
@@ -64,33 +64,28 @@ export const FeaturedProducts = () => {
                   key={product.productId || product.id}
                   className="group glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
                 >
-                  <div className="relative h-48 overflow-hidden rounded-xl bg-slate-50">
+                  <div className="relative h-44 overflow-hidden rounded-xl bg-slate-50">
                     <img
                       src={primaryImage}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    {product.sku && (
-                      <span className="absolute top-2.5 right-2.5 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded-md border border-white/20">
-                        {product.sku}
-                      </span>
-                    )}
-                    <span className="absolute bottom-2.5 left-2.5 bg-primary/85 backdrop-blur-md text-accent text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider border border-white/20">
+                    <span className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider border border-white/80 shadow-2xs">
                       {product.categoryId?.replace('-', ' ')}
                     </span>
                   </div>
 
                   <div className="p-3.5 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary line-clamp-2 transition-colors mb-2 font-sans">
+                      <h3 className="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary line-clamp-2 transition-colors mb-1.5 font-sans">
                         {product.name}
                       </h3>
-                      <p className="text-[11px] text-slate-500 line-clamp-3 leading-relaxed mb-4">
+                      <p className="text-[11px] text-slate-500 line-clamp-2 leading-relaxed mb-3 font-light">
                         {product.shortDescription}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between gap-2">
+                    <div className="pt-3 border-t border-slate-200/50 flex items-center justify-between gap-2">
                       <Link
                         to={`/products/${product.productId || product.id}`}
                         className="text-xs font-semibold text-slate-700 hover:text-primary transition-colors"
@@ -107,7 +102,7 @@ export const FeaturedProducts = () => {
                             enquiryType: 'Product Inquiry',
                           })
                         }
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary hover:bg-primary-light text-white text-xs font-semibold rounded-lg shadow-xs transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 bg-primary hover:bg-primary-light text-white text-xs font-semibold rounded-lg shadow-2xs transition-colors"
                       >
                         <MessageSquare className="w-3 h-3 text-accent" />
                         <span>{t('common.enquireNow')}</span>

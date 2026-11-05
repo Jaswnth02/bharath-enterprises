@@ -31,7 +31,7 @@ export const initialCategories = [
     categoryId: "industrial-supplies",
     name: "Industrial Supplies",
     description: "Heavy-duty fasteners, hydraulic hardware, protective materials, and foundry-grade supplies.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
     status: "active"
   }
 ];
@@ -54,7 +54,7 @@ export const initialProducts = [
     },
     images: [
       "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -99,7 +99,7 @@ export const initialProducts = [
       "Body Material": "Zinc Nickel Plated Hardened Steel"
     },
     images: [
-      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -121,7 +121,7 @@ export const initialProducts = [
       "Weight Capacity": "5 kg to 180 kg per casting"
     },
     images: [
-      "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
     ],
     featured: true,
     status: "published",
@@ -187,7 +187,7 @@ export const initialProducts = [
       "Pressure Class": "PN25 / PN32 (up to 450 PSI)"
     },
     images: [
-      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80"
     ],
     featured: false,
     status: "published",
@@ -255,7 +255,7 @@ export const initialServices = [
     serviceId: "industrial-supplies-management",
     title: "Industrial Supplies & MRO Consignment",
     description: "On-demand maintenance, repair, and operational (MRO) supplies management preventing factory downtime through scheduled inventory replenishment and urgent dispatch.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
     status: "published",
     createdAt: "2025-01-14T10:00:00.000Z"
   }
@@ -341,7 +341,7 @@ export const initialGallery = [
     imageId: "gal-5",
     title: "Heavy Casting Inspection",
     description: "Rigorous quality inspection for ductile and grey iron castings.",
-    imageUrl: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
     category: "Quality",
     createdAt: "2025-01-14T10:00:00.000Z"
   },

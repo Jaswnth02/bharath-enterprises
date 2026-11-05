@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MessageSquare, MessageCircle, PhoneCall, ShieldCheck } from 'lucide-react';
+import { MessageSquare, MessageCircle, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 export const CtaSection = () => {
@@ -12,49 +12,54 @@ export const CtaSection = () => {
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I am contacting you from your website to discuss business requirements.")}`;
 
   return (
-    <section className="py-20 bg-primary text-white relative overflow-hidden">
-      <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-primary-light/30 skew-x-12 transform origin-top pointer-events-none" />
+    <section className="py-20 relative">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8">
+        <div className="glass-white-elevated p-8 sm:p-14 rounded-3xl border border-white/95 shadow-xl text-center relative overflow-hidden">
+          {/* Subtle decorative background refractions */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none -z-10" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 text-center space-y-6">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-semibold tracking-wider uppercase">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Coimbatore Commercial Desk</span>
-        </span>
+          <div className="max-w-2xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-white border border-white/90 text-slate-700 text-xs font-semibold tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <span>Coimbatore Commercial Desk</span>
+            </div>
 
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-sans max-w-3xl mx-auto">
-          {t('home.ctaTitle')}
-        </h2>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-primary tracking-tight font-sans">
+              {t('home.ctaTitle')}
+            </h2>
 
-        <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          {t('home.ctaText')}
-        </p>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              {t('home.ctaText')}
+            </p>
 
-        <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-          <button
-            type="button"
-            onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-hover text-primary font-bold text-xs sm:text-sm rounded-lg shadow-lg hover:shadow-xl transition-all"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>{t('home.ctaButton')}</span>
-          </button>
+            <div className="pt-3 flex flex-wrap items-center justify-center gap-3.5">
+              <button
+                type="button"
+                onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              >
+                <MessageSquare className="w-4 h-4 text-accent" />
+                <span>{t('home.ctaButton')}</span>
+              </button>
 
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs sm:text-sm rounded-lg shadow-lg hover:shadow-xl transition-all"
-          >
-            <MessageCircle className="w-4 h-4 fill-white" />
-            <span>{t('home.ctaWhatsApp')}</span>
-          </a>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              >
+                <MessageCircle className="w-4 h-4 fill-white" />
+                <span>{t('home.ctaWhatsApp')}</span>
+              </a>
+            </div>
+
+            <p className="text-[11px] text-slate-400 pt-2 font-medium">
+              Confidential commercial quotations • Responses delivered within 24 working hours
+            </p>
+          </div>
         </div>
-
-        <p className="text-[11px] text-slate-400 pt-2">
-          Responses typically delivered within 24 working hours • Confidential commercial quotations
-        </p>
       </div>
     </section>
   );
 };
-

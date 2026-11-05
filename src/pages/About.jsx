@@ -90,7 +90,7 @@ export const About = () => {
             </div>
             <div className="glass-white p-1 rounded-2xl shadow-md border border-white/80 -mt-6">
               <img
-                src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80"
                 alt="Bharath Enterprises Precision"
                 className="rounded-xl object-cover h-48 w-full"
               />

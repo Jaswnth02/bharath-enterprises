@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { getServices } from '../../firebase/firestore';
 import { useSite } from '../../context/SiteContext';
 
@@ -19,13 +19,13 @@ export const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-1">
+            <span className="text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
               {t('home.servicesTitle')}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight font-sans">
               End-to-End Commercial Supply Solutions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            <p className="text-xs sm:text-sm text-slate-500 mt-1 font-light">
               {t('home.servicesSubtitle')}
             </p>
           </div>
@@ -35,7 +35,7 @@ export const ServicesSection = () => {
             className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start md:self-auto glass-button px-4 py-2 rounded-xl"
           >
             <span>View All Services</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -43,27 +43,27 @@ export const ServicesSection = () => {
           {services.map((srv) => (
             <div
               key={srv.serviceId || srv.id}
-              className="glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
+              className="group glass-white glass-white-hover rounded-2xl p-2.5 flex flex-col justify-between"
             >
               <div className="relative h-44 overflow-hidden rounded-xl bg-slate-100">
                 <img
                   src={srv.image || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'}
                   alt={srv.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-primary mb-2 leading-snug font-sans">
+                  <h3 className="text-sm font-bold text-primary mb-1.5 leading-snug font-sans group-hover:text-secondary transition-colors">
                     {srv.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-light">
                     {srv.description}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between">
+                <div className="pt-4 mt-3 border-t border-slate-200/50 flex items-center justify-between">
                   <button
                     type="button"
                     onClick={() =>

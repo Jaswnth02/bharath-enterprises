@@ -1,144 +1,97 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ShieldCheck, CheckCircle2, ChevronRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, ChevronRight, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 export const HeroSection = () => {
   const { t } = useTranslation();
   const { settings, openEnquiryModal } = useSite();
 
-  const rawNumber = settings.whatsappNumber || import.meta.env.VITE_COMPANY_WHATSAPP || '919876543210';
-  const cleanNumber = String(rawNumber).replace(/[^0-9]/g, '');
-  const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I would like to inquire about your products and commercial supply capabilities.")}`;
-
   return (
-    <section className="relative text-white overflow-hidden py-20 lg:py-28 bg-[#0E1E35]">
-      {/* Background industrial image with deep overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2000&q=80"
-          alt="Industrial Manufacturing Background"
-          className="w-full h-full object-cover opacity-25"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0E1E35] via-[#0E1E35]/90 to-[#0E1E35]/70" />
-      </div>
+    <section className="relative overflow-hidden py-16 lg:py-24">
+      {/* Subtle ambient lighting for white glass refraction */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-primary/5 via-accent/8 to-secondary/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Headline & Action */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-accent text-xs font-semibold tracking-wide shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span>{t('hero.badge')} • Est. {settings.establishedYear || '2025'}</span>
-            </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center space-y-8">
+        {/* Minimal Pill Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-white border border-white/90 shadow-2xs text-xs font-semibold text-slate-700 animate-in fade-in">
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <span>Coimbatore, Tamil Nadu • Est. {settings.establishedYear || '2025'}</span>
+        </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans">
-              Building Business Connections Through <span className="text-accent underline decoration-accent/40 decoration-wavy">Quality & Reliability</span>
-            </h1>
+        {/* Crisp Headline */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary leading-tight font-sans max-w-4xl mx-auto">
+          Building Business Connections Through <span className="text-accent underline decoration-accent/30 decoration-wavy">Quality & Reliability</span>
+        </h1>
 
-            <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl font-light">
-              Bharath Enterprises is an established commercial entity in Coimbatore, Tamil Nadu, supplying high-grade solutions across Manufacturing, Wholesale Distribution, Retail & Trading, Import-Export, and Industrial Supplies.
-            </p>
+        {/* Short, Clean Subtitle */}
+        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
+          Your established commercial partner in Manufacturing, Wholesale Distribution, Trading, Import & Export, and Industrial Supplies across South India.
+        </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-primary font-bold text-xs sm:text-sm rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
-              >
-                <span>{t('hero.exploreProducts')}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+        {/* Two Clear, Refined Actions */}
+        <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+          >
+            <span>{t('hero.exploreProducts')}</span>
+            <ArrowRight className="w-4 h-4 text-accent" />
+          </Link>
 
-              <button
-                type="button"
-                onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/30 backdrop-blur-md shadow-md transition-all transform hover:-translate-y-0.5"
-              >
-                <span>{t('common.enquireNow')}</span>
-              </button>
+          <button
+            type="button"
+            onClick={() => openEnquiryModal({ enquiryType: 'General Business' })}
+            className="inline-flex items-center gap-2 px-6 py-3 glass-white hover:bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-xl border border-white/90 shadow-2xs hover:shadow-md transition-all transform hover:-translate-y-0.5"
+          >
+            <MessageSquare className="w-4 h-4 text-accent" />
+            <span>{t('common.enquireNow')}</span>
+          </button>
+        </div>
 
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span>Quick WhatsApp</span>
-              </a>
-            </div>
+        {/* Clean, Floating Frosted Showcase Card */}
+        <div className="pt-8">
+          <div className="glass-white-elevated p-3 sm:p-4 rounded-3xl border border-white/95 shadow-xl max-w-4xl mx-auto relative group">
+            <div className="h-64 sm:h-96 rounded-2xl overflow-hidden relative bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80"
+                alt="Bharath Enterprises Commercial Facility"
+                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
 
-            {/* Credibility metric badges in translucent glass */}
-            <div className="pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-left">
-              <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-xs">
-                <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">10–50+</p>
-                <p className="text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-wider font-medium">Catalogue Items</p>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-xs">
-                <p className="text-xl sm:text-2xl font-bold text-accent tracking-tight">5 Core</p>
-                <p className="text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-wider font-medium">Business Domains</p>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-xs">
-                <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">100%</p>
-                <p className="text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-wider font-medium">Coimbatore Based</p>
+              {/* Floating Frosted Pill in Image Corner */}
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto glass-white px-4 py-2.5 rounded-2xl shadow-lg border border-white/90 flex items-center gap-3 text-left">
+                <div className="w-10 h-10 rounded-xl bg-primary text-accent flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+                  BE
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-primary font-sans leading-tight">
+                    Industrial & Commercial Supply Hub
+                  </h4>
+                  <p className="text-[11px] text-slate-500 font-medium">
+                    Verified B2B & B2C Distribution • Coimbatore Facility
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Column: Luminous White Glass Card */}
-          <div className="lg:col-span-5">
-            <div className="glass-white-elevated rounded-3xl p-7 sm:p-9 text-slate-800 shadow-2xl relative">
-              <div className="absolute -top-3 -right-3 bg-accent text-primary text-[10px] font-extrabold uppercase px-3.5 py-1 rounded-full shadow-md tracking-wider">
-                Industrial Standard
-              </div>
-
-              <div className="flex items-center gap-3.5 mb-5">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm p-1.5 border border-white flex items-center justify-center">
-                  <img
-                    src={settings.logo || '/logo-mark.svg'}
-                    alt="Bharath Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-primary leading-tight font-sans">
-                    Bharath Enterprises
-                  </h3>
-                  <p className="text-xs text-slate-500 font-medium">Coimbatore Commercial Desk</p>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-600 leading-relaxed mb-6 font-normal">
-                Direct procurement, transparent pricing, and structured batch testing for all industrial and commercial requirements across Tamil Nadu and international trade lanes.
-              </p>
-
-              <div className="space-y-3 border-t border-slate-200/80 pt-5 text-xs text-slate-700">
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                  <span>Verified B2B wholesale supply agreements</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                  <span>Multi-category industrial fastener & casting supply</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                  <span>Direct import-export coordination & cargo logistics</span>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-slate-200/80 flex items-center justify-between">
-                <span className="text-[11px] text-slate-500 font-medium">Operating from Coimbatore, TN</span>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline"
-                >
-                  <span>Company Profile</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
+        {/* 3 Minimal Metrics in White Glass */}
+        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto pt-4 text-center">
+          <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
+            <p className="text-xl sm:text-2xl font-bold text-primary font-sans">10–50+</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5">Catalogue Products</p>
+          </div>
+          <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
+            <p className="text-xl sm:text-2xl font-bold text-accent font-sans">5 Core</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5">Business Disciplines</p>
+          </div>
+          <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
+            <p className="text-xl sm:text-2xl font-bold text-primary font-sans">100%</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5">Coimbatore Based</p>
           </div>
         </div>
       </div>
