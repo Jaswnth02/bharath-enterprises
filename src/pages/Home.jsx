@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSEO } from '../utils/seo';
 import { HeroSection } from '../components/home/HeroSection';
-import { CompanyIntro } from '../components/home/CompanyIntro';
 import { BusinessCategories } from '../components/home/BusinessCategories';
 import { FeaturedProducts } from '../components/home/FeaturedProducts';
 import { ServicesSection } from '../components/home/ServicesSection';
@@ -20,7 +19,6 @@ export const Home = () => {
   return (
     <div>
       <HeroSection />
-      <CompanyIntro />
       <BusinessCategories />
       <FeaturedProducts />
       <ServicesSection />
@@ -31,4 +29,3 @@ export const Home = () => {
     </div>
   );
 };
-
