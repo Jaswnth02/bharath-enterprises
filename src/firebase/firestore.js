@@ -351,6 +351,20 @@ export const submitEnquiry = async (enquiryData) => {
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
       });
+
+      // Optional: Add to 'mail' collection for Firebase Trigger Email extension
+      try {
+        await addDoc(collection(db, 'mail'), {
+          to: ['cncmurthi37@gmail.com'],
+          message: {
+            subject: `[New Lead - Bharath Enterprises] ${fullData.enquiryType || 'General Business'} from ${fullData.customerName}`,
+            text: `A new business enquiry was received on Bharath Enterprises:\n\nReference: ${newId}\nName: ${fullData.customerName}\nEmail: ${fullData.email}\nPhone: ${fullData.phone}\nCompany: ${fullData.companyName || 'Not specified'}\nType: ${fullData.enquiryType}\nMessage:\n${fullData.message}\n\nSubmitted at: ${new Date().toISOString()}`,
+          },
+        });
+      } catch (mailErr) {
+        // Mail trigger collection write is non-blocking
+      }
+
       return { id: docRef.id, ...fullData };
     } catch (err) {
       console.warn('Firestore submitEnquiry error, saving locally:', err);
