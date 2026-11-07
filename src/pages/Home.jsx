@@ -1,69 +1,57 @@
 import React from 'react';
 import { useSEO } from '../utils/seo';
 import { HeroSection } from '../components/home/HeroSection';
-import { BusinessCategories } from '../components/home/BusinessCategories';
-import { CorridorSpotlight } from '../components/home/CorridorSpotlight';
-import { FeaturedProducts } from '../components/home/FeaturedProducts';
-import { RegionalSupplyWorkflow } from '../components/home/RegionalSupplyWorkflow';
-import { ServicesSection } from '../components/home/ServicesSection';
-import { ProcurementEstimator } from '../components/home/ProcurementEstimator';
-import { ShgCommunityImpact } from '../components/home/ShgCommunityImpact';
-import { RegionalCorridorCoverage } from '../components/home/RegionalCorridorCoverage';
+import { CompanyOverviewPillars } from '../components/home/CompanyOverviewPillars';
+import { PosterServicesSection } from '../components/home/PosterServicesSection';
+import { IndustriesWeServe } from '../components/home/IndustriesWeServe';
+import { GlobalPresenceMap } from '../components/home/GlobalPresenceMap';
+import { SustainableGrowthBanner } from '../components/home/SustainableGrowthBanner';
+import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { CorporateResourcesKit } from '../components/home/CorporateResourcesKit';
 import { QualityComplianceHub } from '../components/home/QualityComplianceHub';
-import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { ProcurementFaq } from '../components/home/ProcurementFaq';
 import { CtaSection } from '../components/home/CtaSection';
 
 export const Home = () => {
   useSEO({
-    title: 'Bharath Enterprises | Nilgiris & Coimbatore, Tamil Nadu',
-    description: 'Bharath Enterprises is an established commercial partner across Nilgiris Tourism, Wholesale Food Distribution, Plywood Trading, Rubber Recycling, and Community Empowerment in Coonoor and Coimbatore, Tamil Nadu.',
-    keywords: 'Bharath Enterprises, Nilgiris tea wholesale, Ooty varkey bulk supply, synthetic rubber recycling Coimbatore, plywood trading Tamil Nadu, Nilgiris tour packages, SHG products Coonoor',
+    title: 'Bharath Enterprises | Connecting Opportunities Globally – Coimbatore, India',
+    description: 'Bharath Enterprises is a global business development and consulting company headquartered in Coimbatore, Tamil Nadu, India. Specializing in Import, Export, Sourcing, Project Consulting & DPR, Industrial Equipment, and Business Setup across 14 international markets.',
+    keywords: 'Bharath Enterprises, Connecting Opportunities Globally, Global Business Development Coimbatore, Import Export Consulting Tamil Nadu, Boilers Spares India, DPR Project Consulting, ASEAN Trade India, www.bharath11.com',
   });
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      {/* 1. Hero Banner */}
+      {/* 1. Hero Banner: Connecting Opportunities Globally */}
       <HeroSection />
 
-      {/* 2. Interactive Disciplines Showcase (Pill Navigation & Split Preview) */}
-      <BusinessCategories />
+      {/* 2. Company Overview & 5 Strategic Pillars */}
+      <CompanyOverviewPillars />
 
-      {/* 3. The Dual-Hub Regional Synergy Corridor (Nilgiris to Coimbatore) */}
-      <CorridorSpotlight />
+      {/* 3. Our Services: 5 Major Verticals from Poster */}
+      <PosterServicesSection />
 
-      {/* 4. Multi-Sector Featured Products */}
-      <FeaturedProducts />
+      {/* 4. Key Industries We Serve (10 Economic Sectors) */}
+      <IndustriesWeServe />
 
-      {/* 5. 4-Step Sourcing & Logistics Pipeline Stepper */}
-      <RegionalSupplyWorkflow />
+      {/* 5. Our Global Presence (14 International Corridors) */}
+      <GlobalPresenceMap />
 
-      {/* 6. Professional Enterprise Services Matrix */}
-      <ServicesSection />
+      {/* 6. Sustainable Growth Vision Banner */}
+      <SustainableGrowthBanner />
 
-      {/* 7. Interactive Trade & Procurement Estimator Tool */}
-      <ProcurementEstimator />
-
-      {/* 8. Self-Help Groups (SHG) & Community Livelihood Impact */}
-      <ShgCommunityImpact />
-
-      {/* 9. Regional Logistics & Freight Corridors (Tamil Nadu & South India) */}
-      <RegionalCorridorCoverage />
-
-      {/* 10. Technical Spec Sheets & Procurement Resource Kit */}
-      <CorporateResourcesKit />
-
-      {/* 11. Certified Standards & Quality Compliance Charter */}
-      <QualityComplianceHub />
-
-      {/* 12. Principles & Value Bento Grid */}
+      {/* 7. Why Choose Bharath Enterprises? (6 Core Strengths) */}
       <WhyChooseUs />
 
-      {/* 13. Practical Trade & Buyer FAQs Accordion */}
+      {/* 8. Technical Spec Sheets & Procurement Resource Kit */}
+      <CorporateResourcesKit />
+
+      {/* 9. Standards, Testing & Compliance Charter */}
+      <QualityComplianceHub />
+
+      {/* 10. Practical Commercial FAQs Accordion */}
       <ProcurementFaq />
 
-      {/* 14. Direct Commercial Enquiry & WhatsApp Desk */}
+      {/* 11. Direct Commercial Enquiry & WhatsApp Desk */}
       <CtaSection />
     </div>
   );

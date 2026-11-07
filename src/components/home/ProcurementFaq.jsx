@@ -4,28 +4,28 @@ import { useSite } from '../../context/SiteContext';
 
 const faqs = [
   {
-    q: 'What are the Minimum Order Quantities (MOQs) for wholesale snacks and tea?',
-    a: 'For commercial wholesale, our standard MOQ for packaged Nilgiris CTC and orthodox tea is 50 kg (assorted pouch/carton sizes). For traditional Ooty Varkey and bakery snacks, standard orders start at 20 bulk retail cartons. Custom trial sample batches are available for registered distributors upon request.'
+    q: 'What consulting and global business development services does Bharath Enterprises provide?',
+    a: 'Bharath Enterprises helps enterprises scale through import, export, global sourcing, project development, and strategic partnerships. We connect Indian manufacturers with overseas markets across Asia, Europe, and Oceania, and assist international companies to establish and expand their commercial presence in India.'
   },
   {
-    q: 'What specifications and mesh sizes are available for recycled nitrile rubber?',
-    a: 'We process industrial-grade Nitrile Butadiene Rubber (NBR) gasket scrap into two primary forms: uniform granules (1.0 mm to 4.0 mm) and fine ambient powder (40 to 80 mesh). Every consignment is certified metal-free and fiber-free, packed in 25kg or 50kg moisture-resistant HDPE sacks or jumbo bulk bags.'
+    q: 'Which countries are included in your active global trade network?',
+    a: 'Our international network spans 14 countries: India (Headquarters), Malaysia, Vietnam, Philippines, Singapore, Thailand, Indonesia, Cambodia, Laos, Brunei, Myanmar, Timor-Leste, the United Kingdom (UK), and Australia.'
   },
   {
-    q: 'Can you customize Nilgiris corporate trips, cab rentals, and resort stays?',
-    a: 'Yes. Our Nilgiris Tourism Desk coordinates complete itineraries across Ooty, Coonoor, and Kotagiri. Services include mountain-certified cab pickups from Coimbatore Airport/Railway Station, heritage plantation resort stays, corporate retreat arrangements, and Nilgiris Mountain Railway (Toy Train) booking facilitation.'
+    q: 'What industrial boilers, spares, and engineering equipment do you supply?',
+    a: 'We supply high-efficiency industrial boilers (steam and thermic fluid), replacement boiler spares, steam accessories, instrumentation and automated PLC control systems, refractory insulation materials, and heavy process equipment across power, textiles, chemical, and manufacturing sectors.'
   },
   {
-    q: 'What quality grades of plywood and interior boards do you supply?',
-    a: 'We supply certified IS:710 Marine Grade BWP (Boiling Water Proof) plywood and IS:303 Commercial BWR/MR plywood boards in standard sheet sizes (8x4 ft, 7x4 ft) and various thicknesses (6mm to 25mm), along with calibrated blockboards and decorative laminates for modular interiors and construction trade.'
+    q: 'How do you support new projects with Detailed Project Reports (DPR) and government schemes?',
+    a: 'We prepare comprehensive, bank-approved Detailed Project Reports (DPRs), feasibility studies, financial projections, and industry analyses. Furthermore, we guide eligible entrepreneurs through government subsidy and loan schemes including PMEGP, MUDRA, Stand-Up India, and state industrial incentives.'
   },
   {
-    q: 'What are the standard delivery lead times across Tamil Nadu?',
-    a: 'Consignments for Coimbatore, Tiruppur, and Erode are dispatched within 24 hours. Statewide deliveries across Tamil Nadu (Chennai, Salem, Madurai, Trichy) typically arrive within 24 to 48 hours. Interstate dispatches to Kerala and Karnataka follow planned freight corridors.'
+    q: 'Can you assist domestic and foreign companies with business setup and licensing?',
+    a: 'Yes. We provide complete business setup services including Private Limited and LLP company registration in India and overseas, Import Export Code (IEC) licensing, GST registration, corporate compliance, and strategic market entry advisory.'
   },
   {
-    q: 'How does Bharath Enterprises support Nilgiris Self-Help Groups (SHGs)?',
-    a: 'We directly collaborate with registered women-led Self-Help Groups in Coonoor and rural Nilgiris. We provide hygienic packaging, quality standardization, and fair-trade market access for steam-distilled eucalyptus oils, forest honey, and sun-cured vanilla, with 100% transparent pricing and no intermediary deductions.'
+    q: 'What end-to-end export-import documentation and logistics coordination do you offer?',
+    a: 'Our trade desk handles global supplier identification, buyer-seller matching, proforma invoicing, letter of credit (LC) scrutiny, pre-shipment inspection, export customs documentation, port clearance, and multimodal logistics coordination.'
   }
 ];
 

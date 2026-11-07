@@ -42,7 +42,7 @@ export const Footer = () => {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Established in Coonoor and Coimbatore, Tamil Nadu (2025). Your trusted business development partner across Nilgiris Tourism, Wholesale Food Distribution, Plywood Trading, Rubber Recycling, and Community Empowerment.
+              Bharath Enterprises is a global business development and consulting company headquartered in Coimbatore, Tamil Nadu, India. Connecting opportunities globally across import, export, sourcing, project development, and strategic partnerships.
             </p>
 
             {/* Social links */}
@@ -137,23 +137,23 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Commercial Disciplines */}
+          {/* Column 3: Commercial Services */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-accent pl-2">
-              Business Disciplines
+              Our Services
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li className="hover:text-slate-200 transition-colors">Nilgiris Tour & Travel</li>
-              <li className="hover:text-slate-200 transition-colors">Wholesale Snacks & FMCG</li>
-              <li className="hover:text-slate-200 transition-colors">Plywood & Interior Trade</li>
-              <li className="hover:text-slate-200 transition-colors">Rubber Waste Recycling</li>
-              <li className="hover:text-slate-200 transition-colors">Agri & SHG Initiatives</li>
+              <li className="hover:text-slate-200 transition-colors">Industrial Equipment & Spares</li>
+              <li className="hover:text-slate-200 transition-colors">Import & Export Services</li>
+              <li className="hover:text-slate-200 transition-colors">Project Consulting & DPR</li>
+              <li className="hover:text-slate-200 transition-colors">Business Setup & Registration</li>
+              <li className="hover:text-slate-200 transition-colors">Special Projects & Sectors</li>
               <li className="pt-2">
                 <Link
-                  to="/products"
+                  to="/services"
                   className="text-accent hover:underline text-xs inline-flex items-center gap-1"
                 >
-                  <span>View Complete Catalogue</span>
+                  <span>Explore All Services</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
@@ -168,19 +168,19 @@ export const Footer = () => {
             <ul className="space-y-3 text-xs text-slate-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>{settings.address || 'Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India'}</span>
+                <span>Bharath Enterprises, Coimbatore, Tamil Nadu, India</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
-                <span>{settings.phone || '+91 9600949927'}</span>
+                <a href="tel:+919600949927" className="hover:text-white transition-colors">+91 96009 49927</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <span>{settings.email || 'cncmurthi27@gmail.com'}</span>
+                <a href="mailto:cncmurthi37@gmail.com" className="hover:text-white transition-colors">cncmurthi37@gmail.com</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-accent shrink-0" />
-                <span>{settings.businessHours || 'Mon – Sat: 9:00 AM – 6:30 PM (IST)'}</span>
+                <span>www.bharath11.com</span>
               </li>
             </ul>
           </div>
@@ -189,7 +189,7 @@ export const Footer = () => {
         {/* Bottom Strip */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3">
           <p>
-            &copy; 2025 Bharath Enterprises, Coonoor & Coimbatore, Tamil Nadu. {t('common.rights')}.
+            &copy; 2025 Bharath Enterprises, Coimbatore, Tamil Nadu, India. All Rights Reserved. Connecting Opportunities Globally.
           </p>
 
           <div className="flex items-center gap-4">

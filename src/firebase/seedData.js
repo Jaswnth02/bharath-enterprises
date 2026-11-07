@@ -189,28 +189,80 @@ export const initialProducts = [
 
 export const initialServices = [
   {
-    serviceId: "nilgiris-tourism-mobility",
-    title: "Nilgiris Tourism & Mobility Services",
-    description: "Customized family itineraries, taxi/cab bookings, corporate outings, and hotel reservations.",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    serviceId: "industrial-equipment-spares",
+    title: "Industrial Equipment & Spares",
+    description: "Supply of heavy-duty industrial boilers, process machinery, instrumentation, refractory works, and precision replacement spares.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    bullets: [
+      "Boilers & Spares",
+      "Steam Accessories",
+      "Instrumentation & PLC",
+      "Refractory Works",
+      "Process Equipment"
+    ],
     status: "published",
     createdAt: "2025-01-10T10:00:00.000Z"
   },
   {
-    serviceId: "bulk-wholesale-regional-distribution",
-    title: "Bulk Wholesale & Regional Distribution",
-    description: "Structured distribution network across Tamil Nadu for snacks, tea, plywood, and consumer goods.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    serviceId: "import-export-services",
+    title: "Import & Export Services",
+    description: "End-to-end international trade facilitation connecting Indian manufacturers with buyers across Asia, Europe, and Oceania.",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
+    bullets: [
+      "Global Sourcing",
+      "Buyer-Seller Connect",
+      "Export Documentation",
+      "Customs Support",
+      "Logistics Coordination"
+    ],
     status: "published",
     createdAt: "2025-01-11T10:00:00.000Z"
   },
   {
-    serviceId: "waste-recycling-environmental-projects",
-    title: "Waste Recycling & Environmental Projects",
-    description: "Synthetic rubber scrap processing and integrated municipal solid waste management DPR execution.",
-    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
+    serviceId: "project-consulting-dpr",
+    title: "Project Consulting & DPR",
+    description: "Bankable Detailed Project Reports, technical feasibility studies, financial projections, and government scheme advisory.",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+    bullets: [
+      "Detailed Project Reports (DPR)",
+      "Feasibility Studies",
+      "Industry Analysis",
+      "Financial Projections",
+      "Government Scheme Guidance (PMEGP, MUDRA, etc.)"
+    ],
     status: "published",
     createdAt: "2025-01-12T10:00:00.000Z"
+  },
+  {
+    serviceId: "business-setup-registration",
+    title: "Business Setup & Registration",
+    description: "Complete corporate incorporation, statutory licensing, international trade permits, and cross-border market entry guidance.",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    bullets: [
+      "Company Registration (India & Overseas)",
+      "Import Export License (IEC)",
+      "GST Registration",
+      "Business Advisory",
+      "Market Entry Support"
+    ],
+    status: "published",
+    createdAt: "2025-01-13T10:00:00.000Z"
+  },
+  {
+    serviceId: "special-projects-sectors",
+    title: "Special Projects & Sectors",
+    description: "Specialized turnkey project incubation across agro-food processing, renewable energy, education franchises, and commercial hospitality.",
+    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+    bullets: [
+      "Food Processing",
+      "Agro & Herbal Products",
+      "Renewable Energy",
+      "Real Estate & Hospitality",
+      "Education & Franchise",
+      "Many more..."
+    ],
+    status: "published",
+    createdAt: "2025-01-14T10:00:00.000Z"
   }
 ];
 
@@ -303,10 +355,13 @@ export const initialWebsiteSettings = {
   establishedYear: "2025",
   logo: "/logo.png",
   tagline: "Your Trusted Business Development Partner",
-  locationBadge: "Coonoor & Coimbatore, Tamil Nadu • Est. 2025",
-  address: "Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India",
-  phone: "+91 9600949927",
-  email: "cncmurthi27@gmail.com",
+  headline: "CONNECTING OPPORTUNITIES GLOBALLY",
+  subheadline: "Import | Export | Sourcing | Consulting | Projects | Business Development",
+  locationBadge: "Coimbatore, Tamil Nadu, India • Global Business Development",
+  address: "Bharath Enterprises, Coimbatore, Tamil Nadu, India",
+  phone: "+91 96009 49927",
+  email: "cncmurthi37@gmail.com",
+  website: "www.bharath11.com",
   whatsappNumber: "919600949927",
   businessHours: "Monday – Saturday: 9:00 AM – 6:30 PM (IST)",
   socialLinks: {
@@ -315,30 +370,34 @@ export const initialWebsiteSettings = {
     twitter: "https://twitter.com/bharathenterprises",
     instagram: "https://instagram.com/bharathenterprises"
   },
-  mission: "To empower regional business ecosystems by delivering authentic Nilgiris produce, sustainable synthetic rubber recycling, high-grade timber trade, and transformative community initiatives from Coonoor and Coimbatore.",
-  vision: "To be recognized as South India's trusted business development partner, uniting eco-friendly industrial processing, wholesale supply excellence, and community empowerment.",
-  aboutContent: "Established in 2025 in Coonoor and Coimbatore, Tamil Nadu, Bharath Enterprises is your trusted business development partner. Operating across five core disciplines: Nilgiris Tour & Travel, Wholesale Snacks & FMCG, Plywood & Interior Trade, Rubber Waste Recycling, and Agri & SHG Initiatives, we bridge critical commercial supply gaps through transparent trading, dependable logistics, and ethical community stewardship.",
+  mission: "Connecting opportunities globally by empowering Indian industries to access global markets and assisting international enterprises in establishing and growing their footprint across India and Asia.",
+  vision: "Your partner for sustainable growth — driving ideas, partnerships, projects, and profits for a brighter tomorrow.",
+  aboutContent: "Bharath Enterprises is a global business development and consulting company, helping businesses grow through import, export, sourcing, project development and strategic partnerships. We connect Indian industries with global markets and support international companies to establish and expand their presence in India and Asia.",
   whyChooseUs: [
     {
-      title: "Quality Commitment",
-      desc: "Every product batch, tea consignment, and recycled material undergoes strict dimensional and sensory checks."
+      title: "Wide Global Network",
+      desc: "Established commercial networks across India, ASEAN countries, the UK, and Australia."
     },
     {
-      title: "Customer Focus",
-      desc: "Dedicated account representatives ensuring clear communication and tailored regional procurement schedules."
+      title: "End-to-End Support",
+      desc: "Complete handholding from sourcing and buyer-seller connect to customs, documentation, and logistics."
     },
     {
-      title: "Business Reliability",
-      desc: "Dependable dispatch protocols and steady reserve stocks minimizing commercial disruptions."
+      title: "Industry Expertise",
+      desc: "Multi-sector technical experience across boilers, manufacturing, textiles, chemicals, food, and energy."
     },
     {
-      title: "Professional Service",
-      desc: "Honest trade practices, transparent pricing, and comprehensive technical documentation."
+      title: "Customized Solutions",
+      desc: "Tailored DPRs, feasibility studies, statutory registrations, and market entry roadmaps."
     },
     {
-      title: "Long-Term Relationships",
-      desc: "We focus on sustainable business partnerships rather than single-transaction commercial deals."
+      title: "Trusted & Reliable",
+      desc: "Unwavering commitment to integrity, compliance, transparent pricing, and enduring partnerships."
+    },
+    {
+      title: "Growth Focused Approach",
+      desc: "Helping businesses scale sustainably through high-value projects, strategic alliances, and profit optimization."
     }
   ],
-  footerContent: "Bharath Enterprises is an established commercial enterprise operating across Coonoor and Coimbatore, Tamil Nadu. Committed to standard-compliant supplies, sustainable recycling, and verified business partnerships. All rights reserved."
+  footerContent: "Bharath Enterprises is a global business development and consulting company headquartered in Coimbatore, Tamil Nadu, India. Connecting opportunities globally across import, export, sourcing, project consulting, and strategic partnerships. All rights reserved."
 };

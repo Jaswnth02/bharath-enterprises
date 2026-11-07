@@ -13,31 +13,31 @@ import { useSite } from '../../context/SiteContext';
 const assurances = [
   {
     code: 'STANDARD 01',
-    title: 'IS:710 & IS:303 Structural Timber Standards',
-    domain: 'Plywood & Building Materials',
+    title: 'Industrial Boiler & Pressure Vessel Compliance (IBR Standards)',
+    domain: 'Industrial Equipment & Spares',
     icon: Award,
-    description: 'Boiling water proof (BWP) cross-linked phenolic resin bonding and calibrated hardwood veneers offering superior resistance to delamination, borer, and termite infestation.'
+    description: 'All boilers, steam accessories, and pressure piping conform to strict Indian Boiler Regulations (IBR) and international safety standards with full hydrostatic pressure certification.'
   },
   {
     code: 'STANDARD 02',
-    title: 'Zero-Metal Magnetic Separation Guarantee',
-    domain: 'Synthetic Rubber Recycling',
+    title: 'Customs, Tariff & Export Documentation Protocols',
+    domain: 'Import & Export Services',
     icon: ShieldCheck,
-    description: 'Automotive nitrile gasket offcuts processed with high-intensity magnetic rollers and vibrating screens to guarantee 100% metal-free granules and 40–80 mesh rubber powder.'
+    description: 'Precision HS code classification, DGFT compliance, Certificate of Origin verification, and streamlined bilateral customs documentation across 14 international trade corridors.'
   },
   {
     code: 'STANDARD 03',
-    title: 'Food Safety & Aroma-Barrier Packaging',
-    domain: 'Wholesale Tea & FMCG',
+    title: 'Bankable DPR & Government Scheme Feasibility (PMEGP/MUDRA)',
+    domain: 'Project Consulting & DPR',
     icon: FileCheck,
-    description: 'Multi-layer nitrogen-flushed pouches and heavy-gauge corrugated cartons protecting orthodox tea aroma, essential oils, and traditional wood-fired Ooty Varkey freshness.'
+    description: 'Structured financial modeling, cash flow sensitivity, and technical appraisal vetted against banking guidelines for hassle-free capital sanction and subsidy disbursement.'
   },
   {
     code: 'STANDARD 04',
-    title: 'Ethical SHG Direct Procurement Charter',
-    domain: 'Agri & Community Livelihoods',
+    title: 'Statutory Corporate Licensing & Cross-Border Registration',
+    domain: 'Business Setup & Registration',
     icon: Leaf,
-    description: 'Direct trade protocols supporting registered women’s Self-Help Groups across Coonoor and rural Nilgiris with 100% transparent pricing and prompt payment cycles.'
+    description: 'Complete Ministry of Corporate Affairs (MCA) incorporation, Import Export Code (IEC) issuance, GST alignment, and overseas market entry statutory protocols.'
   }
 ];
 
@@ -122,3 +122,4 @@ export const QualityComplianceHub = () => {
     </section>
   );
 };
+

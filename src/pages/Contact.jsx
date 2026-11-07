@@ -128,9 +128,9 @@ export const Contact = () => {
               <div className="flex items-start gap-3 p-3.5 sm:p-4 glass-white rounded-2xl border border-white/80 shadow-xs">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-primary font-sans">Office & Facility Address</h4>
+                  <h4 className="text-xs font-bold text-primary font-sans">Office & Commercial Address</h4>
                   <p className="text-xs text-slate-600 mt-0.5 leading-relaxed font-light">
-                    {settings.address || 'Door No: 43D, Ottupattarai post, The Nilgiris - Dist, TN, India'}
+                    {settings.address || 'Bharath Enterprises, Coimbatore, Tamil Nadu, India'}
                   </p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Contact Telephones</h4>
                   <p className="text-xs text-slate-600 mt-0.5 font-mono">
-                    {settings.phone || '+91 9600949927'}
+                    {settings.phone || '+91 96009 49927'}
                   </p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-primary font-sans">Commercial Email</h4>
                   <p className="text-xs text-slate-600 mt-0.5 font-mono">
-                    {settings.email || 'cncmurthi27@gmail.com'}
+                    {settings.email || 'cncmurthi37@gmail.com'}
                   </p>
                 </div>
               </div>

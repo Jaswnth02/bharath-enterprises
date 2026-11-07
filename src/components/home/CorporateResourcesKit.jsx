@@ -17,53 +17,63 @@ import { useSite } from '../../context/SiteContext';
 const resources = [
   {
     id: 'corp-profile',
-    title: 'Bharath Enterprises Corporate Profile (2025)',
+    title: 'Bharath Enterprises Global Corporate Profile (2025)',
     category: 'Corporate Overview',
     type: 'PDF Dossier',
-    pages: '14 Pages',
+    pages: '16 Pages',
     icon: Building2,
-    description: 'Comprehensive business background, Coonoor & Coimbatore hub infrastructure, multi-sector trading scope, and partnership credentials.',
-    highlights: ['Company Background & Mission', 'Corridor Infrastructure', 'Client Trade Assurance']
+    description: 'Comprehensive global business development overview, Coimbatore headquarters, 14 international trade corridors, and strategic partnership credentials.',
+    highlights: ['Connecting Opportunities Globally', '14 Active International Markets', 'End-to-End Enterprise Solutions']
   },
   {
-    id: 'tea-snacks-spec',
-    title: 'Nilgiris Wholesale Tea & Bakery Snacks Spec Sheet',
-    category: 'FMCG & Food Trade',
-    type: 'Product Catalogue',
-    pages: '8 Pages',
-    icon: Coffee,
-    description: 'Orthodox & CTC tea cut grades, traditional Ooty Varkey wholesale carton counts, homemade chocolates packaging, and shelf-life parameters.',
-    highlights: ['CTC Dust & Pekoe Specs', 'Master Carton Dimensions', 'FSSAI Alignment & MOQs']
-  },
-  {
-    id: 'rubber-tech-dossier',
-    title: 'Recycled Nitrile Rubber (NBR) Technical Data Sheet',
-    category: 'Industrial Polymer',
-    type: 'Material Spec Sheet',
-    pages: '6 Pages',
-    icon: Recycle,
-    description: 'Technical fractions (40–80 mesh powder & 1.0–4.0mm granules), polymer purity analysis, zero-metal magnetic check, and compounding guidelines.',
-    highlights: ['Mesh Distribution Curve', 'Polymer Purity Guarantee', 'HDPE Packaging Guidelines']
-  },
-  {
-    id: 'plywood-grade-guide',
-    title: 'Commercial & Marine Plywood Architectural Grade Guide',
-    category: 'Building Materials',
-    type: 'Technical Guide',
-    pages: '10 Pages',
-    icon: Layers,
-    description: 'Technical comparison between IS:710 Marine BWP and IS:303 BWR boards, panel tolerances, resin bond properties, and modular furniture uses.',
-    highlights: ['IS:710 vs IS:303 Parameters', 'Thickness & Calibrations', 'Moisture Proof Certifications']
-  },
-  {
-    id: 'tourism-itinerary-kit',
-    title: 'Nilgiris Tourism & Corporate Retreat Tariff Kit',
-    category: 'Hospitality & Mobility',
-    type: 'Itinerary Kit',
+    id: 'boiler-spares-spec',
+    title: 'Industrial Boilers, Spares & Process Equipment Guide',
+    category: 'Industrial Equipment',
+    type: 'Equipment Catalogue',
     pages: '12 Pages',
+    icon: Layers,
+    description: 'Boilers and spares, steam accessories, instrumentation and PLC automation, refractory works, and process equipment specifications.',
+    highlights: ['Boilers & Steam Piping Specs', 'PLC Automation Controls', 'Refractory Insulation Grades']
+  },
+  {
+    id: 'import-export-manual',
+    title: 'Cross-Border Import & Export Facilitation Manual',
+    category: 'Trade & Logistics',
+    type: 'Trade Handbook',
+    pages: '10 Pages',
     icon: Compass,
-    description: 'Custom family holiday schedules, colonial tea plantation stays, Nilgiris Mountain Railway toy train booking protocols, and cab fleet rates.',
-    highlights: ['Ooty & Coonoor Curated Circuits', 'Verified Resort Tie-ups', 'Hill Taxi Fleet Tariffs']
+    description: 'Global sourcing protocols, buyer-seller verification frameworks, export documentation, customs support, and international shipping coordination.',
+    highlights: ['Global Sourcing Checklists', 'Customs Clearance Workflows', 'ASEAN & European Trade Lanes']
+  },
+  {
+    id: 'dpr-consulting-guide',
+    title: 'Bankable DPR & Government Scheme Handbook (PMEGP/MUDRA)',
+    category: 'Project Consulting',
+    type: 'Consulting Guide',
+    pages: '14 Pages',
+    icon: FileText,
+    description: 'Detailed Project Report (DPR) formats, financial modeling, market viability analysis, and institutional government subsidy frameworks.',
+    highlights: ['Bankable DPR Templates', 'PMEGP & MUDRA Guidance', 'Financial ROI Modeling']
+  },
+  {
+    id: 'business-setup-toolkit',
+    title: 'Company Setup & International Licensing Toolkit (IEC/GST)',
+    category: 'Business Registration',
+    type: 'Statutory Toolkit',
+    pages: '8 Pages',
+    icon: Building2,
+    description: 'Step-by-step statutory incorporation in India and overseas, Import-Export Code (IEC) application, GST compliance, and market entry advisory.',
+    highlights: ['India & Overseas Incorporation', 'IEC & GST Compliance Steps', 'FDI & Regulatory Advisory']
+  },
+  {
+    id: 'special-projects-dossier',
+    title: 'Special Projects & Agro-Food Processing Dossier',
+    category: 'Turnkey Projects',
+    type: 'Project Dossier',
+    pages: '10 Pages',
+    icon: Coffee,
+    description: 'Turnkey development roadmaps for food processing plants, agro and herbal products, solar renewable energy, and education franchises.',
+    highlights: ['Food Processing Plant Models', 'Agro-Herbal Export Potential', 'Renewable Energy Turnkey Setup']
   }
 ];
 
@@ -169,3 +179,4 @@ export const CorporateResourcesKit = () => {
     </section>
   );
 };
+

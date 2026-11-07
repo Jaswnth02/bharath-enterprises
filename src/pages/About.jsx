@@ -31,11 +31,11 @@ export const About = () => {
           <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-2 bg-accent/10 w-fit px-2.5 py-0.5 rounded-md">
             {t('about.title')}
           </span>
-          <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-sans text-primary">
-            Committed to Quality, Sustainability & Commercial Trust
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight font-sans text-primary uppercase">
+            Connecting Opportunities Globally
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-3xl mt-2 leading-relaxed font-light">
-            {t('about.subtitle')}
+            Import | Export | Sourcing | Consulting | Projects | Business Development
           </p>
         </div>
       </div>
@@ -45,25 +45,25 @@ export const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             <span className="text-[11px] sm:text-xs font-bold text-accent uppercase tracking-widest block">
-              {t('about.backgroundTitle')}
+              COMPANY OVERVIEW
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary tracking-tight font-sans">
-              Grounded in Nilgiris & Coimbatore's Commercial Heritage
+              Global Business Development & Strategic Consulting
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-              {settings.aboutContent}
+              Bharath Enterprises is a global business development and consulting company, helping businesses grow through import, export, sourcing, project development and strategic partnerships. We connect Indian industries with global markets and support international companies to establish and expand their presence in India and Asia.
             </p>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-              Operating across Coonoor and Coimbatore, Tamil Nadu, Bharath Enterprises bridges critical supply gaps in Nilgiris Tourism, Wholesale Food Distribution, Plywood Trading, Rubber Recycling, and Community Empowerment. We ensure transparent pricing, consistent stock reserves, and verified quality standards.
+              Headquartered in Coimbatore, Tamil Nadu, India, we operate active trade corridors across 14 countries in Southeast Asia, Europe, and Oceania. We provide end-to-end support across industrial equipment, export-import licensing, Detailed Project Reports (DPR), and turnkey project incubation.
             </p>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
               <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-xs">
-                <p className="text-lg sm:text-xl font-bold text-primary font-sans">2025</p>
-                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Year Established</p>
+                <p className="text-lg sm:text-xl font-bold text-primary font-sans">14+ Countries</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Global Presence</p>
               </div>
               <div className="glass-white p-3 sm:p-4 rounded-2xl border border-white/80 shadow-xs">
-                <p className="text-lg sm:text-xl font-bold text-primary font-sans leading-tight">Coonoor & Coimbatore</p>
+                <p className="text-lg sm:text-xl font-bold text-primary font-sans leading-tight">Coimbatore</p>
                 <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Tamil Nadu, India</p>
               </div>
             </div>
