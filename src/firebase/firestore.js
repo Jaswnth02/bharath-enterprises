@@ -22,9 +22,10 @@ import {
   initialGallery,
   initialWebsiteSettings,
 } from './seedData';
+import { dispatchEnquiryEmails } from '../services/emailService';
 
 // Helper for local mock storage
-const STORAGE_PREFIX = 'bharath_v7_';
+const STORAGE_PREFIX = 'bharath_v17_';
 const getLocalData = (key, defaultData) => {
   try {
     const item = localStorage.getItem(`${STORAGE_PREFIX}${key}`);
@@ -335,61 +336,61 @@ export const deleteService = async (serviceId) => {
 // ----------------------------------------------------
 export const submitEnquiry = async (enquiryData) => {
   const newId = 'ENQ-' + Math.floor(100000 + Math.random() * 900000);
+  const now = new Date().toISOString();
   const fullData = {
     ...enquiryData,
     enquiryId: newId,
     status: 'New', // New, Contacted, In Progress, Completed, Rejected
     adminNotes: '',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: now,
+    updatedAt: now,
   };
 
-  if (isFirebaseConfigured && db) {
-    try {
-      const docRef = await addDoc(collection(db, 'enquiries'), {
-        ...fullData,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-      });
-
-      // Optional: Add to 'mail' collection for Firebase Trigger Email extension
-      try {
-        await addDoc(collection(db, 'mail'), {
-          to: ['cncmurthi37@gmail.com'],
-          message: {
-            subject: `[New Lead - Bharath Enterprises] ${fullData.enquiryType || 'General Business'} from ${fullData.customerName}`,
-            text: `A new business enquiry was received on Bharath Enterprises:\n\nReference: ${newId}\nName: ${fullData.customerName}\nEmail: ${fullData.email}\nPhone: ${fullData.phone}\nCompany: ${fullData.companyName || 'Not specified'}\nType: ${fullData.enquiryType}\nMessage:\n${fullData.message}\n\nSubmitted at: ${new Date().toISOString()}`,
-          },
-        });
-      } catch (mailErr) {
-        // Mail trigger collection write is non-blocking
-      }
-
-      return { id: docRef.id, ...fullData };
-    } catch (err) {
-      console.warn('Firestore submitEnquiry error, saving locally:', err);
-    }
+  // 1. Instant local persistence so UI & admin reflect the new lead without waiting
+  try {
+    const items = getLocalData('enquiries', []);
+    items.unshift({ id: newId, ...fullData });
+    setLocalData('enquiries', items);
+  } catch (localErr) {
+    console.warn('Local cache write warning:', localErr);
   }
 
-  const items = getLocalData('enquiries', [
-    {
-      enquiryId: "ENQ-104921",
-      customerName: "Sundaramurthy M.",
-      email: "sundar@coimbatoretextiles.example.com",
-      phone: "+91 94432 11029",
-      companyName: "Kovai Industrial Components",
-      enquiryType: "Product Inquiry",
-      productId: "be-prod-101",
-      productName: "High-Tensile Industrial Fasteners & Hex Bolts",
-      message: "Need bulk pricing quotation for 5,000 units of M12 x 50mm Grade 10.9 hex bolts with test certificate.",
-      status: "New",
-      adminNotes: "Sample enquiry pre-loaded for demonstration.",
-      createdAt: new Date(Date.now() - 3600000 * 4).toISOString(),
-      updatedAt: new Date(Date.now() - 3600000 * 4).toISOString(),
+  // 2. Dispatch to live Cloud Firestore (fast non-blocking queue)
+  if (isFirebaseConfigured && db) {
+    try {
+      const docRef = doc(collection(db, 'enquiries'));
+      
+      // Dispatch Firestore write with a fast 1200ms timeout race.
+      // Firestore SDK automatically persists & synchronizes writes in background
+      // so the user receives instant sub-second feedback!
+      const firestoreWrite = setDoc(docRef, {
+        ...fullData,
+        id: docRef.id,
+      });
+
+      // Non-blocking dual email trigger dispatch in background:
+      // 1. Sends lead notification to company domain email (contact@bharatok.com)
+      // 2. Sends auto-reply confirmation to customer email
+      try {
+        dispatchEnquiryEmails({ id: docRef.id, ...fullData }).catch((err) => {
+          console.warn('Background email dispatch warning:', err);
+        });
+      } catch (_) {}
+
+      // Fast race: return immediately if Firestore acknowledges or after 1200ms max
+      const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 1200));
+      await Promise.race([firestoreWrite, timeoutPromise]);
+      return { id: docRef.id, ...fullData };
+    } catch (err) {
+      console.warn('Firestore submitEnquiry warning:', err);
     }
-  ]);
-  items.unshift({ id: newId, ...fullData });
-  setLocalData('enquiries', items);
+  } else {
+    // If running in local mock mode without live Firestore connection, still attempt direct email dispatch
+    try {
+      dispatchEnquiryEmails(fullData).catch(() => {});
+    } catch (_) {}
+  }
+
   return { id: newId, ...fullData };
 };
 
@@ -671,4 +672,72 @@ export const getCustomers = async () => {
     }
   ]);
 };
+
+// ----------------------------------------------------
+// LIVE FIRESTORE DATABASE SEEDER & SYNC
+// ----------------------------------------------------
+export const seedCloudFirestore = async (onProgress = () => {}) => {
+  if (!isFirebaseConfigured || !db) {
+    throw new Error('Firebase is not configured yet. Please check your .env credentials.');
+  }
+
+  const results = {
+    settings: false,
+    services: 0,
+    categories: 0,
+    products: 0,
+    projects: 0,
+    gallery: 0,
+  };
+
+  // 1. Website Settings
+  onProgress('Syncing corporate website settings...');
+  await setDoc(doc(db, 'websiteSettings', 'general'), {
+    ...initialWebsiteSettings,
+    updatedAt: new Date().toISOString(),
+  });
+  results.settings = true;
+
+  // 2. Services
+  onProgress('Writing 5 core business services from poster...');
+  for (const srv of initialServices) {
+    await setDoc(doc(db, 'services', srv.serviceId), {
+      ...srv,
+      createdAt: new Date().toISOString(),
+    });
+    results.services += 1;
+  }
+
+  // 3. Categories
+  onProgress('Writing product categories...');
+  for (const cat of initialCategories) {
+    await setDoc(doc(db, 'categories', cat.categoryId), cat);
+    results.categories += 1;
+  }
+
+  // 4. Products
+  onProgress('Writing products catalog...');
+  for (const prod of initialProducts) {
+    await setDoc(doc(db, 'products', prod.productId), prod);
+    results.products += 1;
+  }
+
+  // 5. Projects
+  onProgress('Writing commercial project deployments...');
+  for (const proj of initialProjects) {
+    await setDoc(doc(db, 'projects', proj.projectId), proj);
+    results.projects += 1;
+  }
+
+  // 6. Gallery
+  onProgress('Writing facility operations gallery...');
+  for (const gal of initialGallery) {
+    await setDoc(doc(db, 'gallery', gal.imageId), gal);
+    results.gallery += 1;
+  }
+
+  onProgress('All collections successfully populated in Cloud Firestore!');
+  return results;
+};
+
 

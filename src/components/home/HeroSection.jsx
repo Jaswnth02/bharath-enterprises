@@ -1,84 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, MessageSquare, Globe2, ShieldCheck, TrendingUp, Sparkles } from 'lucide-react';
+import { MessageSquare, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 export const HeroSection = () => {
   const { t } = useTranslation();
-  const { settings, openEnquiryModal } = useSite();
+  const { openEnquiryModal } = useSite();
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16 lg:py-24">
-      {/* Subtle ambient lighting for white glass refraction */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[750px] h-[350px] sm:h-[500px] bg-gradient-to-tr from-primary/5 via-accent/10 to-secondary/5 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section className="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex flex-col justify-center py-6 sm:py-8 lg:py-10 relative overflow-hidden bg-white">
+      {/* Subtle luxury ambient gold glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[800px] h-[300px] sm:h-[450px] bg-gradient-to-tr from-[#CCA038]/5 via-[#CCA038]/3 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6 sm:space-y-8">
-        {/* Minimal Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full glass-white border border-white/90 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-700 animate-in fade-in">
-          <Globe2 className="w-3.5 h-3.5 text-accent animate-pulse" />
-          <span>Coimbatore, Tamil Nadu, India • Global Business Development</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-auto w-full">
+        {/* Top Gold Divider & Category Tag */}
+        <div className="flex items-center justify-center gap-3 sm:gap-6 mb-4 sm:mb-6 md:mb-8 animate-in fade-in duration-700">
+          <span className="w-8 sm:w-16 md:w-20 h-[1.5px] bg-[#CCA038]" />
+          <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-[0.22em] sm:tracking-[0.28em] text-[#0F1E36] uppercase font-sans">
+            GLOBAL BUSINESS DEVELOPMENT
+          </span>
+          <span className="w-8 sm:w-16 md:w-20 h-[1.5px] bg-[#CCA038]" />
         </div>
 
-        {/* Crisp Poster Headline */}
-        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-primary leading-tight font-sans max-w-3xl mx-auto uppercase">
-          Connecting Opportunities <span className="text-accent underline decoration-accent/30 decoration-wavy">Globally</span>
+        {/* Grand Editorial Serif Display Headline calibrated to fit viewport */}
+        <h1 
+          style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', 'Cinzel', Georgia, serif" }}
+          className="font-editorial-serif leading-[1.03] text-center select-none uppercase"
+        >
+          <span className="block text-[#0A192F] font-semibold tracking-wide text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.85rem]">
+            CONNECTING
+          </span>
+          <span className="block text-[#0A192F] font-semibold tracking-wide text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.85rem] mt-0.5 sm:mt-1">
+            OPPORTUNITIES
+          </span>
+          <span className="block text-[#CCA038] font-semibold tracking-wide text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.85rem] mt-0.5 sm:mt-1">
+            GLOBALLY
+          </span>
         </h1>
 
-        {/* Domain Tags Sub-Ribbon from Poster */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto text-[11px] sm:text-xs font-bold text-slate-600">
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Import</span>
-          <span className="text-accent font-black">•</span>
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Export</span>
-          <span className="text-accent font-black">•</span>
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Sourcing</span>
-          <span className="text-accent font-black">•</span>
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Consulting</span>
-          <span className="text-accent font-black">•</span>
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Projects</span>
-          <span className="text-accent font-black">•</span>
-          <span className="px-2.5 py-1 rounded-lg glass-white border border-white/80 shadow-2xs">Business Development</span>
-        </div>
+        {/* Centered Gold Accent Rule */}
+        <div className="w-20 sm:w-28 md:w-32 h-[2px] bg-[#CCA038] mx-auto mt-4 sm:mt-6 md:mt-7 mb-6 sm:mb-8 md:mb-9" />
 
-        {/* Overview Paragraph */}
-        <p className="text-xs sm:text-sm lg:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
-          Bharath Enterprises is a global business development and consulting company, helping businesses grow through import, export, sourcing, project development, and strategic partnerships. We connect Indian industries with global markets and support international companies to expand their presence in India and Asia.
-        </p>
-
-        {/* Two Clear, Refined Actions */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-1 w-full max-w-xs sm:max-w-none mx-auto">
+        {/* Two Polished Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full max-w-xs sm:max-w-none mx-auto">
           <Link
             to="/services"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-98"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 bg-[#0E1F38] hover:bg-[#142D4E] text-white text-xs sm:text-sm font-bold rounded-full shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95"
           >
             <span>Explore Our Services</span>
-            <ArrowRight className="w-4 h-4 text-accent" />
+            <span className="text-[#CCA038] font-bold text-base sm:text-lg leading-none">→</span>
           </Link>
 
           <button
             type="button"
             onClick={() => openEnquiryModal({ enquiryType: 'Global Business Development' })}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 glass-white hover:bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-xl border border-white/90 shadow-2xs hover:shadow-md transition-all transform hover:-translate-y-0.5 active:scale-98"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0E1F38] text-xs sm:text-sm font-bold rounded-full border border-[#CCA038] shadow-2xs hover:shadow-md transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
           >
-            <MessageSquare className="w-4 h-4 text-accent" />
+            <MessageSquare className="w-4 h-4 text-[#CCA038]" />
             <span>Connect With Us</span>
           </button>
-        </div>
-
-        {/* 3 Metrics in White Glass */}
-        <div className="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-2xl mx-auto pt-4 sm:pt-6 text-center">
-          <div className="glass-white p-2.5 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
-            <p className="text-lg sm:text-2xl font-bold text-primary font-sans">14+ Countries</p>
-            <p className="text-[9px] sm:text-[11px] text-slate-500 font-medium mt-0.5 leading-tight">Global Presence</p>
-          </div>
-          <div className="glass-white p-2.5 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
-            <p className="text-lg sm:text-2xl font-bold text-accent font-sans">5 Core</p>
-            <p className="text-[9px] sm:text-[11px] text-slate-500 font-medium mt-0.5 leading-tight">Service Verticals</p>
-          </div>
-          <div className="glass-white p-2.5 sm:p-4 rounded-2xl border border-white/80 shadow-2xs">
-            <p className="text-lg sm:text-2xl font-bold text-primary font-sans">10+ Sectors</p>
-            <p className="text-[9px] sm:text-[11px] text-slate-500 font-medium mt-0.5 leading-tight">Industries Served</p>
-          </div>
         </div>
       </div>
     </section>

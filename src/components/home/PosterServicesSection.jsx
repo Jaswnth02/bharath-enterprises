@@ -1,187 +1,265 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  Wrench, 
-  Ship, 
-  FileSpreadsheet, 
-  Building, 
-  Sparkles,
-  MessageSquare
-} from 'lucide-react';
+import React, { useRef, useEffect } from 'react';
+import { Check } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 const services = [
   {
     id: 'industrial-equipment-spares',
-    title: 'INDUSTRIAL EQUIPMENT & SPARES',
+    title: 'Industrial Equipment & Spares',
     category: 'Engineering & Spares',
-    icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    desc: 'High-performance industrial machinery, boilers, spares, and automation equipment.',
     bullets: [
       'Boilers & Spares',
       'Steam Accessories',
       'Instrumentation & PLC',
       'Refractory Works',
-      'Process Equipment'
-    ]
+      'Process Equipment',
+    ],
   },
   {
     id: 'import-export-services',
-    title: 'IMPORT & EXPORT SERVICES',
+    title: 'Import & Export Services',
     category: 'Cross-Border Logistics',
-    icon: Ship,
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
+    desc: 'End-to-end foreign trade management, international sourcing, and customs clearance.',
     bullets: [
       'Global Sourcing',
       'Buyer-Seller Connect',
       'Export Documentation',
       'Customs Support',
-      'Logistics Coordination'
-    ]
+      'Logistics Coordination',
+    ],
   },
   {
     id: 'project-consulting-dpr',
-    title: 'PROJECT CONSULTING & DPR',
+    title: 'Project Consulting & DPR',
     category: 'Financial & Advisory',
-    icon: FileSpreadsheet,
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    desc: 'Bankable Detailed Project Reports, financial modeling, and government subsidy advisory.',
     bullets: [
       'Detailed Project Reports (DPR)',
       'Feasibility Studies',
       'Industry Analysis',
       'Financial Projections',
-      'Government Scheme Guidance (PMEGP, MUDRA, etc.)'
-    ]
+      'Government Scheme Guidance (PMEGP, MUDRA)',
+    ],
   },
   {
     id: 'business-setup-registration',
-    title: 'BUSINESS SETUP & REGISTRATION',
+    title: 'Business Setup & Registration',
     category: 'Corporate Legal & Licensing',
-    icon: Building,
-    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80',
+    desc: 'Fast-track corporate structuring, trade licensing, IEC, and regulatory compliance.',
     bullets: [
       'Company Registration (India & Overseas)',
       'Import Export License (IEC)',
       'GST Registration',
       'Business Advisory',
-      'Market Entry Support'
-    ]
+      'Market Entry Support',
+    ],
   },
   {
     id: 'special-projects-sectors',
-    title: 'SPECIAL PROJECTS & SECTORS',
+    title: 'Special Projects & Sectors',
     category: 'Turnkey Incubations',
-    icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    desc: 'Turnkey commercial incubation across food processing, renewable energy, and hospitality.',
     bullets: [
       'Food Processing',
       'Agro & Herbal Products',
       'Renewable Energy',
       'Real Estate & Hospitality',
       'Education & Franchise',
-      'Many more...'
-    ]
-  }
+    ],
+  },
+  {
+    id: 'custom-enterprise-solutions',
+    title: 'Custom Enterprise & Sourcing Mandates',
+    category: 'Bespoke Trade Solutions',
+    desc: 'Tailored cross-border trade structures, contract manufacturing, and bilateral strategic execution.',
+    bullets: [
+      'Custom Global Sourcing & Vetting',
+      'Bilateral Joint Ventures',
+      'Private Label Packaging',
+      'ASEAN & GCC Trade Corridors',
+      'Dedicated Director Advisory',
+    ],
+  },
 ];
 
 export const PosterServicesSection = () => {
-  const { openEnquiryModal } = useSite();
+  const sectionRef = useRef(null);
+  const trackRef = useRef(null);
+  const sliderRef = useRef(null);
+  const progressFillRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    const slider = sliderRef.current;
+    const progressFill = progressFillRef.current;
+
+    if (!section || !track || !slider) return;
+
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let maxTranslate = 0;
+    let isDesktop = window.innerWidth >= 1024;
+    let animationFrameId;
+
+    const measure = () => {
+      isDesktop = window.innerWidth >= 1024;
+      if (isDesktop) {
+        maxTranslate = Math.max(slider.scrollWidth - track.clientWidth, 0);
+      } else {
+        maxTranslate = 0;
+        slider.style.transform = 'none';
+      }
+    };
+
+    measure();
+
+    const onScroll = () => {
+      if (!isDesktop) return;
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const totalScrollable = rect.height - windowHeight;
+
+      if (totalScrollable <= 0) return;
+
+      const scrolled = -rect.top;
+      targetProgress = Math.min(Math.max(scrolled / totalScrollable, 0), 1);
+    };
+
+    // 120fps hardware-accelerated RAF render loop (Lerp without React re-renders)
+    const tick = () => {
+      if (isDesktop && maxTranslate > 0) {
+        const diff = targetProgress - currentProgress;
+        currentProgress += diff * 0.15;
+
+        if (Math.abs(diff) < 0.0002) {
+          currentProgress = targetProgress;
+        }
+
+        const translateX = currentProgress * maxTranslate;
+        slider.style.transform = `translate3d(-${translateX.toFixed(2)}px, 0, 0)`;
+
+        if (progressFill) {
+          const widthPercent = Math.max(currentProgress * 100, 15);
+          progressFill.style.width = `${widthPercent}%`;
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(tick);
+    };
+
+    animationFrameId = requestAnimationFrame(tick);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      measure();
+      onScroll();
+    }, { passive: true });
+    onScroll();
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
 
   return (
-    <section className="py-12 sm:py-20 relative bg-slate-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-14 gap-4">
-          <div>
-            <span className="text-[10px] sm:text-[11px] font-bold text-accent uppercase tracking-widest block mb-1">
-              OUR SERVICES
-            </span>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-primary tracking-tight font-sans">
-              Comprehensive Trade & Business Solutions
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1.5 font-light">
-              From heavy industrial equipment to international licensing, DPR advisory, and turnkey sectors.
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => openEnquiryModal({ enquiryType: 'Comprehensive Services Inquiry' })}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-accent transition-colors self-start sm:self-auto glass-button px-4 py-2.5 rounded-xl shrink-0"
+    <section
+      ref={sectionRef}
+      className="bg-white relative h-auto lg:h-[230vh]"
+    >
+      <div className="relative lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-0 overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Centered Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <h2 
+            style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+            className="font-luxury-headline text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold text-[#0A192F] tracking-tight leading-[1.14]"
           >
-            <span>Request Service Proposal</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+            Comprehensive Trade & Business Solutions
+          </h2>
+
+          <p className="text-xs sm:text-sm md:text-base text-slate-500 mt-2.5 font-light leading-relaxed">
+            From heavy industrial equipment to global licensing, DPR advisory, and turnkey sectors. Scroll down to slide through all 6 capabilities.
+          </p>
         </div>
 
-        {/* 5 Service Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
-          {services.map((srv, idx) => {
-            const Icon = srv.icon;
-            return (
+        {/* Viewport: Exactly 3 Cards in View */}
+        <div
+          ref={trackRef}
+          className="overflow-x-auto lg:overflow-hidden snap-x snap-mandatory lg:snap-none pb-6 lg:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+          style={{ scrollbarWidth: 'none' }}
+        >
+          <div
+            ref={sliderRef}
+            className="flex gap-6 sm:gap-7 will-change-transform"
+            style={{ transform: 'translate3d(0, 0, 0)' }}
+          >
+            {services.map((srv) => (
               <div
                 key={srv.id}
-                className="glass-white-elevated rounded-3xl p-3 sm:p-3.5 border border-white/95 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="shrink-0 w-full sm:w-[calc(50%-0.875rem)] lg:w-[calc((100%-2*1.75rem)/3)] snap-start bg-[#F4F5F8] rounded-[32px] p-3 sm:p-3.5 border border-slate-200/70 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 select-none"
               >
                 <div>
-                  {/* Photo Header */}
-                  <div className="relative h-44 rounded-2xl overflow-hidden bg-slate-100 mb-3.5">
-                    <img
-                      src={srv.image}
-                      alt={srv.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                    <div className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-primary text-[10px] font-bold shadow-2xs border border-white/80">
-                      0{idx + 1}
+                  {/* Floating Elevated Top White Box */}
+                  <div className="bg-white rounded-[24px] p-6 sm:p-7 shadow-xs border border-slate-100/90 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#0A192F] font-sans tracking-tight">
+                        {srv.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-2 font-normal leading-relaxed min-h-[38px]">
+                        {srv.desc}
+                      </p>
                     </div>
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
-                      <span className="text-[9px] font-bold text-accent uppercase tracking-wider block">
+
+                    <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                      <span className="text-xs font-extrabold text-[#CCA038] tracking-wider uppercase">
                         {srv.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase px-2 py-0.5 rounded-full bg-slate-100">
+                        Core Vertical
                       </span>
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xs sm:text-sm font-black text-primary font-sans mb-3 leading-snug px-1 uppercase tracking-tight">
-                    {srv.title}
-                  </h3>
+                  {/* Bottom Checklist Section */}
+                  <div className="p-4 sm:p-5 pt-6 pb-2">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-4">
+                      CORE DELIVERABLES & SCOPE
+                    </span>
 
-                  {/* Bullets List Exactly from Poster */}
-                  <div className="space-y-2 px-1 mb-4 text-xs">
-                    {srv.bullets.map((bullet, bIdx) => (
-                      <div key={bIdx} className="flex items-start gap-2 text-slate-700">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
-                        <span className="font-medium text-[11px] leading-tight">{bullet}</span>
-                      </div>
-                    ))}
+                    <div className="space-y-3.5">
+                      {srv.bullets.map((bullet, bIdx) => (
+                        <div key={bIdx} className="flex items-center gap-3">
+                          <div className="w-5 h-5 rounded-full bg-[#0A192F] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                            <Check className="w-3 h-3 stroke-[3]" />
+                          </div>
+                          <span className="text-xs sm:text-[13px] text-slate-700 font-medium">
+                            {bullet}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Bottom Action */}
-                <div className="pt-3 border-t border-slate-200/50 px-1">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      openEnquiryModal({
-                        enquiryType: srv.title,
-                        productOrService: srv.title,
-                      })
-                    }
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-primary hover:bg-primary-light text-white text-[11px] font-bold rounded-xl shadow-2xs transition-all active:scale-95"
-                  >
-                    <MessageSquare className="w-3 h-3 text-accent" />
-                    <span>Inquire Now</span>
-                  </button>
-                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll Progress Indicator Bar at Bottom */}
+        <div className="mt-8 flex flex-col items-center justify-center gap-2">
+          <div className="w-48 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+            <div
+              ref={progressFillRef}
+              className="h-full bg-[#0E1F38] rounded-full"
+              style={{ width: '15%' }}
+            />
+          </div>
+          <span className="text-[10px] text-slate-400 font-medium">
+            Scroll down with mouse to slide cards smoothly
+          </span>
         </div>
       </div>
     </section>
   );
 };
-

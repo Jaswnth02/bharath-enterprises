@@ -35,58 +35,60 @@ export const GlobalPresenceMap = () => {
   return (
     <section className="py-12 sm:py-20 relative bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="glass-white-elevated rounded-3xl p-6 sm:p-10 md:p-14 border border-white/95 shadow-xl relative overflow-hidden">
-          {/* Subtle world mesh background */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Subtle world mesh background */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Section Heading */}
-          <div className="max-w-3xl mb-8 sm:mb-12">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-[10px] sm:text-[11px] uppercase tracking-wider mb-2">
-              <Globe2 className="w-3.5 h-3.5" />
-              <span>OUR GLOBAL PRESENCE</span>
-            </div>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-primary font-sans tracking-tight">
-              Bridging India with 14 Strategic International Markets
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-light mt-2 leading-relaxed">
-              We connect Indian manufacturing and product strengths with established commercial channels across Southeast Asia (ASEAN), the United Kingdom, and Australia.
+        {/* Section Heading */}
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-[10px] sm:text-[11px] uppercase tracking-wider mb-2">
+            <Globe2 className="w-3.5 h-3.5" />
+            <span>OUR GLOBAL PRESENCE</span>
+          </div>
+          <h2 
+            className="text-2xl sm:text-3xl lg:text-4xl font-normal text-primary tracking-tight font-luxury-headline"
+            style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+          >
+            Bridging India with 14 Strategic International Markets
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 font-light mt-2 leading-relaxed">
+            We connect Indian manufacturing and product strengths with established commercial channels across Southeast Asia (ASEAN), the United Kingdom, and Australia.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* 14 Countries Grid (7 Cols) */}
+          <div className="lg:col-span-7">
+            <p className="text-xs font-bold text-primary uppercase tracking-wider mb-3">
+              Active International Corridors (Click to inspect):
             </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              {countries.map((c) => {
+                const isSelected = selectedCountry.name === c.name;
+                return (
+                  <button
+                    key={c.name}
+                    type="button"
+                    onClick={() => setSelectedCountry(c)}
+                    className={`text-left p-3 rounded-2xl border text-xs font-bold transition-all flex items-center justify-between ${
+                      isSelected
+                        ? 'bg-primary text-white border-primary shadow-md scale-102'
+                        : 'bg-white/90 hover:bg-white text-slate-700 border-slate-200/80 hover:border-accent/50 shadow-xs'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-base">{c.flag}</span>
+                      <span>{c.name}</span>
+                    </div>
+                    <MapPin className={`w-3.5 h-3.5 ${isSelected ? 'text-accent' : 'text-slate-400'}`} />
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* 14 Countries Grid (7 Cols) */}
-            <div className="lg:col-span-7">
-              <p className="text-xs font-bold text-primary uppercase tracking-wider mb-3">
-                Active International Corridors (Click to inspect):
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                {countries.map((c) => {
-                  const isSelected = selectedCountry.name === c.name;
-                  return (
-                    <button
-                      key={c.name}
-                      type="button"
-                      onClick={() => setSelectedCountry(c)}
-                      className={`text-left p-3 rounded-2xl border text-xs font-bold transition-all flex items-center justify-between ${
-                        isSelected
-                          ? 'bg-primary text-white border-primary shadow-md scale-102'
-                          : 'glass-white hover:bg-white text-slate-700 border-white/90 hover:border-accent/50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">{c.flag}</span>
-                        <span>{c.name}</span>
-                      </div>
-                      <MapPin className={`w-3.5 h-3.5 ${isSelected ? 'text-accent' : 'text-slate-400'}`} />
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Selected Country Dossier Card (5 Cols) */}
-            <div className="lg:col-span-5">
-              <div className="glass-white rounded-3xl p-6 sm:p-8 border border-white/90 shadow-md space-y-5 relative overflow-hidden">
+          {/* Selected Country Dossier Card (5 Cols) */}
+          <div className="lg:col-span-5">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/70 shadow-lg space-y-5 relative overflow-hidden">
                 <div className="flex items-center justify-between border-b border-slate-200/60 pb-4">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{selectedCountry.flag}</span>
@@ -147,8 +149,7 @@ export const GlobalPresenceMap = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 

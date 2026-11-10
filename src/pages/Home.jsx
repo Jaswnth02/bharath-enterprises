@@ -4,11 +4,8 @@ import { HeroSection } from '../components/home/HeroSection';
 import { CompanyOverviewPillars } from '../components/home/CompanyOverviewPillars';
 import { PosterServicesSection } from '../components/home/PosterServicesSection';
 import { IndustriesWeServe } from '../components/home/IndustriesWeServe';
-import { GlobalPresenceMap } from '../components/home/GlobalPresenceMap';
 import { SustainableGrowthBanner } from '../components/home/SustainableGrowthBanner';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { CorporateResourcesKit } from '../components/home/CorporateResourcesKit';
-import { QualityComplianceHub } from '../components/home/QualityComplianceHub';
 import { ProcurementFaq } from '../components/home/ProcurementFaq';
 import { CtaSection } from '../components/home/CtaSection';
 
@@ -20,7 +17,7 @@ export const Home = () => {
   });
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="w-full">
       {/* 1. Hero Banner: Connecting Opportunities Globally */}
       <HeroSection />
 
@@ -33,25 +30,16 @@ export const Home = () => {
       {/* 4. Key Industries We Serve (10 Economic Sectors) */}
       <IndustriesWeServe />
 
-      {/* 5. Our Global Presence (14 International Corridors) */}
-      <GlobalPresenceMap />
-
-      {/* 6. Sustainable Growth Vision Banner */}
-      <SustainableGrowthBanner />
-
-      {/* 7. Why Choose Bharath Enterprises? (6 Core Strengths) */}
+      {/* 5. Why Choose Bharath Enterprises? (6 Core Strengths / Drifting Cards) */}
       <WhyChooseUs />
 
-      {/* 8. Technical Spec Sheets & Procurement Resource Kit */}
-      <CorporateResourcesKit />
-
-      {/* 9. Standards, Testing & Compliance Charter */}
-      <QualityComplianceHub />
-
-      {/* 10. Practical Commercial FAQs Accordion */}
+      {/* 6. Practical Commercial FAQs Accordion */}
       <ProcurementFaq />
 
-      {/* 11. Direct Commercial Enquiry & WhatsApp Desk */}
+      {/* 7. Sustainable Growth Vision Banner */}
+      <SustainableGrowthBanner />
+
+      {/* 8. Direct Commercial Enquiry & WhatsApp Desk */}
       <CtaSection />
     </div>
   );

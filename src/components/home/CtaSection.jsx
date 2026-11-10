@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MessageSquare, MessageCircle, Phone, Mail, Globe, MapPin } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 export const CtaSection = () => {
@@ -12,75 +12,59 @@ export const CtaSection = () => {
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I am contacting you from your website regarding global business development and consulting services.")}`;
 
   return (
-    <section className="py-12 sm:py-20 relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-8">
-        <div className="glass-white-elevated p-6 sm:p-10 md:p-14 rounded-3xl border border-white/95 shadow-xl text-center relative overflow-hidden">
-          {/* Subtle decorative background refractions */}
-          <div className="absolute top-0 right-0 w-60 sm:w-80 h-60 sm:h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none -z-10" />
-          <div className="absolute bottom-0 left-0 w-60 sm:w-80 h-60 sm:h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
-          <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-white border border-white/90 text-slate-700 text-[11px] sm:text-xs font-semibold tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-accent" />
-              <span>Coimbatore Global Trade & Consulting Desk</span>
-            </div>
-
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-primary tracking-tight font-sans">
-              Ready to Expand Your Business Opportunities Globally?
-            </h2>
-
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-              Connect directly with our advisory desk for industrial equipment sourcing, import-export facilitation, Detailed Project Reports (DPR), and strategic business setup across India and Asia.
-            </p>
-
-            {/* Quick Contact Badges from Poster */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-1 text-xs">
-              <a
-                href="tel:+919600949927"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-white border border-white/90 text-primary font-bold shadow-2xs hover:text-accent transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-accent" />
-                <span>+91 96009 49927</span>
-              </a>
-              <a
-                href="mailto:cncmurthi37@gmail.com"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-white border border-white/90 text-primary font-bold shadow-2xs hover:text-accent transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-accent" />
-                <span>cncmurthi37@gmail.com</span>
-              </a>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-white border border-white/90 text-slate-700 font-bold shadow-2xs">
-                <Globe className="w-3.5 h-3.5 text-accent" />
-                <span>www.bharath11.com</span>
-              </span>
-            </div>
-
-            <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-xs sm:max-w-none mx-auto">
-              <button
-                type="button"
-                onClick={() => openEnquiryModal({ enquiryType: 'Global Business Development' })}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-light text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-98"
-              >
-                <MessageSquare className="w-4 h-4 text-accent" />
-                <span>Submit Business Enquiry</span>
-              </button>
-
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-98"
-              >
-                <MessageCircle className="w-4 h-4 fill-white" />
-                <span>Direct WhatsApp Desk</span>
-              </a>
-            </div>
-
-            <p className="text-[10px] sm:text-[11px] text-slate-400 pt-1 font-medium">
-              Bharath Enterprises • Coimbatore, Tamil Nadu, India • Active Across 14 International Corridors
-            </p>
-          </div>
+    <section className="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex flex-col justify-center py-10 sm:py-16 relative overflow-hidden bg-[#EFECE6] text-[#1A1A1A]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center my-auto w-full">
+        
+        {/* Eyebrow Badge matching FAQ */}
+        <div className="inline-flex items-center gap-2 text-xs font-bold text-[#E67E22] uppercase tracking-wider mb-4 sm:mb-6">
+          <span className="text-[10px]">▲</span>
+          <span className="text-slate-800 font-sans tracking-widest text-[11px] sm:text-xs">GLOBAL TRADE & CONSULTING DESK</span>
         </div>
+
+        {/* Display Serif Headline scaled to fill viewport */}
+        <h2 
+          style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+          className="text-3xl sm:text-5xl lg:text-[3.5rem] font-normal text-[#1A1A1A] leading-[1.12] tracking-tight max-w-4xl mx-auto"
+        >
+          Ready to Expand Your Business Opportunities Globally?
+        </h2>
+
+        {/* Lead Description */}
+        <p className="text-xs sm:text-sm md:text-base text-[#6B655F] font-light leading-relaxed max-w-2xl mx-auto mt-4 sm:mt-5">
+          Connect directly with our advisory desk for industrial equipment sourcing, import-export facilitation, Detailed Project Reports (DPR), and strategic business setup across India and Asia.
+        </p>
+
+        {/* Action Buttons matching FAQ Consultation Buttons */}
+        <div className="pt-8 sm:pt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-xs sm:max-w-none mx-auto">
+          <button
+            type="button"
+            onClick={() => openEnquiryModal({ formType: 'trade_rfq', enquiryType: 'Direct Trade Desk & RFQ' })}
+            className="inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-xl bg-[#E67E22] hover:bg-[#D35400] text-white text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95 group cursor-pointer"
+          >
+            <span className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center text-white">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+            <span>Submit Business Enquiry</span>
+          </button>
+
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-xl bg-[#1A1A1A] hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
+          >
+            <span className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center text-white">
+              <MessageCircle className="w-3.5 h-3.5 fill-white" />
+            </span>
+            <span>Direct WhatsApp Desk</span>
+          </a>
+        </div>
+
+        {/* Corridor Footer Note */}
+        <p className="text-[11px] sm:text-xs text-[#8C857D] font-light mt-8 sm:mt-12">
+          Bharath Enterprises • Coimbatore, Tamil Nadu, India • Active Across 14 International Corridors
+        </p>
+
       </div>
     </section>
   );

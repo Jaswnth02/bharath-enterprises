@@ -15,6 +15,7 @@ import { Contact } from '../pages/Contact';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 import { CustomerDashboard } from '../pages/CustomerDashboard';
+import { Team } from '../pages/Team';
 import { NotFound } from '../pages/NotFound';
 
 // Admin pages
@@ -41,10 +42,11 @@ export const AppRoutes = () => {
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Navigate to="/login" replace />} />
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Route>

@@ -1,14 +1,6 @@
 import React from 'react';
-import { Sparkles, ArrowRight, MessageSquare, PhoneCall } from 'lucide-react';
+import { ArrowRight, PhoneCall } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
-
-const corePillars = [
-  'IDEAS',
-  'PARTNERSHIPS',
-  'PROJECTS',
-  'PROFITS',
-  'A BRIGHTER TOMORROW'
-];
 
 export const SustainableGrowthBanner = () => {
   const { openEnquiryModal, settings } = useSite();
@@ -18,75 +10,59 @@ export const SustainableGrowthBanner = () => {
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent("Hello Bharath Enterprises, I am contacting you to explore global business development and strategic partnerships.")}`;
 
   return (
-    <section className="py-12 sm:py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#142D4E] via-[#1E3F68] to-[#0D1E35] text-white p-8 sm:p-12 md:p-16 shadow-2xl border border-white/20">
-          {/* Subtle decorative background city light refractions */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/30 rounded-full blur-3xl pointer-events-none" />
+    <section className="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
+      {/* Subtle luxury ambient glow matching Hero */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[900px] h-[350px] sm:h-[550px] bg-gradient-to-tr from-primary/3 via-accent/8 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Column: Vision Statement */}
-            <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/20 border border-accent/40 text-accent font-bold text-xs uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>EXECUTIVE STRATEGIC VISION</span>
-              </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center my-auto">
+        {/* Category Tag with Gold Dividers matching Hero */}
+        <div className="flex items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-8 animate-in fade-in duration-700">
+          <span className="w-8 sm:w-16 h-[1.5px] bg-[#CCA038]" />
+          <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-[0.24em] text-[#0A192F] uppercase font-sans">
+            EXECUTIVE STRATEGIC VISION
+          </span>
+          <span className="w-8 sm:w-16 h-[1.5px] bg-[#CCA038]" />
+        </div>
 
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black font-sans tracking-tight leading-tight">
-                Your Partner for <span className="text-accent underline decoration-accent/40 decoration-wavy">Sustainable Growth</span>
-              </h2>
+        {/* Grand Display Headline fitting top-to-bottom viewport scale */}
+        <h2 
+          style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+          className="font-luxury-headline text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#0A192F] tracking-tight leading-[1.12] mb-6 sm:mb-8"
+        >
+          Your Partner for{' '}
+          <span className="text-accent italic font-normal">Sustainable Growth</span>
+        </h2>
 
-              <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-xl">
-                We believe in enduring business relationships that create shared economic value. From developing bankable projects to facilitating cross-border industrial sourcing, we stand alongside you at every step of your commercial expansion.
-              </p>
+        {/* Centered Gold Accent Rule */}
+        <div className="w-20 sm:w-28 md:w-32 h-[2px] bg-[#CCA038] mx-auto mb-6 sm:mb-8" />
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => openEnquiryModal({ enquiryType: 'Strategic Partnership Inquiry' })}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-primary font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all active:scale-95"
-                >
-                  <MessageSquare className="w-4 h-4 text-primary" />
-                  <span>Initiate Partnership</span>
-                </button>
+        {/* Enlarged Editorial Paragraph */}
+        <p className="text-base sm:text-lg md:text-xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto mb-10 sm:mb-12">
+          We believe in enduring business relationships that create shared economic value. From developing bankable projects to facilitating cross-border industrial sourcing, we stand alongside you at every step of your commercial expansion.
+        </p>
 
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/30 backdrop-blur-md transition-all active:scale-95"
-                >
-                  <PhoneCall className="w-4 h-4 text-accent" />
-                  <span>Direct Trade WhatsApp</span>
-                </a>
-              </div>
-            </div>
+        {/* Centered Dual Action Buttons matching Hero */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto">
+          <button
+            type="button"
+            onClick={() => openEnquiryModal({ formType: 'partnership', enquiryType: 'Executive Strategic Partnership' })}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 bg-[#0E1F38] hover:bg-[#142D4E] text-white text-xs sm:text-sm font-bold rounded-full shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95 group cursor-pointer"
+          >
+            <span>Initiate Partnership</span>
+            <ArrowRight className="w-4 h-4 text-[#CCA038] transition-transform group-hover:translate-x-1" />
+          </button>
 
-            {/* Right Column: 5 Values from Poster */}
-            <div className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 space-y-3.5 shadow-xl">
-              <span className="text-[10px] font-bold text-accent uppercase tracking-widest block border-b border-white/15 pb-2">
-                DRIVING SUSTAINED ENTERPRISE
-              </span>
-
-              <div className="space-y-2.5">
-                {corePillars.map((pillar, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-xs sm:text-sm font-extrabold tracking-wider text-slate-100 hover:text-accent transition-colors">
-                    <span>{pillar}</span>
-                    <span className="text-accent font-mono text-xs">0{idx + 1}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-4 border-t border-white/15 text-[11px] text-slate-300 font-light">
-                * Coimbatore, Tamil Nadu, India • Active Across 14 Global Corridors
-              </div>
-            </div>
-          </div>
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0E1F38] text-xs sm:text-sm font-bold rounded-full border border-[#CCA038] shadow-2xs hover:shadow-md transition-all transform hover:-translate-y-0.5 active:scale-95"
+          >
+            <PhoneCall className="w-4 h-4 text-[#CCA038]" />
+            <span>Direct Trade WhatsApp</span>
+          </a>
         </div>
       </div>
     </section>
   );
 };
-

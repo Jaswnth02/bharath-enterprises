@@ -268,34 +268,282 @@ export const initialServices = [
 
 export const initialProjects = [
   {
-    projectId: "proj-synthetic-rubber-coimbatore",
-    title: "Synthetic Rubber Waste Unit — Coimbatore",
-    description: "Established nitrile rubber recycling unit converting scrap into reusable granules and powder.",
-    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80",
-    category: "RECYCLING & MANUFACTURING",
-    completionDate: "Operating 2025",
+    projectId: "proj-usana-india-opportunity",
+    title: "USANA India — Cellular Nutrition & Business Opportunity",
+    description: "Official commercial distribution and wellness business network for USANA in India. Featuring science-backed cellular nutrition, structured 5-way income plan (Retail Profit, Weekly Matching Commissions, Incentives, Leadership and Elite Bonuses), and full commercial distributor mentorship.",
+    image: "/projects/usana-card-cover.jpg",
+    brochureImages: [
+      "/projects/usana/1.jpeg",
+      "/projects/usana/2.jpeg",
+      "/projects/usana/3.jpeg",
+      "/projects/usana/4.jpeg"
+    ],
+    category: "Ongoing Projects",
+    completionDate: "Active Ongoing Project",
     status: "published",
-    createdAt: "2025-02-01T10:00:00.000Z"
+    createdAt: "2025-03-01T10:00:00.000Z",
+    location: "India Network • Coimbatore Hub",
+    highlights: [
+      "Official 4-Page Business & Opportunity Brochure",
+      "5 Ways to Earn: Retail Profit, Weekly Commissions, Incentives, Leadership & Elite Bonus",
+      "Science-based cellular nutrition & premium health products",
+      "Structured two-side matching commission system with weekly payouts",
+      "Direct onboarding & commercial partnership support"
+    ]
   },
   {
-    projectId: "proj-statewide-snacks-tea-network",
-    title: "Statewide Nilgiris Snacks & Tea Network",
-    description: "Expanding dealer networks across Coimbatore, Tiruppur, Erode, Salem, and Chennai for hill snacks.",
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
-    category: "WHOLESALE & DISTRIBUTION",
-    completionDate: "Tamil Nadu Network",
+    projectId: "proj-herbal-tea-sugar-control",
+    title: "Project Herbal Tea — Sugar Control (Heal Herbals®)",
+    description: "Natural herbal formulation featuring 20+ traditional botanicals (Sirukurinjan, Aavaram Poo, Naval Seed, Tripala, Bitter Guard, Papaya Leaf, Lemon Grass, Nithya Kalyani, Guava Leaf) designed to support healthy sugar balance, enhance immunity, eliminate fatigue, and support weight management.",
+    image: "/projects/herbal-tea/card-cover.png",
+    brochureImages: [
+      "/projects/herbal-tea/b1.jpeg",
+      "/projects/herbal-tea/b2.png"
+    ],
+    category: "Ongoing Projects",
+    completionDate: "Active Ongoing Project",
     status: "published",
-    createdAt: "2025-02-10T10:00:00.000Z"
+    createdAt: "2025-03-02T10:00:00.000Z",
+    location: "Coimbatore • All India Commercial Supply",
+    highlights: [
+      "Official 2-Page Product & Business Opportunity Brochure",
+      "Heal Herbals® Sugar Control — 100% Natural 20+ Herbal Food Supplement",
+      "Formulated with Sirukurinjan, Aavaram Poo, Naval Seed, Tripala, Guava Leaf & Bitter Guard",
+      "FSSAI Certified (Lic No. 22423273000002) & ISO 9001 Quality Assured",
+      "High market demand & turnkey business opportunity for distributors and entrepreneurs"
+    ]
   },
   {
-    projectId: "proj-coonoor-shg-livelihood-program",
-    title: "Coonoor Self-Help Group Livelihood Program",
-    description: "Providing branding, market linkages, and sales support for registered local SHG artisans.",
-    image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80",
-    category: "COMMUNITY & SHG",
-    completionDate: "Nilgiris Initiative",
+    projectId: "proj-lord-jewellers-coonoor",
+    title: "Lord® Jewellers — Jewellery Business & Distribution Network",
+    description: "Established jewellery enterprise and commercial distribution network based in Coonoor, Nilgiris. Featuring fine hallmark gold, bridal ornaments, handcrafted gemstone jewellery, diamonds, and traditional artisanal South Indian designs with trusted retail and wholesale supply partnerships.",
+    image: "/projects/lord-jewellery/card-cover.png",
+    brochureImages: [
+      "/projects/lord-jewellery/card-cover.png"
+    ],
+    category: "Ongoing Projects",
+    completionDate: "Active Ongoing Project",
+    aspectRatio: "aspect-[3/2]",
     status: "published",
-    createdAt: "2025-02-15T10:00:00.000Z"
+    createdAt: "2025-03-02T12:00:00.000Z",
+    location: "Coonoor • The Nilgiris",
+    highlights: [
+      "Official Lord® Jewellers Commercial Business & Distribution Network",
+      "Fine hallmark gold bridal sets, gemstone necklaces, bangles & rings",
+      "Established retail presence and wholesale distribution hub in Coonoor",
+      "Custom artisanal craftsmanship with certified purity and commercial supply agreements"
+    ]
+  },
+  {
+    projectId: "proj-aloe-vera-gel-dpr",
+    title: "Aloe Vera Gel Manufacturing Project (DPR)",
+    description: "Commercial manufacturing and export project (DPR) for pure Aloe Vera Gel, juice, and herbal extracts. Production capacity of 500 – 1,000 kg/day with high export potential across Malaysia, Vietnam, and Middle East markets.",
+    image: "/projects/aloe-vera-gel/card-cover.png",
+    brochureImages: [
+      "/projects/aloe-vera-gel/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project (DPR)",
+    aspectRatio: "aspect-[3/2]",
+    status: "published",
+    createdAt: "2025-03-03T10:00:00.000Z",
+    location: "Tamil Nadu, India • Export Oriented Unit",
+    highlights: [
+      "Official Detailed Project Report (DPR) & Investment Blueprint",
+      "Processing capacity: 500 – 1,000 kg/day for cosmetic and medicinal applications",
+      "Project cost ₹15 – 25 Lakhs with estimated 20% – 30% net profit margin",
+      "Complete machinery breakdown, licensing (FSSAI, MSME, Pollution NOC, IEC), and global marketing strategy"
+    ]
+  },
+  {
+    projectId: "proj-nilgiris-tour-travel",
+    title: "Tour & Travel in the Nilgiris (Ooty • Coonoor • Kotagiri • Gudalur)",
+    description: "Integrated Nilgiris tourism and commercial travel network covering Ooty, Coonoor, Kotagiri, and Gudalur. Providing customized holiday itineraries, UNESCO heritage toy train experiences, plantation stays, corporate retreats, and reliable mountain fleet logistics.",
+    image: "/projects/nilgiris-travel/card-cover.png",
+    brochureImages: [
+      "/projects/nilgiris-travel/b1.png",
+      "/projects/nilgiris-travel/b2.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Expansion",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-04T10:00:00.000Z",
+    location: "The Nilgiris • Ooty, Coonoor, Kotagiri, Gudalur",
+    highlights: [
+      "Official 2-Page Tourism & Tour Packages Brochure",
+      "Custom tour packages: Ooty Day Tour, Coonoor Sightseeing, 2D/3D Nilgiris Circuit & Corporate Outings",
+      "Dedicated vehicle fleet: Sedan, Innova / SUV, Tempo Traveller & Mini Bus with hill-certified drivers",
+      "Comprehensive hotel & luxury tea estate resort reservations with 24/7 customer support"
+    ]
+  },
+  {
+    projectId: "proj-snacks-statewide-network",
+    title: "Quality Snacks & Nilgiri Tea Statewide Distribution Network",
+    description: "Commercial supply and dealership network bringing authentic Nilgiris specialities — Ooty Varkey, Nilgiri Tea, potato chips, banana chips, homemade chocolates, and traditional savouries — to retailers, supermarkets, and distributors across Tamil Nadu.",
+    image: "/projects/snacks/card-cover.png",
+    brochureImages: [
+      "/projects/snacks/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Expansion",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-05T10:00:00.000Z",
+    location: "Coonoor • Statewide Tamil Nadu Distribution",
+    highlights: [
+      "Official 1-Page Snacks Distribution & Investment Plan Brochure",
+      "Fast-moving product portfolio: Chips & savouries, bakery snacks, homemade chocolates, and Nilgiri tea gift packs",
+      "Priority target markets: Coonoor, Ooty, Mettupalayam, Coimbatore, Tiruppur, Erode, Salem, and Chennai",
+      "Accessible ₹1,00,000 turnkey distributor investment model with step-by-step 90-day action plan"
+    ]
+  },
+  {
+    projectId: "proj-home-needs-supply-chain",
+    title: "Home Needs Integrated Supply Chain Project",
+    description: "Integrated household essentials supply chain network connecting manufacturers, wholesale distributors, retail stores, and end consumers across Coimbatore and The Nilgiris for groceries, staples, cleaning products, and home utility consumables.",
+    image: "/projects/home-needs/card-cover.png",
+    brochureImages: [
+      "/projects/home-needs/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-06T10:00:00.000Z",
+    location: "Coimbatore & Nilgiris • Tamil Nadu",
+    highlights: [
+      "Official Integrated Supply Chain Project & Financial Projections Brochure",
+      "Comprehensive product range: Groceries, food grains, cleaning essentials, personal care, and household utilities",
+      "End-to-end supply chain flow: Manufacturers → Central Warehousing → Retail Outlets → Consumers",
+      "Project investment ₹10 – 25 Lakhs with projected 30% – 40% ROI and 12–18 months payback period"
+    ]
+  },
+  {
+    projectId: "proj-plywood-marketing-dpr",
+    title: "Plywood Marketing Detailed Project Report (DPR)",
+    description: "Commercial distribution, wholesale dealership, and retail sub-dealer network for commercial MR, BWR, and marine BWP plywood boards, MDF/HDF, particle boards, and decorative laminates across Tamil Nadu.",
+    image: "/projects/plywood/card-cover.png",
+    brochureImages: [
+      "/projects/plywood/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project (DPR)",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-07T10:00:00.000Z",
+    location: "Coonoor, Nilgiris • Across Tamil Nadu",
+    highlights: [
+      "Official Detailed Project Report (DPR) & Wholesale Marketing Blueprint",
+      "Complete interior range: Plywood, MDF/HDF, Particle Boards, Laminates & Carpentry Accessories",
+      "Target network: Coonoor, Nilgiris & Statewide Tamil Nadu distribution",
+      "Project investment ₹5,00,000 with monthly break-even sales at ₹3.75 Lakhs"
+    ]
+  },
+  {
+    projectId: "proj-synthetic-rubber-recycling-unit",
+    title: "Synthetic Rubber Waste Recycling Unit — Nitrile Rubber Scrap",
+    description: "Sustainable industrial recycling unit in Coimbatore to process nitrile rubber gasket scrap sourced from Rubber General Industries (RGIPL) into high-value reusable rubber granules and powder.",
+    image: "/projects/rubber/card-cover.png",
+    brochureImages: [
+      "/projects/rubber/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-08T10:00:00.000Z",
+    location: "Coimbatore, Tamil Nadu • Industrial Hub",
+    highlights: [
+      "Official Synthetic Rubber Recycling Project Report & Process Blueprint",
+      "Raw material supply partnership with Rubber General Industries (rgipl.co)",
+      "Converts nitrile rubber gasket scrap into reusable granules & fine rubber powder",
+      "Proposed capacity: 200 kg/day (5,000 kg/month) with ₹18.50 Lakh total project cost"
+    ]
+  },
+  {
+    projectId: "proj-vanilla-cultivation-nilgiris",
+    title: "Vanilla Cultivation in the Nilgiris — High Value Commercial Returns",
+    description: "High-value commercial vanilla (Vanilla planifolia) agro-cultivation project in the sheltered lower and mid-altitude valleys of The Nilgiris (Coonoor, Gudalur, Kotagiri) for gourmet cured beans, pure powder, and premium extracts.",
+    image: "/projects/vanilla/card-cover.png",
+    brochureImages: [
+      "/projects/vanilla/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-09T10:00:00.000Z",
+    location: "Coonoor, Kotagiri, Gudalur • The Nilgiris",
+    highlights: [
+      "Official 1-Page Vanilla Cultivation Project & Income Blueprint",
+      "Premium crop for The Nilgiris: Intercropping with coffee, pepper, and arecanut",
+      "Projected yields: Up to 400 – 600 kg/acre with ₹80 Lakh – 1.8 Crore potential from Year 5",
+      "Technical guidance supported by ICAR & Tamil Nadu Agricultural University (TNAU)"
+    ]
+  },
+  {
+    projectId: "proj-coonoor-waste-management-dpr",
+    title: "Coonoor Waste Management Project DPR — Integrated Solid Waste & Recycling",
+    description: "Integrated solid waste management and recycling project for Coonoor municipality and surrounding hill stations, incorporating door-to-door collection, mechanized segregation, organic bio-composting, and resource recovery.",
+    image: "/projects/waste-management/card-cover.png",
+    brochureImages: [
+      "/projects/waste-management/b1.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Project (DPR)",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-10T10:00:00.000Z",
+    location: "Coonoor, Wellington, Aruvankadu, Ketti • The Nilgiris",
+    highlights: [
+      "Official Comprehensive DPR for Coonoor Integrated Solid Waste Management",
+      "Phase 1 capacity: 5 Tonnes per day (TPD) with PPP / Municipality tie-up model",
+      "End-to-end flow: Segregation, organic bio-composting, recyclable recovery & authorised disposal",
+      "Project investment ₹1.85 Crore with ₹70.8 Lakh projected Year-1 EBITDA profit"
+    ]
+  },
+  {
+    projectId: "proj-dermalux-wellness-facial-body-soap",
+    title: "Dermalux® Wellness — Facial & Body Soap",
+    description: "Premium cosmetic and wellness soap crafted with pure natural botanicals and advanced skincare science. Formulated with Niacinamide, Aloe Vera, Vitamin B5 (Panthenol), Penta Ceramide, and Oat for natural skin glowing, deep hydration, and anti-ageing care.",
+    image: "/projects/dermalux-wellness/card-cover.png",
+    brochureImages: [
+      "/projects/dermalux-wellness/card-cover.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Product Launch",
+    aspectRatio: "aspect-[3/2]",
+    status: "published",
+    createdAt: "2025-03-11T10:00:00.000Z",
+    location: "Made in Malaysia • Global & Pan-India Distribution",
+    highlights: [
+      "Made in Malaysia — Made for the World international wellness formulation",
+      "Key Natural Ingredients: Niacinamide, Aloe Vera, B5 Panthenol, Penta Ceramide & Oat",
+      "Free from harsh chemicals, parabens, sulfates, and artificial colours",
+      "Suitable for all skin types with proven skin glowing and anti-ageing properties"
+    ]
+  },
+  {
+    projectId: "proj-sea-resort-buildup-hospitality",
+    title: "Sea Resort Buildup — Resort Development & Tourism Investment",
+    description: "Turnkey commercial sea resort buildup, beachfront hospitality infrastructure development, and luxury leisure investment project. Featuring private luxury ocean-view villas, infinity pools, eco-friendly coastal architecture, and high-ROI hospitality management models.",
+    image: "/projects/sea-resort/card-cover.png",
+    brochureImages: [
+      "/projects/sea-resort/card-cover.png"
+    ],
+    category: "Future Projects",
+    completionDate: "Upcoming Investment Project",
+    aspectRatio: "aspect-video",
+    status: "published",
+    createdAt: "2025-03-12T10:00:00.000Z",
+    location: "Coastal India • Premium Beachfront Destination",
+    highlights: [
+      "Turnkey beachfront resort development, infrastructure planning & hospitality DPR",
+      "Luxury oceanfront villas, infinity pools, coastal landscaping & private guest amenities",
+      "High-potential tourism investment with multiple hospitality & leisure revenue streams",
+      "Comprehensive site master planning, architectural modeling & operator management tie-up"
+    ]
   }
 ];
 
@@ -360,8 +608,8 @@ export const initialWebsiteSettings = {
   locationBadge: "Coimbatore, Tamil Nadu, India • Global Business Development",
   address: "Bharath Enterprises, Coimbatore, Tamil Nadu, India",
   phone: "+91 96009 49927",
-  email: "cncmurthi37@gmail.com",
-  website: "www.bharath11.com",
+  email: "contact@bharatok.com",
+  website: "bharatok.com",
   whatsappNumber: "919600949927",
   businessHours: "Monday – Saturday: 9:00 AM – 6:30 PM (IST)",
   socialLinks: {

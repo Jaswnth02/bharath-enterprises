@@ -17,7 +17,7 @@ export const AdminProjects = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
-  const [category, setCategory] = useState('Manufacturing');
+  const [category, setCategory] = useState('Ongoing Projects');
   const [completionDate, setCompletionDate] = useState('2025');
   const [status, setStatus] = useState('published');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,7 +52,7 @@ export const AdminProjects = () => {
     setTitle(proj.title || '');
     setDescription(proj.description || '');
     setImage(proj.image || '');
-    setCategory(proj.category || 'Manufacturing');
+    setCategory(proj.category || 'Ongoing Projects');
     setCompletionDate(proj.completionDate || '2025');
     setStatus(proj.status || 'published');
     setIsModalOpen(true);
@@ -217,11 +217,8 @@ export const AdminProjects = () => {
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none bg-white"
                   >
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Wholesale & Distribution">Wholesale & Distribution</option>
-                    <option value="Retail & Trading">Retail & Trading</option>
-                    <option value="Import & Export">Import & Export</option>
-                    <option value="Industrial Supplies">Industrial Supplies</option>
+                    <option value="Ongoing Projects">Ongoing Projects</option>
+                    <option value="Future Projects">Future Projects</option>
                   </select>
                 </div>
 

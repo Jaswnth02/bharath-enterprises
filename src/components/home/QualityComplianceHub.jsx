@@ -54,7 +54,10 @@ export const QualityComplianceHub = () => {
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>QUALITY & COMPLIANCE CHARTER</span>
             </div>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-primary font-sans tracking-tight">
+            <h2 
+              style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+              className="font-luxury-headline text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold text-[#0A192F] tracking-tight leading-[1.14]"
+            >
               Standards, Testing & Trade Certifications
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 font-light mt-1.5 leading-relaxed">

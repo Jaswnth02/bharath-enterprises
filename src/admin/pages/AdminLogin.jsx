@@ -17,8 +17,8 @@ export const AdminLogin = () => {
 
   const from = location.state?.from?.pathname || '/admin/dashboard';
 
-  const [email, setEmail] = useState('admin@bharathenterprises.com');
-  const [password, setPassword] = useState('Admin@2025');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -95,7 +95,7 @@ export const AdminLogin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 text-xs bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/40"
-                placeholder="admin@bharathenterprises.com"
+                placeholder=""
               />
             </div>
           </div>
@@ -122,11 +122,6 @@ export const AdminLogin = () => {
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
-          </div>
-
-          <div className="p-3 bg-slate-900/60 rounded-lg border border-slate-700/80 text-[11px] text-slate-400">
-            <span className="font-semibold text-accent block mb-0.5">Development Admin Credentials:</span>
-            <span>User: <strong className="text-white">admin@bharathenterprises.com</strong> | Pass: <strong className="text-white">Admin@2025</strong></span>
           </div>
 
           <button

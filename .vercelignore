@@ -1,0 +1,8 @@
+/Projects/
+dist/
+node_modules/
+.git/
+.DS_Store
+*.log
+/Home page bg.png
+/USANA India Cellular Nutrition Showcase.png

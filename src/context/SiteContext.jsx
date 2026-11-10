@@ -35,11 +35,22 @@ export const SiteProvider = ({ children }) => {
   }, []);
 
   const openEnquiryModal = (prefill = {}) => {
+    let detectedForm = prefill.formType || 'general';
+    if (!prefill.formType) {
+      const type = (prefill.enquiryType || '').toLowerCase();
+      if (type.includes('consultation')) detectedForm = 'consultation';
+      else if (type.includes('partnership')) detectedForm = 'partnership';
+      else if (type.includes('trade') || type.includes('rfq') || type.includes('development') || type.includes('procurement')) detectedForm = 'trade_rfq';
+    }
+
     setEnquiryModalPrefill({
       productId: prefill.productId || '',
       productName: prefill.productName || '',
       enquiryType: prefill.enquiryType || (prefill.productId ? 'Product Inquiry' : 'General Business'),
       serviceTitle: prefill.serviceTitle || '',
+      productOrService: prefill.productOrService || '',
+      formType: detectedForm,
+      ...prefill,
     });
     setIsEnquiryModalOpen(true);
   };
@@ -51,6 +62,7 @@ export const SiteProvider = ({ children }) => {
       productName: '',
       enquiryType: 'General Business',
       serviceTitle: '',
+      formType: 'general',
     });
   };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 const faqs = [
@@ -34,68 +34,100 @@ export const ProcurementFaq = () => {
   const { openEnquiryModal } = useSite();
 
   return (
-    <section className="py-12 sm:py-20 relative bg-slate-50/40">
-      <div className="max-w-4xl mx-auto px-4 sm:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-white border border-white/90 text-slate-700 text-[10px] sm:text-[11px] font-bold tracking-wide uppercase mb-2">
-            <HelpCircle className="w-3.5 h-3.5 text-accent" />
-            <span>TRADE FAQ</span>
-          </div>
-          <h2 className="text-xl sm:text-3xl font-extrabold text-primary font-sans tracking-tight">
-            Frequently Asked Procurement Questions
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 font-light">
-            Clear guidelines on order dispatch, packaging standards, MOQs, and trade terms.
-          </p>
-        </div>
+    <section className="py-16 sm:py-24 bg-[#EFECE6] text-[#1A1A1A] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* Left Column (5 cols): Heading & "Still have questions?" Card matching reference UI */}
+          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold text-[#E67E22] uppercase tracking-wider mb-4">
+                <span className="text-[10px]">▲</span>
+                <span className="text-slate-800 font-sans tracking-widest text-[11px]">QUESTIONS & ANSWERS</span>
+              </div>
 
-        {/* Accordion List */}
-        <div className="space-y-3">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-            return (
-              <div
-                key={idx}
-                className="glass-white rounded-2xl border border-white/90 overflow-hidden transition-all duration-200"
+              <h2 
+                style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+                className="text-3xl sm:text-4xl lg:text-[2.85rem] font-normal text-[#1A1A1A] leading-[1.12] tracking-tight"
               >
+                Clear answers for complex operations
+              </h2>
+
+              <p className="text-xs sm:text-sm text-[#6B655F] font-light leading-relaxed mt-4 max-w-md">
+                Clear answers on timelines, engagement models, reporting and measurable business outcomes.
+              </p>
+            </div>
+
+            {/* Still have questions? Card matching reference */}
+            <div className="bg-[#E5E0D8] rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 space-y-3.5">
+              <h3 
+                style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+                className="text-xl sm:text-2xl font-normal text-[#1A1A1A]"
+              >
+                Still have questions?
+              </h3>
+              <p className="text-xs sm:text-[13px] text-[#6B655F] font-light leading-relaxed">
+                Need clarity before moving forward? Speak with our operations team and get direct answers tailored to your business challenges.
+              </p>
+              <div className="pt-2">
                 <button
                   type="button"
-                  onClick={() => setOpenIdx(isOpen ? -1 : idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 focus:outline-none"
+                  onClick={() => openEnquiryModal({ formType: 'consultation', enquiryType: 'Trade & Procurement Consultation' })}
+                  className="inline-flex items-center gap-3 px-5 py-2.5 rounded-xl bg-[#E67E22] hover:bg-[#D35400] text-white text-xs sm:text-sm font-semibold shadow-xs transition-all active:scale-95 group cursor-pointer"
                 >
-                  <span className="text-xs sm:text-sm font-bold text-primary font-sans">
-                    {faq.q}
+                  <span className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center text-white">
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-accent shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
+                  <span>Book a consultation</span>
                 </button>
-
-                {isOpen && (
-                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-1 text-xs text-slate-600 font-light leading-relaxed border-t border-slate-100 animate-in fade-in">
-                    {faq.a}
-                  </div>
-                )}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
 
-        {/* Bottom Help Callout */}
-        <div className="mt-8 text-center text-xs text-slate-500">
-          <span>Have a specific commercial inquiry not answered above? </span>
-          <button
-            type="button"
-            onClick={() => openEnquiryModal({ enquiryType: 'Trade Question' })}
-            className="text-primary font-bold hover:text-accent underline transition-colors ml-1"
-          >
-            Speak with our commercial desk
-          </button>
+          {/* Right Column (7 cols): FAQ Accordion Cards matching reference */}
+          <div className="lg:col-span-7 space-y-3.5">
+            {faqs.map((faq, idx) => {
+              const isOpen = openIdx === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-[22px] sm:rounded-[26px] p-5 sm:p-6 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-200"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenIdx(isOpen ? -1 : idx)}
+                    className="w-full text-left flex items-start justify-between gap-4 focus:outline-none cursor-pointer"
+                  >
+                    <span 
+                      style={{ fontFamily: "'Playfair Display', 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif" }}
+                      className="text-base sm:text-lg font-normal text-[#1A1A1A] leading-snug"
+                    >
+                      {faq.q}
+                    </span>
+
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-200 ${
+                      isOpen ? 'bg-[#1A1A1A] text-white' : 'bg-[#E5E0D8] text-slate-700'
+                    }`}>
+                      {isOpen ? (
+                        <ChevronUp className="w-4 h-4 stroke-[2.5]" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                      )}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="pt-3 text-xs sm:text-[13px] text-[#6B655F] font-light leading-relaxed animate-in fade-in duration-200">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
-

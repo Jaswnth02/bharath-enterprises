@@ -177,13 +177,7 @@ export const Login = () => {
           </button>
         </form>
 
-        <div className="pt-2 text-center text-xs text-slate-500 border-t border-slate-200/60 space-y-2">
-          <p>
-            {t('auth.noAccount')}{' '}
-            <Link to="/register" className="font-bold text-primary hover:text-accent">
-              {t('auth.registerButton')}
-            </Link>
-          </p>
+        <div className="pt-2 text-center text-xs text-slate-500 border-t border-slate-200/60">
           <p className="text-[11px]">
             Looking for administration?{' '}
             <Link to="/admin/login" className="text-slate-700 hover:underline">

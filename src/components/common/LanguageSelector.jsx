@@ -37,10 +37,10 @@ export const LanguageSelector = ({ variant = 'dark' }) => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-xl transition-all ${
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full transition-all ${
           isLight
             ? 'text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-700/60 border border-slate-700'
-            : 'text-slate-700 hover:text-primary glass-button'
+            : 'text-slate-700 hover:text-primary bg-white/80 hover:bg-white border border-slate-200 shadow-2xs'
         }`}
         aria-label="Select Language"
       >

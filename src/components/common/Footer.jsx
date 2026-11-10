@@ -5,7 +5,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   ArrowRight,
   ShieldCheck,
   FileText,
@@ -176,11 +175,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <a href="mailto:cncmurthi37@gmail.com" className="hover:text-white transition-colors">cncmurthi37@gmail.com</a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-accent shrink-0" />
-                <span>www.bharath11.com</span>
+                <a href="mailto:contact@bharatok.com" className="hover:text-white transition-colors">contact@bharatok.com</a>
               </li>
             </ul>
           </div>

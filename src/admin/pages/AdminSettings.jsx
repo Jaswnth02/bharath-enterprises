@@ -1,8 +1,9 @@
-import React from 'react';
-import { ShieldCheck, Key, Globe, Database, Server, Info } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Key, Globe, Database, Server, Info, RefreshCw, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useSite } from '../../context/SiteContext';
 import { isFirebaseConfigured } from '../../firebase/config';
+import { seedCloudFirestore } from '../../firebase/firestore';
 import { useSEO } from '../../utils/seo';
 
 export const AdminSettings = () => {
@@ -11,7 +12,31 @@ export const AdminSettings = () => {
   });
 
   const { user } = useAuth();
-  const { settings } = useSite();
+  const { settings, refreshSettings } = useSite();
+  const [seeding, setSeeding] = useState(false);
+  const [seedStatus, setSeedStatus] = useState(null);
+  const [seedError, setSeedError] = useState(null);
+
+  const handleSeedDatabase = async () => {
+    if (!window.confirm('Populate Cloud Firestore with the complete Bharath Enterprises business catalogue, services, and corporate settings?')) {
+      return;
+    }
+    setSeeding(true);
+    setSeedError(null);
+    setSeedStatus('Starting Firestore sync...');
+
+    try {
+      const res = await seedCloudFirestore((msg) => setSeedStatus(msg));
+      setSeedStatus(`Successfully populated Cloud Firestore: ${res.services} services, ${res.categories} categories, ${res.products} products, ${res.projects} projects, ${res.gallery} gallery items, and corporate website settings!`);
+      if (refreshSettings) refreshSettings();
+    } catch (err) {
+      console.error('Seeding error:', err);
+      setSeedError(err.message || 'Failed to populate database.');
+      setSeedStatus(null);
+    } finally {
+      setSeeding(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -25,6 +50,42 @@ export const AdminSettings = () => {
         <p className="text-xs text-slate-500">
           Environment status, security provisioning protocols, and multilingual configuration.
         </p>
+      </div>
+
+      {/* Cloud Firestore Database Sync Banner */}
+      <div className="bg-linear-to-r from-primary to-slate-900 rounded-2xl p-6 text-white shadow-md relative overflow-hidden">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1 max-w-xl">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent text-xs font-bold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Cloud Firestore Database Manager</span>
+            </div>
+            <h2 className="text-lg font-bold">Populate Live Firebase Database</h2>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Sync all official poster data (5 core services, 10 industry classifications, business development catalogue, and global footprint) directly to your live Firestore cloud collections.
+            </p>
+            {seedStatus && (
+              <div className="mt-3 p-3 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-emerald-300 text-xs flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
+                <span>{seedStatus}</span>
+              </div>
+            )}
+            {seedError && (
+              <div className="mt-3 p-3 bg-rose-500/20 border border-rose-500/40 rounded-xl text-rose-300 text-xs flex items-start gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                <span>{seedError}</span>
+              </div>
+            )}
+          </div>
+          <button
+            onClick={handleSeedDatabase}
+            disabled={seeding}
+            className="self-start md:self-center px-5 py-3 rounded-xl bg-accent hover:bg-amber-500 text-primary font-bold text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 disabled:opacity-50 flex items-center gap-2 shrink-0 cursor-pointer"
+          >
+            <RefreshCw className={`w-4 h-4 ${seeding ? 'animate-spin' : ''}`} />
+            <span>{seeding ? 'Syncing to Firestore...' : 'Sync Data to Firestore'}</span>
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -87,6 +87,33 @@ export const loginUser = async (email, password) => {
 
       if (userDoc.exists()) {
         profileData = { ...profileData, ...userDoc.data() };
+      } else {
+        // Auto-provision initial administrator if logging in with official admin or company email
+        const cleanEmail = (user.email || '').toLowerCase();
+        const isAdminEmail = 
+          cleanEmail.startsWith('admin') || 
+          cleanEmail === 'contact@bharatok.com' ||
+          cleanEmail === 'cncmurthi32@gmail.com' ||
+          cleanEmail === 'cncmurthi37@gmail.com' ||
+          cleanEmail === 'admin@bharath11.com' ||
+          cleanEmail === 'admin@bharathenterprises.com';
+
+        if (isAdminEmail) {
+          profileData.role = 'admin';
+          profileData.fullName = 'Bharath Enterprises Administrator';
+          try {
+            await setDoc(userDocRef, {
+              uid: user.uid,
+              email: user.email,
+              fullName: profileData.fullName,
+              role: 'admin',
+              accountStatus: 'active',
+              createdAt: serverTimestamp(),
+            }, { merge: true });
+          } catch (e) {
+            console.warn('Could not write admin role to Firestore:', e);
+          }
+        }
       }
 
       return profileData;
@@ -95,16 +122,17 @@ export const loginUser = async (email, password) => {
     }
   }
 
-  // Local fallback login
-  // Check default admin credential placeholder
-  if (
-    email.toLowerCase() === 'admin@bharathenterprises.com' &&
-    password === 'Admin@2025'
-  ) {
+  // Admin credential authentication
+  const isMurthiAdmin = 
+    email.toLowerCase() === 'cncmurthi37@gmail.com' && password === 'murthi@2026';
+  const isLegacyAdmin = 
+    email.toLowerCase() === 'admin@bharathenterprises.com' && password === 'Admin@2025';
+
+  if (isMurthiAdmin || isLegacyAdmin) {
     const adminUser = {
-      uid: 'admin-master-001',
-      fullName: 'Bharath Administrator',
-      email: 'admin@bharathenterprises.com',
+      uid: isMurthiAdmin ? 'admin-murthi-001' : 'admin-master-001',
+      fullName: isMurthiAdmin ? 'Murthi S (Administrator)' : 'Bharath Administrator',
+      email: email.toLowerCase(),
       role: 'admin',
       accountStatus: 'active',
     };
@@ -173,11 +201,13 @@ export const subscribeToAuthChanges = (callback) => {
           if (snap.exists()) {
             callback({ uid: firebaseUser.uid, ...snap.data() });
           } else {
+            const cleanEmail = (firebaseUser.email || '').toLowerCase();
+            const isAdmin = cleanEmail.startsWith('admin') || cleanEmail === 'contact@bharatok.com' || cleanEmail === 'cncmurthi37@gmail.com';
             callback({
               uid: firebaseUser.uid,
               email: firebaseUser.email,
-              fullName: firebaseUser.displayName,
-              role: 'customer',
+              fullName: firebaseUser.displayName || (isAdmin ? 'Bharath Administrator' : 'Customer'),
+              role: isAdmin ? 'admin' : 'customer',
             });
           }
         } catch (e) {
