@@ -19,6 +19,13 @@ const LinkedinIcon = ({ className }) => (
 // Add your real team members here
 const teamMembers = [
   {
+    name: 'Bharath Moorthi',
+    role: 'Chairman',
+    photo: '/team/Bharath Moorthi.png',
+    twitter: '',
+    linkedin: '',
+  },
+  {
     name: 'Moorthi Subbaian',
     role: 'Managing Director (MD)',
     photo: '/team/Murthi.png',
@@ -43,6 +50,13 @@ const teamMembers = [
     name: 'Hemalatha',
     role: 'Business Promoter',
     photo: '/team/Hemalatha.png',
+    twitter: '',
+    linkedin: '',
+  },
+  {
+    name: 'Mahalaxmi',
+    role: 'Director Public Relations',
+    photo: '/team/Mahalaxmi.png',
     twitter: '',
     linkedin: '',
   },
