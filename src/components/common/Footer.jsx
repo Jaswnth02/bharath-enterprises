@@ -98,33 +98,15 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-accent" />
-                  <span>{t('nav.about')}</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-accent" />
-                  <span>{t('nav.products')}</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-accent" />
-                  <span>{t('nav.services')}</span>
-                </Link>
-              </li>
-              <li>
                 <Link to="/projects" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
                   <ArrowRight className="w-3 h-3 text-accent" />
                   <span>{t('nav.projects')}</span>
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
+                <Link to="/team" className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
                   <ArrowRight className="w-3 h-3 text-accent" />
-                  <span>{t('nav.gallery')}</span>
+                  <span>{t('nav.team')}</span>
                 </Link>
               </li>
               <li>
@@ -147,15 +129,6 @@ export const Footer = () => {
               <li className="hover:text-slate-200 transition-colors">Project Consulting & DPR</li>
               <li className="hover:text-slate-200 transition-colors">Business Setup & Registration</li>
               <li className="hover:text-slate-200 transition-colors">Special Projects & Sectors</li>
-              <li className="pt-2">
-                <Link
-                  to="/services"
-                  className="text-accent hover:underline text-xs inline-flex items-center gap-1"
-                >
-                  <span>Explore All Services</span>
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
-              </li>
             </ul>
           </div>
 

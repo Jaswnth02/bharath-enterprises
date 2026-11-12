@@ -5,12 +5,7 @@ import { AdminLayout } from '../components/layout/AdminLayout';
 
 // Public pages
 import { Home } from '../pages/Home';
-import { About } from '../pages/About';
-import { Products } from '../pages/Products';
-import { ProductDetails } from '../pages/ProductDetails';
-import { Services } from '../pages/Services';
 import { Projects } from '../pages/Projects';
-import { Gallery } from '../pages/Gallery';
 import { Contact } from '../pages/Contact';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
@@ -37,13 +32,8 @@ export const AppRoutes = () => {
       {/* Public Pages */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:productId" element={<ProductDetails />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Navigate to="/login" replace />} />
