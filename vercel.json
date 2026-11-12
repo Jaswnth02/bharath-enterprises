@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/products", "destination": "/", "permanent": true },
+    { "source": "/products/(.*)", "destination": "/", "permanent": true },
+    { "source": "/services", "destination": "/", "permanent": true },
+    { "source": "/gallery", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
