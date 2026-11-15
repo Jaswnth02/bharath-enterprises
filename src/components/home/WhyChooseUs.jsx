@@ -152,10 +152,9 @@ export const WhyChooseUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           
           {/* Left Column: Heading only */}
-          <div className="lg:col-span-3 flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0A192F] tracking-tight leading-[1.12] flex items-center gap-2">
-              <span>What We Do</span>
-              <span className="text-2xl sm:text-3xl text-slate-400 font-normal select-none">↴</span>
+          <div className="lg:col-span-3 flex flex-col justify-center shrink-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold text-[#0A192F] tracking-tight whitespace-nowrap">
+              What We Do
             </h2>
           </div>
 

@@ -215,9 +215,6 @@ export const PosterServicesSection = () => {
                       <span className="text-xs font-extrabold text-[#CCA038] tracking-wider uppercase">
                         {srv.category}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase px-2 py-0.5 rounded-full bg-slate-100">
-                        Core Vertical
-                      </span>
                     </div>
                   </div>
 

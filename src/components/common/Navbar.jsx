@@ -28,8 +28,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto h-14 sm:h-16 flex items-center justify-between bg-white rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-200/80 px-3.5 sm:px-5 pointer-events-auto">
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none shrink-0 pr-1 sm:pr-2">
-          <div className="h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center shrink-0">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0 pr-1 sm:pr-2">
+          <div className="h-9 sm:h-10 w-9 sm:w-10 flex items-center justify-center shrink-0">
             <img
               src={settings.logo || '/logo.png'}
               alt="Bharath Enterprises Logo"
@@ -37,10 +37,10 @@ export const Navbar = () => {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#0A192F] leading-tight font-sans">
+            <span className="text-sm sm:text-base font-black tracking-tight text-[#0A192F] leading-none font-sans">
               BHARATH
             </span>
-            <span className="text-[7.5px] sm:text-[8px] font-bold tracking-widest text-accent uppercase -mt-0.5">
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.22em] text-accent uppercase mt-0.5">
               ENTERPRISES
             </span>
           </div>
@@ -80,6 +80,7 @@ export const Navbar = () => {
         <div className="hidden lg:flex items-center gap-2 sm:gap-2.5">
           <LanguageSelector variant="dark" />
 
+          {/* Customer Portal temporarily hidden - uncomment to restore
           {user ? (
             <Link
               to={isAdmin ? '/admin/dashboard' : '/customer-dashboard'}
@@ -95,6 +96,7 @@ export const Navbar = () => {
               <span>Customer Portal</span>
             </Link>
           )}
+          */}
 
           <button
             type="button"
@@ -164,6 +166,7 @@ export const Navbar = () => {
                 <LanguageSelector variant="dark" />
               </div>
 
+              {/* Customer Portal temporarily hidden in mobile menu - uncomment to restore
               {user ? (
                 <Link
                   to={isAdmin ? '/admin/dashboard' : '/customer-dashboard'}
@@ -181,6 +184,7 @@ export const Navbar = () => {
                   <span>{t('nav.customerLogin')}</span>
                 </Link>
               )}
+              */}
 
               <button
                 type="button"

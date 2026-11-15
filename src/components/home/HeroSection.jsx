@@ -45,10 +45,10 @@ export const HeroSection = () => {
         {/* Two Polished Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full max-w-xs sm:max-w-none mx-auto">
           <Link
-            to="/services"
+            to="/projects"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 bg-[#0E1F38] hover:bg-[#142D4E] text-white text-xs sm:text-sm font-bold rounded-full shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95"
           >
-            <span>Explore Our Services</span>
+            <span>Explore our Projects</span>
             <span className="text-[#CCA038] font-bold text-base sm:text-lg leading-none">→</span>
           </Link>
 
