@@ -28,6 +28,9 @@ export const Contact = () => {
     customerName: user?.fullName || '',
     email: user?.email || '',
     phone: user?.phone || '',
+    companyName: '',
+    facilityLocation: '',
+    productOrService: '',
     message: '',
   });
 
@@ -47,7 +50,9 @@ export const Contact = () => {
     else if (!isValidEmail(formData.email)) errs.email = 'Please enter a valid email address.';
     if (!formData.phone.trim()) errs.phone = 'Please enter your phone number.';
     else if (!isValidPhone(formData.phone)) errs.phone = 'Please enter a valid phone number.';
-    if (!formData.message.trim()) errs.message = 'Please write your message.';
+    if (!formData.companyName.trim()) errs.companyName = 'Please enter your company or business name.';
+    if (!formData.facilityLocation.trim()) errs.facilityLocation = 'Please specify your location (City & Country).';
+    if (!formData.message.trim()) errs.message = 'Please write your message or requirements.';
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -65,8 +70,11 @@ export const Contact = () => {
         customerName: formData.customerName,
         email: formData.email,
         phone: formData.phone,
+        companyName: formData.companyName,
+        facilityLocation: formData.facilityLocation,
+        productOrService: formData.productOrService || 'General Commercial Contact',
         message: formData.message,
-        enquiryType: 'Direct Support & Contact',
+        enquiryType: formData.productOrService ? `Contact: ${formData.productOrService}` : 'Direct Support & Contact',
         customerId: user?.uid || null,
       });
       setSuccess(true);
@@ -74,6 +82,9 @@ export const Contact = () => {
         customerName: user?.fullName || '',
         email: user?.email || '',
         phone: user?.phone || '',
+        companyName: '',
+        facilityLocation: '',
+        productOrService: '',
         message: '',
       });
     } catch (err) {
@@ -170,80 +181,139 @@ export const Contact = () => {
                     </div>
                   )}
 
-                  {/* Full Name */}
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-800 mb-2">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.customerName}
-                      onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
-                      placeholder="Enter Your Full Name"
-                      className={`w-full bg-white rounded-xl px-4 py-3 sm:py-3.5 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
-                        errors.customerName
-                          ? 'border-rose-400 bg-rose-50/20'
-                          : 'border-transparent focus:border-neutral-300'
-                      }`}
-                    />
-                    {errors.customerName && (
-                      <p className="text-[11px] text-rose-500 mt-1">{errors.customerName}</p>
-                    )}
+                  {/* Row 1: Full Name & Company */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        Full Name <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.customerName}
+                        onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
+                        placeholder="e.g. Rajesh Sundaram"
+                        className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
+                          errors.customerName
+                            ? 'border-rose-400 bg-rose-50/20'
+                            : 'border-transparent focus:border-neutral-300'
+                        }`}
+                      />
+                      {errors.customerName && (
+                        <p className="text-[11px] text-rose-500 mt-1">{errors.customerName}</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        Company / Business Name <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.companyName}
+                        onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                        placeholder="e.g. Apex Global Trade Ltd."
+                        className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
+                          errors.companyName
+                            ? 'border-rose-400 bg-rose-50/20'
+                            : 'border-transparent focus:border-neutral-300'
+                        }`}
+                      />
+                      {errors.companyName && (
+                        <p className="text-[11px] text-rose-500 mt-1">{errors.companyName}</p>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Email Address */}
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-800 mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Enter Your Email Address"
-                      className={`w-full bg-white rounded-xl px-4 py-3 sm:py-3.5 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
-                        errors.email
-                          ? 'border-rose-400 bg-rose-50/20'
-                          : 'border-transparent focus:border-neutral-300'
-                      }`}
-                    />
-                    {errors.email && (
-                      <p className="text-[11px] text-rose-500 mt-1">{errors.email}</p>
-                    )}
+                  {/* Row 2: Email & Phone */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        Corporate Email <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="name@company.com"
+                        className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
+                          errors.email
+                            ? 'border-rose-400 bg-rose-50/20'
+                            : 'border-transparent focus:border-neutral-300'
+                        }`}
+                      />
+                      {errors.email && (
+                        <p className="text-[11px] text-rose-500 mt-1">{errors.email}</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        Phone / WhatsApp <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 98765 43210"
+                        className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
+                          errors.phone
+                            ? 'border-rose-400 bg-rose-50/20'
+                            : 'border-transparent focus:border-neutral-300'
+                        }`}
+                      />
+                      {errors.phone && (
+                        <p className="text-[11px] text-rose-500 mt-1">{errors.phone}</p>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Phone Number */}
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-800 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="Enter Your Phone Number"
-                      className={`w-full bg-white rounded-xl px-4 py-3 sm:py-3.5 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
-                        errors.phone
-                          ? 'border-rose-400 bg-rose-50/20'
-                          : 'border-transparent focus:border-neutral-300'
-                      }`}
-                    />
-                    {errors.phone && (
-                      <p className="text-[11px] text-rose-500 mt-1">{errors.phone}</p>
-                    )}
+                  {/* Row 3: City/Location & Subject */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        City, State & Country <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.facilityLocation}
+                        onChange={(e) => setFormData({ ...formData, facilityLocation: e.target.value })}
+                        placeholder="e.g. Coimbatore, Tamil Nadu, India"
+                        className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs ${
+                          errors.facilityLocation
+                            ? 'border-rose-400 bg-rose-50/20'
+                            : 'border-transparent focus:border-neutral-300'
+                        }`}
+                      />
+                      {errors.facilityLocation && (
+                        <p className="text-[11px] text-rose-500 mt-1">{errors.facilityLocation}</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-neutral-800 mb-2">
+                        Subject / Project of Interest
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.productOrService}
+                        onChange={(e) => setFormData({ ...formData, productOrService: e.target.value })}
+                        placeholder="e.g. USANA Opportunity / Trade / DPR"
+                        className="w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border border-transparent focus:border-neutral-300 focus:outline-none transition-all shadow-xs"
+                      />
+                    </div>
                   </div>
 
                   {/* Message */}
                   <div>
                     <label className="block text-xs font-semibold text-neutral-800 mb-2">
-                      Message
+                      Detailed Requirement / Specifications <span className="text-rose-500">*</span>
                     </label>
                     <textarea
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Write Your Message Here"
-                      className={`w-full bg-white rounded-xl px-4 py-3 sm:py-3.5 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs resize-none ${
+                      placeholder="Please type your specific requirements, project questions, target volumes, or timeline..."
+                      className={`w-full bg-white rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 border focus:outline-none transition-all shadow-xs resize-none ${
                         errors.message
                           ? 'border-rose-400 bg-rose-50/20'
                           : 'border-transparent focus:border-neutral-300'
