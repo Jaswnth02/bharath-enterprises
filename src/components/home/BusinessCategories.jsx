@@ -143,6 +143,8 @@ export const BusinessCategories = () => {
                 <img
                   src={currentCat.image}
                   alt={currentCat.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-xl text-primary font-bold text-xs flex items-center gap-1.5 shadow-2xs border border-white/80">

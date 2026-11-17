@@ -27,6 +27,8 @@ export const Footer = () => {
                 <img
                   src={settings.logo || '/logo.png'}
                   alt="Bharath Enterprises"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </div>

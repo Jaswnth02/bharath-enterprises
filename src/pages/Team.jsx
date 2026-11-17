@@ -21,49 +21,56 @@ const teamMembers = [
   {
     name: 'Bharath Moorthi',
     role: 'Chairman',
-    photo: '/team/Bharath Moorthi.png',
+    photo: '/team/Bharath Moorthi.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Moorthi Subbaian',
     role: 'Managing Director (MD)',
-    photo: '/team/Murthi.png',
+    photo: '/team/Murthi.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Govindharaj R',
     role: 'Business Head',
-    photo: '/team/Govindharaj.png',
+    photo: '/team/Govindharaj.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Sivakumar Natarajan',
     role: 'Business Development Officer',
-    photo: '/team/Sivakumar Natarajan.png',
+    photo: '/team/Sivakumar Natarajan.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Hemalatha',
     role: 'Business Promoter',
-    photo: '/team/Hemalatha.png',
+    photo: '/team/Hemalatha.webp',
+    twitter: '',
+    linkedin: '',
+  },
+  {
+    name: 'Bharani Kumaresan',
+    role: 'Project Manager',
+    photo: '/team/bharani kumaresan.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Mahalaxmi',
     role: 'Director Public Relations',
-    photo: '/team/Mahalaxmi.png',
+    photo: '/team/Mahalaxmi.webp',
     twitter: '',
     linkedin: '',
   },
   {
     name: 'Jaswanth MG',
     role: 'Chief Information Officer',
-    photo: '/team/Jaswanth.png',
+    photo: '/team/Jaswanth.webp',
     twitter: '',
     linkedin: '',
     profileUrl: 'https://jaswanthmg.vercel.app',
@@ -78,6 +85,8 @@ const TeamCard = ({ member }) => (
         <img
           src={member.photo}
           alt={member.name}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
         />
       ) : (

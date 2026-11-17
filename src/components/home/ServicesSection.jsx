@@ -87,6 +87,8 @@ export const ServicesSection = () => {
                       <img
                         src={srv.image || 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'}
                         alt={srv.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-xl text-primary font-mono text-xs font-black shadow-2xs border border-white/80">

@@ -47,6 +47,8 @@ export const ProjectsPreview = () => {
                 <img
                   src={proj.image || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'}
                   alt={proj.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-md text-primary text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-white/80 shadow-2xs">

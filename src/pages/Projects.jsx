@@ -44,135 +44,135 @@ export const Projects = () => {
           if (p.projectId === 'proj-usana-india-opportunity') {
             return {
               ...p,
-              image: '/projects/usana-card-cover.jpg',
+              image: '/projects/usana-card-cover.webp',
               aspectRatio: 'aspect-[3/2]',
               brochureImages: [
-                '/projects/usana/1.jpeg',
-                '/projects/usana/2.jpeg',
-                '/projects/usana/3.jpeg',
-                '/projects/usana/4.jpeg',
+                '/projects/usana/1.webp',
+                '/projects/usana/2.webp',
+                '/projects/usana/3.webp',
+                '/projects/usana/4.webp',
               ],
             };
           }
           if (p.projectId === 'proj-herbal-tea-sugar-control') {
             return {
               ...p,
-              image: '/projects/herbal-tea/card-cover.png',
+              image: '/projects/herbal-tea/card-cover.webp',
               aspectRatio: 'aspect-[3/2]',
               brochureImages: [
-                '/projects/herbal-tea/b1.jpeg',
-                '/projects/herbal-tea/b2.png',
+                '/projects/herbal-tea/b1.webp',
+                '/projects/herbal-tea/b2.webp',
               ],
             };
           }
           if (p.projectId === 'proj-lord-jewellers-coonoor') {
             return {
               ...p,
-              image: '/projects/lord-jewellery/card-cover.png',
+              image: '/projects/lord-jewellery/card-cover.webp',
               aspectRatio: 'aspect-[3/2]',
               brochureImages: [
-                '/projects/lord-jewellery/card-cover.png',
+                '/projects/lord-jewellery/card-cover.webp',
               ],
             };
           }
           if (p.projectId === 'proj-aloe-vera-gel-dpr') {
             return {
               ...p,
-              image: '/projects/aloe-vera-gel/card-cover.png',
+              image: '/projects/aloe-vera-gel/card-cover.webp',
               aspectRatio: 'aspect-[3/2]',
               brochureImages: [
-                '/projects/aloe-vera-gel/b1.png',
+                '/projects/aloe-vera-gel/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-nilgiris-tour-travel') {
             return {
               ...p,
-              image: '/projects/nilgiris-travel/card-cover.png',
+              image: '/projects/nilgiris-travel/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/nilgiris-travel/b1.png',
-                '/projects/nilgiris-travel/b2.png',
+                '/projects/nilgiris-travel/b1.webp',
+                '/projects/nilgiris-travel/b2.webp',
               ],
             };
           }
           if (p.projectId === 'proj-snacks-statewide-network') {
             return {
               ...p,
-              image: '/projects/snacks/card-cover.png',
+              image: '/projects/snacks/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/snacks/b1.png',
+                '/projects/snacks/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-home-needs-supply-chain') {
             return {
               ...p,
-              image: '/projects/home-needs/card-cover.png',
+              image: '/projects/home-needs/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/home-needs/b1.png',
+                '/projects/home-needs/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-plywood-marketing-dpr') {
             return {
               ...p,
-              image: '/projects/plywood/card-cover.png',
+              image: '/projects/plywood/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/plywood/b1.png',
+                '/projects/plywood/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-synthetic-rubber-recycling-unit') {
             return {
               ...p,
-              image: '/projects/rubber/card-cover.png',
+              image: '/projects/rubber/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/rubber/b1.png',
+                '/projects/rubber/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-vanilla-cultivation-nilgiris') {
             return {
               ...p,
-              image: '/projects/vanilla/card-cover.png',
+              image: '/projects/vanilla/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/vanilla/b1.png',
+                '/projects/vanilla/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-coonoor-waste-management-dpr') {
             return {
               ...p,
-              image: '/projects/waste-management/card-cover.png',
+              image: '/projects/waste-management/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/waste-management/b1.png',
+                '/projects/waste-management/b1.webp',
               ],
             };
           }
           if (p.projectId === 'proj-dermalux-wellness-facial-body-soap') {
             return {
               ...p,
-              image: '/projects/dermalux-wellness/card-cover.png',
+              image: '/projects/dermalux-wellness/card-cover.webp',
               aspectRatio: 'aspect-[3/2]',
               brochureImages: [
-                '/projects/dermalux-wellness/card-cover.png',
+                '/projects/dermalux-wellness/card-cover.webp',
               ],
             };
           }
           if (p.projectId === 'proj-sea-resort-buildup-hospitality') {
             return {
               ...p,
-              image: '/projects/sea-resort/card-cover.png',
+              image: '/projects/sea-resort/card-cover.webp',
               aspectRatio: 'aspect-video',
               brochureImages: [
-                '/projects/sea-resort/card-cover.png',
+                '/projects/sea-resort/card-cover.webp',
               ],
             };
           }
@@ -306,8 +306,10 @@ export const Projects = () => {
                     className={`relative w-full ${proj.aspectRatio || 'aspect-[3/2]'} overflow-hidden rounded-xl bg-slate-100 cursor-pointer shadow-2xs group/img border border-slate-200/70`}
                   >
                     <img
-                      src={proj.image || '/projects/usana-card-cover.jpg'}
+                      src={proj.image || '/projects/usana-card-cover.webp'}
                       alt={proj.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover/img:scale-102 transition-transform duration-300"
                     />
                     
@@ -483,6 +485,7 @@ export const Projects = () => {
                     <img
                       src={brochureList[activePageIndex]}
                       alt={`${previewProject.title || 'Project'} Brochure Page ${activePageIndex + 1}`}
+                      decoding="async"
                       className="max-w-full max-h-[70vh] h-auto object-contain rounded-2xl shadow-2xl border border-slate-800 animate-in fade-in duration-200"
                     />
 
@@ -518,6 +521,8 @@ export const Projects = () => {
                         <img
                           src={imgUrl}
                           alt={`USANA Brochure Page ${i + 1}`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-auto object-contain rounded-2xl shadow-2xl border border-slate-800"
                         />
                       </div>
@@ -545,7 +550,7 @@ export const Projects = () => {
                       }`}
                       title={`Go to Page ${idx + 1}`}
                     >
-                      <img src={thumbUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                      <img src={thumbUrl} alt={`Thumbnail ${idx + 1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                       <span className="absolute bottom-0 inset-x-0 bg-black/80 text-[9px] text-white font-bold text-center py-0.5">
                         {idx + 1}
                       </span>

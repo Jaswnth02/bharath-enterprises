@@ -20,6 +20,8 @@ export const ShgCommunityImpact = () => {
                 <img
                   src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80"
                   alt="Nilgiris Women Self Help Group Community"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-72 sm:h-96 object-cover rounded-xl"
                 />
                 {/* Floating Impact Card */}

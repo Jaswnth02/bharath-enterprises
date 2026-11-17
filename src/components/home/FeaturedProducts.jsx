@@ -68,6 +68,8 @@ export const FeaturedProducts = () => {
                     <img
                       src={primaryImage}
                       alt={product.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider border border-white/80 shadow-2xs">

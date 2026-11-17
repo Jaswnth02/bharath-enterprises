@@ -271,12 +271,12 @@ export const initialProjects = [
     projectId: "proj-usana-india-opportunity",
     title: "USANA India — Cellular Nutrition & Business Opportunity",
     description: "Official commercial distribution and wellness business network for USANA in India. Featuring science-backed cellular nutrition, structured 5-way income plan (Retail Profit, Weekly Matching Commissions, Incentives, Leadership and Elite Bonuses), and full commercial distributor mentorship.",
-    image: "/projects/usana-card-cover.jpg",
+    image: "/projects/usana-card-cover.webp",
     brochureImages: [
-      "/projects/usana/1.jpeg",
-      "/projects/usana/2.jpeg",
-      "/projects/usana/3.jpeg",
-      "/projects/usana/4.jpeg"
+      "/projects/usana/1.webp",
+      "/projects/usana/2.webp",
+      "/projects/usana/3.webp",
+      "/projects/usana/4.webp"
     ],
     category: "Ongoing Projects",
     completionDate: "Active Ongoing Project",
@@ -295,10 +295,10 @@ export const initialProjects = [
     projectId: "proj-herbal-tea-sugar-control",
     title: "Project Herbal Tea — Sugar Control (Heal Herbals®)",
     description: "Natural herbal formulation featuring 20+ traditional botanicals (Sirukurinjan, Aavaram Poo, Naval Seed, Tripala, Bitter Guard, Papaya Leaf, Lemon Grass, Nithya Kalyani, Guava Leaf) designed to support healthy sugar balance, enhance immunity, eliminate fatigue, and support weight management.",
-    image: "/projects/herbal-tea/card-cover.png",
+    image: "/projects/herbal-tea/card-cover.webp",
     brochureImages: [
-      "/projects/herbal-tea/b1.jpeg",
-      "/projects/herbal-tea/b2.png"
+      "/projects/herbal-tea/b1.webp",
+      "/projects/herbal-tea/b2.webp"
     ],
     category: "Ongoing Projects",
     completionDate: "Active Ongoing Project",
@@ -317,9 +317,9 @@ export const initialProjects = [
     projectId: "proj-lord-jewellers-coonoor",
     title: "Lord® Jewellers — Jewellery Business & Distribution Network",
     description: "Established jewellery enterprise and commercial distribution network based in Coonoor, Nilgiris. Featuring fine hallmark gold, bridal ornaments, handcrafted gemstone jewellery, diamonds, and traditional artisanal South Indian designs with trusted retail and wholesale supply partnerships.",
-    image: "/projects/lord-jewellery/card-cover.png",
+    image: "/projects/lord-jewellery/card-cover.webp",
     brochureImages: [
-      "/projects/lord-jewellery/card-cover.png"
+      "/projects/lord-jewellery/card-cover.webp"
     ],
     category: "Ongoing Projects",
     completionDate: "Active Ongoing Project",
@@ -338,9 +338,9 @@ export const initialProjects = [
     projectId: "proj-aloe-vera-gel-dpr",
     title: "Aloe Vera Gel Manufacturing Project (DPR)",
     description: "Commercial manufacturing and export project (DPR) for pure Aloe Vera Gel, juice, and herbal extracts. Production capacity of 500 – 1,000 kg/day with high export potential across Malaysia, Vietnam, and Middle East markets.",
-    image: "/projects/aloe-vera-gel/card-cover.png",
+    image: "/projects/aloe-vera-gel/card-cover.webp",
     brochureImages: [
-      "/projects/aloe-vera-gel/b1.png"
+      "/projects/aloe-vera-gel/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project (DPR)",
@@ -359,10 +359,10 @@ export const initialProjects = [
     projectId: "proj-nilgiris-tour-travel",
     title: "Tour & Travel in the Nilgiris (Ooty • Coonoor • Kotagiri • Gudalur)",
     description: "Integrated Nilgiris tourism and commercial travel network covering Ooty, Coonoor, Kotagiri, and Gudalur. Providing customized holiday itineraries, UNESCO heritage toy train experiences, plantation stays, corporate retreats, and reliable mountain fleet logistics.",
-    image: "/projects/nilgiris-travel/card-cover.png",
+    image: "/projects/nilgiris-travel/card-cover.webp",
     brochureImages: [
-      "/projects/nilgiris-travel/b1.png",
-      "/projects/nilgiris-travel/b2.png"
+      "/projects/nilgiris-travel/b1.webp",
+      "/projects/nilgiris-travel/b2.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Expansion",
@@ -381,9 +381,9 @@ export const initialProjects = [
     projectId: "proj-snacks-statewide-network",
     title: "Quality Snacks & Nilgiri Tea Statewide Distribution Network",
     description: "Commercial supply and dealership network bringing authentic Nilgiris specialities — Ooty Varkey, Nilgiri Tea, potato chips, banana chips, homemade chocolates, and traditional savouries — to retailers, supermarkets, and distributors across Tamil Nadu.",
-    image: "/projects/snacks/card-cover.png",
+    image: "/projects/snacks/card-cover.webp",
     brochureImages: [
-      "/projects/snacks/b1.png"
+      "/projects/snacks/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Expansion",
@@ -402,9 +402,9 @@ export const initialProjects = [
     projectId: "proj-home-needs-supply-chain",
     title: "Home Needs Integrated Supply Chain Project",
     description: "Integrated household essentials supply chain network connecting manufacturers, wholesale distributors, retail stores, and end consumers across Coimbatore and The Nilgiris for groceries, staples, cleaning products, and home utility consumables.",
-    image: "/projects/home-needs/card-cover.png",
+    image: "/projects/home-needs/card-cover.webp",
     brochureImages: [
-      "/projects/home-needs/b1.png"
+      "/projects/home-needs/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project",
@@ -423,9 +423,9 @@ export const initialProjects = [
     projectId: "proj-plywood-marketing-dpr",
     title: "Plywood Marketing Detailed Project Report (DPR)",
     description: "Commercial distribution, wholesale dealership, and retail sub-dealer network for commercial MR, BWR, and marine BWP plywood boards, MDF/HDF, particle boards, and decorative laminates across Tamil Nadu.",
-    image: "/projects/plywood/card-cover.png",
+    image: "/projects/plywood/card-cover.webp",
     brochureImages: [
-      "/projects/plywood/b1.png"
+      "/projects/plywood/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project (DPR)",
@@ -444,9 +444,9 @@ export const initialProjects = [
     projectId: "proj-synthetic-rubber-recycling-unit",
     title: "Synthetic Rubber Waste Recycling Unit — Nitrile Rubber Scrap",
     description: "Sustainable industrial recycling unit in Coimbatore to process nitrile rubber gasket scrap sourced from Rubber General Industries (RGIPL) into high-value reusable rubber granules and powder.",
-    image: "/projects/rubber/card-cover.png",
+    image: "/projects/rubber/card-cover.webp",
     brochureImages: [
-      "/projects/rubber/b1.png"
+      "/projects/rubber/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project",
@@ -465,9 +465,9 @@ export const initialProjects = [
     projectId: "proj-vanilla-cultivation-nilgiris",
     title: "Vanilla Cultivation in the Nilgiris — High Value Commercial Returns",
     description: "High-value commercial vanilla (Vanilla planifolia) agro-cultivation project in the sheltered lower and mid-altitude valleys of The Nilgiris (Coonoor, Gudalur, Kotagiri) for gourmet cured beans, pure powder, and premium extracts.",
-    image: "/projects/vanilla/card-cover.png",
+    image: "/projects/vanilla/card-cover.webp",
     brochureImages: [
-      "/projects/vanilla/b1.png"
+      "/projects/vanilla/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project",
@@ -486,9 +486,9 @@ export const initialProjects = [
     projectId: "proj-coonoor-waste-management-dpr",
     title: "Coonoor Waste Management Project DPR — Integrated Solid Waste & Recycling",
     description: "Integrated solid waste management and recycling project for Coonoor municipality and surrounding hill stations, incorporating door-to-door collection, mechanized segregation, organic bio-composting, and resource recovery.",
-    image: "/projects/waste-management/card-cover.png",
+    image: "/projects/waste-management/card-cover.webp",
     brochureImages: [
-      "/projects/waste-management/b1.png"
+      "/projects/waste-management/b1.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Project (DPR)",
@@ -507,9 +507,9 @@ export const initialProjects = [
     projectId: "proj-dermalux-wellness-facial-body-soap",
     title: "Dermalux® Wellness — Facial & Body Soap",
     description: "Premium cosmetic and wellness soap crafted with pure natural botanicals and advanced skincare science. Formulated with Niacinamide, Aloe Vera, Vitamin B5 (Panthenol), Penta Ceramide, and Oat for natural skin glowing, deep hydration, and anti-ageing care.",
-    image: "/projects/dermalux-wellness/card-cover.png",
+    image: "/projects/dermalux-wellness/card-cover.webp",
     brochureImages: [
-      "/projects/dermalux-wellness/card-cover.png"
+      "/projects/dermalux-wellness/card-cover.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Product Launch",
@@ -528,9 +528,9 @@ export const initialProjects = [
     projectId: "proj-sea-resort-buildup-hospitality",
     title: "Sea Resort Buildup — Resort Development & Tourism Investment",
     description: "Turnkey commercial sea resort buildup, beachfront hospitality infrastructure development, and luxury leisure investment project. Featuring private luxury ocean-view villas, infinity pools, eco-friendly coastal architecture, and high-ROI hospitality management models.",
-    image: "/projects/sea-resort/card-cover.png",
+    image: "/projects/sea-resort/card-cover.webp",
     brochureImages: [
-      "/projects/sea-resort/card-cover.png"
+      "/projects/sea-resort/card-cover.webp"
     ],
     category: "Future Projects",
     completionDate: "Upcoming Investment Project",
