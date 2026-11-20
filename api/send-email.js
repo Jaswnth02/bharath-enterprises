@@ -15,11 +15,12 @@ export const createSmtpTransporter = () => {
   return nodemailer.createTransport({
     host,
     port,
-    secure: port === 465, // true for port 465, false for 587 (STARTTLS)
+    secure: port === 465,
+    requireTLS: port === 587,
     auth: { user, pass },
     tls: {
-      ciphers: 'SSLv3',
       rejectUnauthorized: false,
+      minVersion: 'TLSv1.2',
     },
   });
 };
