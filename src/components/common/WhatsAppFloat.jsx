@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
+import { trackWhatsAppClick } from '../../utils/analytics';
 
 export const WhatsAppFloat = () => {
   const { settings } = useSite();
@@ -25,6 +26,7 @@ export const WhatsAppFloat = () => {
       href={encodedUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick({ source: 'floating_pill', prefillMessage: defaultMessage })}
       aria-label="Chat with Bharath Enterprises on WhatsApp"
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 p-3 sm:px-4 sm:py-3 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 group"
     >

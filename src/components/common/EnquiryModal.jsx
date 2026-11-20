@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 import { useSite } from '../../context/SiteContext';
 import { useAuth } from '../../context/AuthContext';
 import { submitEnquiry } from '../../firebase/firestore';
+import { trackEnquirySubmit, trackWhatsAppClick } from '../../utils/analytics';
 import { isValidEmail, isValidPhone } from '../../utils/validators';
 
 const FORM_MODES = [
@@ -170,6 +171,14 @@ export const EnquiryModal = () => {
 
       const result = await submitEnquiry(payload);
       setSubmittedData(result);
+
+      // Track lead in Google Analytics
+      trackEnquirySubmit({
+        enquiryId: result?.enquiryId || result?.id || 'lead',
+        mode: activeMode,
+        productOrService: payload.productOrService,
+        companyName: payload.companyName,
+      });
     } catch (err) {
       setErrorMessage(err.message || 'Submission failed. Please check your connection and try again.');
     } finally {
@@ -230,6 +239,7 @@ export const EnquiryModal = () => {
                 href={`https://wa.me/${cleanNumber}?text=${encodeURIComponent(`Hello Bharath Enterprises, I have just submitted commercial inquiry #${submittedData.enquiryId || submittedData.id} regarding "${submittedData.productOrService}".`)}`}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackWhatsAppClick({ source: 'enquiry_success_followup', prefillMessage: submittedData.productOrService })}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#25D366] text-white text-xs font-bold rounded-xl shadow-sm hover:brightness-105 active:scale-95 transition-all"
               >
                 <span>Follow Up via WhatsApp</span>

@@ -15,6 +15,7 @@ import {
 import { useSEO } from '../utils/seo';
 import { getProjects } from '../firebase/firestore';
 import { useSite } from '../context/SiteContext';
+import { trackBrochureView, trackBrochureDownload } from '../utils/analytics';
 
 export const Projects = () => {
   const { t } = useTranslation();
@@ -222,6 +223,13 @@ export const Projects = () => {
     setPreviewProject(proj);
     setActivePageIndex(0);
     setViewMode('single');
+
+    // Track brochure view in Google Analytics
+    trackBrochureView({
+      projectId: proj.projectId || proj.id,
+      title: proj.title,
+      totalPages: proj.brochureImages?.length || 1,
+    });
   };
 
   return (
@@ -512,6 +520,7 @@ export const Projects = () => {
                           <a
                             href={imgUrl}
                             download={`USANA-Brochure-Page-${i + 1}.jpeg`}
+                            onClick={() => trackBrochureDownload({ projectId: previewProject?.projectId, title: previewProject?.title, pageNumber: i + 1 })}
                             className="text-[11px] text-slate-400 hover:text-white flex items-center gap-1"
                           >
                             <Download className="w-3 h-3 text-accent" />
