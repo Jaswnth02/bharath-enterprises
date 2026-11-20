@@ -1,128 +1,116 @@
 /**
- * Google Analytics 4 (GA4) Integration for Bharath Enterprises
- * 
- * Supports:
- * - Dynamic gtag.js initialization with measurement ID from VITE_GA_MEASUREMENT_ID
- * - SPA Route Change Pageview tracking with document.title
- * - High-value conversion event tracking:
- *   - Form submissions / Leads (Enquiry Modal)
- *   - WhatsApp clicks (Float & inline buttons)
- *   - Brochure views & downloads
- *   - Direct contact clicks (phone, email)
+ * Analytics Integration for Bharath Enterprises
+ *
+ * Uses Google Tag Manager (GTM-WNCXFVC7) which is loaded via index.html.
+ * GTM manages GA4 and all other tags from the GTM dashboard.
+ *
+ * All events are pushed to window.dataLayer — GTM forwards them to GA4.
+ *
+ * Tracks:
+ *  - SPA pageviews on route change
+ *  - Enquiry form submissions (generate_lead)
+ *  - WhatsApp button clicks (contact)
+ *  - Project brochure views (view_item)
+ *  - Brochure page downloads (file_download)
+ *  - Phone / email contact link clicks (contact)
  */
 
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
+const GTM_ID = 'GTM-WNCXFVC7';
 
 /**
- * Initialize Google Analytics 4
- * Injects gtag.js script and sets up window.dataLayer / window.gtag
+ * Push an object to the GTM dataLayer.
+ * GTM picks it up and fires matching triggers in GA4 (or any other tag).
  */
-export const initGA = () => {
+const pushDataLayer = (payload) => {
   if (typeof window === 'undefined') return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
+};
 
-  // Don't initialize if already loaded
-  if (document.getElementById('google-analytics-gtag')) return;
-
-  // Measurement ID must be a valid GA4 ID (starts with G-)
-  const measurementId = GA_MEASUREMENT_ID.trim();
-  if (!measurementId || !measurementId.startsWith('G-')) {
-    // Analytics is disabled or pending configuration
-    console.info('[Analytics] Notice: VITE_GA_MEASUREMENT_ID not configured or pending. Tracking dormant.');
-    return;
+/**
+ * Ensure gtag helper is available for direct GA4 calls via GTM.
+ * GTM injects its own gtag once the container loads; this is a safe no-op
+ * stub so our helpers never throw before GTM is ready.
+ */
+const safeGtag = (...args) => {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag(...args);
+  } else {
+    // Queue via dataLayer until GTM/GA4 sets up window.gtag
+    pushDataLayer(args);
   }
+};
 
-  try {
-    // 1. Create script tag
-    const script = document.createElement('script');
-    script.id = 'google-analytics-gtag';
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-    document.head.appendChild(script);
-
-    // 2. Initialize dataLayer and gtag function
+// ─── No longer needed: GTM loads gtag.js via its own tag ────────────────────
+// initGA() is a no-op kept for backward compatibility — GTM handles everything.
+export const initGA = () => {
+  // GTM-WNCXFVC7 is already injected in index.html.
+  // GA4 config & script loading are managed inside GTM container.
+  if (typeof window !== 'undefined') {
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    window.gtag = gtag;
-
-    gtag('js', new Date());
-
-    // 3. Configure GA4 with SPA-friendly settings
-    gtag('config', measurementId, {
-      send_page_view: false, // We manually dispatch page_view on route change
-      cookie_flags: 'SameSite=None;Secure',
-    });
-
-    console.info('[Analytics] Google Analytics 4 initialized successfully with ID:', measurementId);
-  } catch (err) {
-    console.warn('[Analytics] Failed to initialize Google Analytics:', err);
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
   }
 };
 
 /**
- * Track a Page View on Route Change
- * @param {string} path - URL path (e.g. '/projects', '/team')
- * @param {string} title - Page Title (from document.title)
+ * Track a page view on SPA route change.
+ * Pushes a 'page_view' event to dataLayer so GTM/GA4 records each navigation.
+ *
+ * @param {string} path  - e.g. '/projects' or '/team'
+ * @param {string} title - Page title (from document.title after useSEO updates it)
  */
 export const trackPageView = (path, title) => {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    const measurementId = (GA_MEASUREMENT_ID || '').trim();
-    if (!measurementId) return;
-
-    window.gtag('event', 'page_view', {
-      page_title: title || document.title,
-      page_location: window.location.href,
-      page_path: path || window.location.pathname + window.location.search,
-      send_to: measurementId,
-    });
-  }
+  pushDataLayer({
+    event: 'page_view',
+    page_title: title || document.title,
+    page_location: typeof window !== 'undefined' ? window.location.href : '',
+    page_path: path || (typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''),
+  });
 };
 
 /**
- * Generic Event Tracker
- * @param {string} eventName - GA4 event name (e.g. 'generate_lead', 'click', 'view_item')
- * @param {object} params - Parameters object
+ * Generic event push to dataLayer.
+ * @param {string} eventName - GA4-compatible event name
+ * @param {object} params    - Additional event parameters
  */
 export const trackEvent = (eventName, params = {}) => {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', eventName, {
-      ...params,
-      timestamp: new Date().toISOString(),
-    });
-  }
+  pushDataLayer({
+    event: eventName,
+    ...params,
+  });
 };
 
 /**
- * Track Lead / Commercial Enquiry Submission
+ * Track Commercial Enquiry Form Submission (Lead)
  */
 export const trackEnquirySubmit = ({ enquiryId, mode, productOrService, companyName }) => {
   trackEvent('generate_lead', {
     event_category: 'engagement',
     event_label: productOrService || 'General Commercial Enquiry',
     enquiry_id: enquiryId,
-    mode: mode,
+    form_mode: mode,
     company_name: companyName,
   });
 };
 
 /**
- * Track WhatsApp Chat Initiation
+ * Track WhatsApp Chat Button Click
  */
 export const trackWhatsAppClick = ({ source = 'floating_button', prefillMessage = '' }) => {
-  trackEvent('contact', {
-    method: 'whatsapp',
+  trackEvent('whatsapp_click', {
     event_category: 'contact',
     event_label: source,
+    contact_method: 'whatsapp',
     prefill_message: prefillMessage ? prefillMessage.substring(0, 100) : '',
   });
 };
 
 /**
- * Track Brochure Open / View in Modal
+ * Track Project Brochure Open / View in Modal
  */
 export const trackBrochureView = ({ projectId, title, totalPages = 1 }) => {
-  trackEvent('view_item', {
+  trackEvent('brochure_view', {
+    event_category: 'engagement',
     item_id: projectId,
     item_name: title,
     item_category: 'Project Brochure',
@@ -131,10 +119,11 @@ export const trackBrochureView = ({ projectId, title, totalPages = 1 }) => {
 };
 
 /**
- * Track Brochure Download / Save
+ * Track Brochure Page Download / Save
  */
 export const trackBrochureDownload = ({ projectId, title, pageNumber = 1 }) => {
   trackEvent('file_download', {
+    event_category: 'engagement',
     item_id: projectId,
     item_name: title,
     file_name: `${title}-Page-${pageNumber}`,
@@ -143,11 +132,13 @@ export const trackBrochureDownload = ({ projectId, title, pageNumber = 1 }) => {
 };
 
 /**
- * Track Direct Phone Call or Email click
+ * Track Phone or Email Contact Link Click
  */
 export const trackContactClick = (method = 'phone') => {
-  trackEvent('contact', {
-    method,
+  trackEvent('contact_click', {
     event_category: 'contact',
+    contact_method: method,
   });
 };
+
+export { GTM_ID };
