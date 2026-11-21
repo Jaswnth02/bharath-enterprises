@@ -279,18 +279,17 @@ export const buildCustomerAutoReplyText = (enquiry) => {
 
 Thank you for contacting Bharath Enterprises. We have successfully received your enquiry regarding "${enquiry.enquiryType || 'Industrial & Trade Services'}".
 
-Enquiry Reference: #${enquiry.enquiryId || enquiry.id}
-Status: Received and under review
+Reference Ticket: #${enquiry.enquiryId || enquiry.id}
+Status: Received and queued for technical desk review
+Response Window: Within 24 business hours
 
-Our technical and commercial trade desk is evaluating your requirements and will respond within 24 business hours.
-
-For immediate support, you can connect directly with our desk:
+Our trade desk is currently reviewing your requirements. For urgent coordination, you may reach us directly:
 - Email: ${COMPANY_DOMAIN_EMAIL}
 - Phone / WhatsApp: ${COMPANY_PHONE}
 - Location: Coimbatore & Coonoor, Tamil Nadu, India
 
 Warm regards,
-Commercial Trade & Operations Team
+Commercial Operations Team
 Bharath Enterprises`;
 };
 

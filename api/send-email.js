@@ -148,18 +148,17 @@ Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST`,
 
 Thank you for contacting Bharath Enterprises. We have successfully received your enquiry regarding "${enquiry.enquiryType || 'Industrial & Trade Services'}".
 
-Reference Number: #${ref}
+Reference Ticket: #${ref}
 Status: Received and queued for technical desk review
+Response Window: Within 24 business hours
 
-Our team will evaluate your requirements and get back to you within 24 business hours.
-
-Direct Support Contact:
+Our trade desk is currently reviewing your requirements. For urgent coordination, you may reach us directly:
 - Email: ${senderEmail}
-- Phone: +91 96009 49927
+- Phone / WhatsApp: +91 96009 49927
 - Location: Coimbatore & Coonoor, Tamil Nadu, India
 
 Warm regards,
-Commercial Trade Desk
+Commercial Operations Team
 Bharath Enterprises`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; background: #ffffff;">
@@ -171,19 +170,25 @@ Bharath Enterprises`,
             <div style="padding: 24px; background-color: #FFFFFF;">
               <p style="font-size: 14px; color: #111827;">Dear <strong>${enquiry.customerName || 'Valued Client'}</strong>,</p>
               <p style="font-size: 13.5px; color: #374151; line-height: 1.6;">
-                Thank you for contacting Bharath Enterprises. We have received your submission regarding <strong>${enquiry.enquiryType || 'Industrial & Trade Services'}</strong>.
+                Thank you for contacting Bharath Enterprises. We have successfully received your enquiry regarding <strong>"${enquiry.enquiryType || 'Industrial & Trade Services'}"</strong>.
               </p>
               <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px 18px; margin: 18px 0;">
                 <p style="margin: 3px 0; font-size: 13px; color: #64748B;">Reference Ticket: <strong style="color: #0A192F; font-family: monospace;">#${ref}</strong></p>
-                <p style="margin: 3px 0; font-size: 13px; color: #64748B;">Response Window: <strong style="color: #059669;">Within 24 business hours</strong></p>
+                <p style="margin: 3px 0; font-size: 13px; color: #64748B;">Status: <strong style="color: #059669;">Received and queued for technical desk review</strong></p>
+                <p style="margin: 3px 0; font-size: 13px; color: #64748B;">Response Window: <strong style="color: #0A192F;">Within 24 business hours</strong></p>
               </div>
               <p style="font-size: 13px; color: #4B5563; line-height: 1.6;">
-                Our trade desk is currently reviewing your requirements. For urgent coordination, you may reach us directly at <a href="tel:+919600949927" style="color: #0A192F; font-weight: bold; text-decoration: none;">+91 96009 49927</a>.
+                Our trade desk is currently reviewing your requirements. For urgent coordination, you may reach us directly:
               </p>
-              <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid #E5E7EB; font-size: 12px; color: #6B7280;">
+              <div style="background-color: #FAF8F5; border: 1px solid #E7E3DC; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13px; color: #374151; line-height: 1.6;">
+                <div>• <strong>Email:</strong> <a href="mailto:${senderEmail}" style="color: #0A192F; text-decoration: none;">${senderEmail}</a></div>
+                <div>• <strong>Phone / WhatsApp:</strong> <a href="tel:+919600949927" style="color: #0A192F; text-decoration: none; font-weight: 600;">+91 96009 49927</a></div>
+                <div>• <strong>Location:</strong> Coimbatore & Coonoor, Tamil Nadu, India</div>
+              </div>
+              <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid #E5E7EB; font-size: 13px; color: #6B7280;">
                 Warm regards,<br />
                 <strong style="color: #0A192F;">Commercial Operations Team</strong><br />
-                Bharath Enterprises · Coimbatore & Coonoor, Tamil Nadu
+                Bharath Enterprises
               </div>
             </div>
           </div>
