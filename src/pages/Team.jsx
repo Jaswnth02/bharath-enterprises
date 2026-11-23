@@ -62,6 +62,13 @@ const teamMembers = [
     linkedin: '',
   },
   {
+    name: 'Mahalaxmi',
+    role: 'Director Public Relations',
+    photo: '/team/Mahalaxmi.webp',
+    twitter: '',
+    linkedin: '',
+  },
+  {
     name: 'Hemalatha',
     role: 'Business Promoter',
     photo: '/team/Hemalatha.webp',
@@ -72,13 +79,6 @@ const teamMembers = [
     name: 'Bharani Kumaresan',
     role: 'Project Manager',
     photo: '/team/bharani kumaresan.webp',
-    twitter: '',
-    linkedin: '',
-  },
-  {
-    name: 'Mahalaxmi',
-    role: 'Director Public Relations',
-    photo: '/team/Mahalaxmi.webp',
     twitter: '',
     linkedin: '',
   },
