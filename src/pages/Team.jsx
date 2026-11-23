@@ -26,6 +26,14 @@ const teamMembers = [
     linkedin: '',
   },
   {
+    name: 'Jaswanth MG',
+    role: 'Chief Information Officer',
+    photo: '/team/Jaswanth.webp',
+    twitter: '',
+    linkedin: '',
+    profileUrl: 'https://jaswanthmg.vercel.app',
+  },
+  {
     name: 'Moorthi Subbaian',
     role: 'Managing Director (MD)',
     photo: '/team/Murthi.webp',
@@ -73,14 +81,6 @@ const teamMembers = [
     photo: '/team/Mahalaxmi.webp',
     twitter: '',
     linkedin: '',
-  },
-  {
-    name: 'Jaswanth MG',
-    role: 'Chief Information Officer',
-    photo: '/team/Jaswanth.webp',
-    twitter: '',
-    linkedin: '',
-    profileUrl: 'https://jaswanthmg.vercel.app',
   },
 ];
 
