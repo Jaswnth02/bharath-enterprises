@@ -33,6 +33,13 @@ const teamMembers = [
     linkedin: '',
   },
   {
+    name: 'Subramanian',
+    role: 'Malaysia Country Head',
+    photo: '/team/Subramanian.webp',
+    twitter: '',
+    linkedin: '',
+  },
+  {
     name: 'Govindharaj R',
     role: 'Business Head',
     photo: '/team/Govindharaj.webp',
